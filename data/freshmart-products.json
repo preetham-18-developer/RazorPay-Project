@@ -2,9 +2,9 @@
   {
     "product_id": "prod_fm_01",
     "sku": "RICE-5KG-001",
-    "name": "Royal Organic Basmati Rice (5kg)",
+    "name": "Royal Organic Basmati Rice (1kg)",
     "description": "Aromatic long-grain aged premium basmati rice sourced from Himalayan foothills.",
-    "price": 64900,
+    "price": 180,
     "currency": "INR",
     "image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80",
     "category": "Staples & Grains"
@@ -14,7 +14,7 @@
     "sku": "MILK-1L-002",
     "name": "Farm Fresh A2 Whole Cow Milk (1L)",
     "description": "Pasteurized, unhomogenized pure A2 cow milk delivered fresh daily.",
-    "price": 8500,
+    "price": 65,
     "currency": "INR",
     "image": "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80",
     "category": "Dairy & Cold Store"
@@ -24,7 +24,7 @@
     "sku": "OIL-1L-003",
     "name": "Cold-Pressed Mustard Oil (1L)",
     "description": "Traditional Kachi Ghani cold-pressed mustard oil with pungent aroma.",
-    "price": 21000,
+    "price": 190,
     "currency": "INR",
     "image": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80",
     "category": "Staples & Oils"
@@ -34,7 +34,7 @@
     "sku": "APPLES-1KG-004",
     "name": "Fresh Royal Gala Apples (1kg)",
     "description": "Crisp, sweet, hand-picked fresh orchard apples from Himachal Pradesh.",
-    "price": 18000,
+    "price": 160,
     "currency": "INR",
     "image": "https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?auto=format&fit=crop&w=600&q=80",
     "category": "Fruits & Produce"
@@ -42,9 +42,9 @@
   {
     "product_id": "prod_fm_05",
     "sku": "TEA-500G-005",
-    "name": "Darjeeling First Flush Black Tea (500g)",
+    "name": "Darjeeling First Flush Black Tea (250g)",
     "description": "Muscatel notes from high-altitude single estate Darjeeling gardens.",
-    "price": 49900,
+    "price": 280,
     "currency": "INR",
     "image": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80",
     "category": "Beverages & Teas"
@@ -54,7 +54,7 @@
     "sku": "BREAD-400G-006",
     "name": "Artisanal Multigrain Sourdough Bread (400g)",
     "description": "Naturally fermented 24-hour sourdough loaf baked with ancient grains.",
-    "price": 12000,
+    "price": 55,
     "currency": "INR",
     "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80",
     "category": "Bakery"
@@ -64,7 +64,7 @@
     "sku": "HONEY-500G-007",
     "name": "Raw Wildflower Organic Honey (500g)",
     "description": "Unfiltered, unpasteurized natural honey collected from forest beehives.",
-    "price": 37500,
+    "price": 290,
     "currency": "INR",
     "image": "https://images.unsplash.com/photo-1587049352847-4a222e784d38?auto=format&fit=crop&w=600&q=80",
     "category": "Pantry & Sweeteners"
@@ -74,7 +74,7 @@
     "sku": "COFFEE-200G-008",
     "name": "South Indian Filter Coffee Roast (200g)",
     "description": "80:20 Arabica-Chicory dark roast blend for authentic filter kaapi.",
-    "price": 24000,
+    "price": 140,
     "currency": "INR",
     "image": "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=600&q=80",
     "category": "Beverages & Coffee"
@@ -84,7 +84,7 @@
     "sku": "PANTRY-RES-18999",
     "name": "Gourmet Pantry Reserve",
     "description": "Exclusive artisanal hamper with Kashmir Mongra Saffron (5g), Cold-Pressed Truffle Olive Oil (500ml), and Aged Balsamic Vinegar.",
-    "price": 1899900,
+    "price": 499,
     "currency": "INR",
     "image": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=600&q=80",
     "category": "Pantry & Gourmet"
