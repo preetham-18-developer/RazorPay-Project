@@ -13,6 +13,10 @@ export default function FreshMartOrderDetailPage() {
   const [submittingDispute, setSubmittingDispute] = useState(false);
   const [transitionStatus, setTransitionStatus] = useState('');
 
+  const [disputeSubmitted, setDisputeSubmitted] = useState(false);
+  const [createdDisputeId, setCreatedDisputeId] = useState('');
+  const [showReportForm, setShowReportForm] = useState(false);
+
   useEffect(() => {
     async function fetchTimeline() {
       try {
@@ -55,10 +59,6 @@ export default function FreshMartOrderDetailPage() {
   }
 
   const { reconstructed_state: state, timeline, evidence_dossier: evidence } = data;
-
-  const [disputeSubmitted, setDisputeSubmitted] = useState(false);
-  const [createdDisputeId, setCreatedDisputeId] = useState('');
-  const [showReportForm, setShowReportForm] = useState(false);
 
   const handleDisputeSubmit = async (e) => {
     e.preventDefault();
