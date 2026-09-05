@@ -34342,5 +34342,3648 @@
       "customer_claim": "High-value Gourmet Pantry Reserve order was marked delivered by courier but never received by customer.",
       "amount": 1899900
     }
+  },
+  {
+    "event_id": "evt_fm_1788620001733_5764",
+    "order_id": "ORDER_ATK1_1788620001733",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T14:53:21.733Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "amount": 129900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620001745_3059",
+    "order_id": "ORDER_ATK1_1788620001733",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T14:53:21.745Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "items": [
+        {
+          "product_id": "prod_fm_01",
+          "sku": "RICE-5KG-001",
+          "qty": 1
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620001755_9355",
+    "order_id": "ORDER_ATK1_1788620001733",
+    "dispute_id": null,
+    "event_type": "COURIER_MARKED_DELIVERED",
+    "timestamp": "2026-09-05T14:53:21.755Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "otp_verified": true
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620001773_3701",
+    "order_id": "ORDER_ATK1_1788620001733",
+    "dispute_id": "disp_fm_1788620001773",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T14:53:21.773Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "WRONG_PRODUCT",
+      "customer_claim": "Received wrong product despite OTP delivery.",
+      "amount": 129900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620002005_8905",
+    "order_id": "ORDER_ATK2_1788620002005",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T14:53:22.005Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620002011_5403",
+    "order_id": "ORDER_ATK2_1788620002005",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T14:53:22.011Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620002017_7555",
+    "order_id": "ORDER_ATK2_1788620002005",
+    "dispute_id": null,
+    "event_type": "COURIER_MARKED_DELIVERED",
+    "timestamp": "2026-09-05T14:53:22.017Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "otp_verified": false
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620002023_6573",
+    "order_id": "ORDER_ATK2_1788620002005",
+    "dispute_id": null,
+    "event_type": "CUSTOMER_REPORTED_NON_RECEIPT",
+    "timestamp": "2026-09-05T14:53:22.023Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620002032_3148",
+    "order_id": "ORDER_ATK2_1788620002005",
+    "dispute_id": "disp_fm_1788620002032",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T14:53:22.032Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "PRODUCT_NOT_RECEIVED",
+      "customer_claim": "Not received.",
+      "amount": 129900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620002154_691",
+    "order_id": "ORDER_ATK3_1788620002154",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T14:53:22.154Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620002161_4719",
+    "order_id": "ORDER_ATK3_1788620002154",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T14:53:22.161Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620002171_5993",
+    "order_id": "ORDER_ATK3_1788620002154",
+    "dispute_id": "disp_fm_1788620002171",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T14:53:22.171Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "PRODUCT_NOT_RECEIVED",
+      "customer_claim": "Never received.",
+      "amount": 129900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620002297_7644",
+    "order_id": "ORDER_ATK4_1788620002297",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T14:53:22.297Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620002302_6946",
+    "order_id": "ORDER_ATK4_1788620002297",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T14:53:22.302Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "items": [
+        {
+          "product_id": "prod_fm_01",
+          "sku": "RICE-5KG-001",
+          "qty": 1
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620002308_6509",
+    "order_id": "ORDER_ATK4_1788620002297",
+    "dispute_id": null,
+    "event_type": "PARCEL_PACKED",
+    "timestamp": "2026-09-05T14:53:22.308Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "packed_items": [
+        {
+          "product_id": "prod_fm_08",
+          "sku": "RICE-1KG-009",
+          "qty": 1
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620002314_9779",
+    "order_id": "ORDER_ATK4_1788620002297",
+    "dispute_id": null,
+    "event_type": "COURIER_MARKED_DELIVERED",
+    "timestamp": "2026-09-05T14:53:22.314Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "otp_verified": true
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620002325_1110",
+    "order_id": "ORDER_ATK4_1788620002297",
+    "dispute_id": "disp_fm_1788620002325",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T14:53:22.325Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "WRONG_PRODUCT",
+      "customer_claim": "Wrong product.",
+      "amount": 129900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620002452_9274",
+    "order_id": "ORDER_ATK5_1788620002452",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T14:53:22.452Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620002458_5375",
+    "order_id": "ORDER_ATK5_1788620002452",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T14:53:22.458Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "items": [
+        {
+          "sku": "RICE-5KG-001",
+          "qty": 1
+        },
+        {
+          "sku": "MILK-1L-002",
+          "qty": 2
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620002463_3802",
+    "order_id": "ORDER_ATK5_1788620002452",
+    "dispute_id": null,
+    "event_type": "PARCEL_PACKED",
+    "timestamp": "2026-09-05T14:53:22.463Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "packed_items": [
+        {
+          "sku": "RICE-5KG-001",
+          "qty": 1
+        },
+        {
+          "sku": "MILK-1L-002",
+          "qty": 1
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620002472_6305",
+    "order_id": "ORDER_ATK6_1788620002472",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T14:53:22.472Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "payment_id": "pay_001",
+      "amount": 189900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620002479_7405",
+    "order_id": "ORDER_ATK6_1788620002472",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T14:53:22.479Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "payment_id": "pay_002",
+      "amount": 189900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620002489_899",
+    "order_id": "ORDER_ATK7_1788620002489",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T14:53:22.489Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620002495_5898",
+    "order_id": "ORDER_ATK7_1788620002489",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T14:53:22.495Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620002501_6319",
+    "order_id": "ORDER_ATK7_1788620002489",
+    "dispute_id": null,
+    "event_type": "CUSTOMER_REPORTED_NON_RECEIPT",
+    "timestamp": "2026-09-05T14:53:22.501Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620002511_2589",
+    "order_id": "ORDER_ATK7_1788620002489",
+    "dispute_id": "disp_fm_1788620002511",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T14:53:22.511Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "PRODUCT_NOT_RECEIVED",
+      "customer_claim": "Not received 5 mins after order.",
+      "amount": 129900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620002643_3310",
+    "order_id": "ORDER_ATK11_1788620002643",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T14:53:22.643Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "amount": 1899900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620002649_8742",
+    "order_id": "ORDER_ATK11_1788620002643",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T14:53:22.649Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "total_amount": 1899900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620002655_7663",
+    "order_id": "ORDER_ATK11_1788620002643",
+    "dispute_id": null,
+    "event_type": "PARCEL_PACKED",
+    "timestamp": "2026-09-05T14:53:22.655Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620002662_3606",
+    "order_id": "ORDER_ATK11_1788620002643",
+    "dispute_id": null,
+    "event_type": "COURIER_ASSIGNED",
+    "timestamp": "2026-09-05T14:53:22.662Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620002668_6543",
+    "order_id": "ORDER_ATK11_1788620002643",
+    "dispute_id": null,
+    "event_type": "DISPATCHED_FOR_DELIVERY",
+    "timestamp": "2026-09-05T14:53:22.668Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620002673_5376",
+    "order_id": "ORDER_ATK11_1788620002643",
+    "dispute_id": null,
+    "event_type": "COURIER_MARKED_DELIVERED",
+    "timestamp": "2026-09-05T14:53:22.673Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "otp_verified": true
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620002680_7136",
+    "order_id": "ORDER_ATK11_1788620002643",
+    "dispute_id": null,
+    "event_type": "CUSTOMER_CONFIRMED_RECEIPT",
+    "timestamp": "2026-09-05T14:53:22.680Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620002691_4090",
+    "order_id": "ORDER_ATK11_1788620002643",
+    "dispute_id": "disp_fm_1788620002691",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T14:53:22.691Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "PRODUCT_NOT_RECEIVED",
+      "customer_claim": "",
+      "amount": 1899900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620003057_3710",
+    "order_id": "ORDER_ATK12_1788620002822",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T14:53:23.057Z",
+    "source": "test",
+    "actor": "cust_clean_1788620002822",
+    "metadata": {
+      "payment_id": "pay_clean_1788620002822",
+      "amount": 129900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620003066_5503",
+    "order_id": "ORDER_ATK12_1788620002822",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T14:53:23.066Z",
+    "source": "test",
+    "actor": "cust_clean_1788620002822",
+    "metadata": {
+      "total_amount": 129900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620003074_8327",
+    "order_id": "ORDER_ATK12_1788620002822",
+    "dispute_id": null,
+    "event_type": "PARCEL_PACKED",
+    "timestamp": "2026-09-05T14:53:23.074Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620003083_9881",
+    "order_id": "ORDER_ATK12_1788620002822",
+    "dispute_id": null,
+    "event_type": "COURIER_ASSIGNED",
+    "timestamp": "2026-09-05T14:53:23.083Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620003092_7472",
+    "order_id": "ORDER_ATK12_1788620002822",
+    "dispute_id": null,
+    "event_type": "DISPATCHED_FOR_DELIVERY",
+    "timestamp": "2026-09-05T14:53:23.092Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620003102_8554",
+    "order_id": "ORDER_ATK12_1788620002822",
+    "dispute_id": null,
+    "event_type": "COURIER_MARKED_DELIVERED",
+    "timestamp": "2026-09-05T14:53:23.102Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "otp_verified": true
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620003110_4971",
+    "order_id": "ORDER_ATK12_1788620002822",
+    "dispute_id": null,
+    "event_type": "CUSTOMER_CONFIRMED_RECEIPT",
+    "timestamp": "2026-09-05T14:53:23.110Z",
+    "source": "test",
+    "actor": "cust_clean_1788620002822",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620003119_9244",
+    "order_id": "ORDER_ATK12_1788620002822",
+    "dispute_id": "disp_fm_1788620003119",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T14:53:23.119Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "PRODUCT_NOT_RECEIVED",
+      "customer_claim": "",
+      "amount": 129900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620003285_717",
+    "order_id": "ORDER_ATK13_1788620003285",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T14:53:23.285Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620003292_2300",
+    "order_id": "ORDER_ATK13_1788620003285",
+    "dispute_id": null,
+    "event_type": "REFUND_PROCESSED",
+    "timestamp": "2026-09-05T14:53:23.292Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620003298_2699",
+    "order_id": "ORDER_ATK13_1788620003285",
+    "dispute_id": null,
+    "event_type": "COURIER_MARKED_DELIVERED",
+    "timestamp": "2026-09-05T14:53:23.298Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620003310_4201",
+    "order_id": "ORDER_ATK14_1788620003310",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T14:53:23.310Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "items": [
+        {
+          "sku": "RICE-5KG-001",
+          "qty": 1
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620003316_7328",
+    "order_id": "ORDER_ATK14_1788620003310",
+    "dispute_id": null,
+    "event_type": "PARCEL_PACKED",
+    "timestamp": "2026-09-05T14:53:23.316Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "packed_items": [
+        {
+          "sku": "RICE-5KG-001",
+          "qty": 2
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620003326_1356",
+    "order_id": "ORDER_ATK15_1788620003326",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T14:53:23.326Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620003333_5582",
+    "order_id": "ORDER_ATK15_1788620003326",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T14:53:23.333Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620003340_2164",
+    "order_id": "ORDER_ATK15_1788620003326",
+    "dispute_id": null,
+    "event_type": "COURIER_MARKED_DELIVERED",
+    "timestamp": "2026-09-05T14:53:23.340Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620003351_2663",
+    "order_id": "ORDER_ATK15_1788620003326",
+    "dispute_id": "disp_fm_1788620003351",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T14:53:23.351Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "REFUND_NOT_PROCESSED",
+      "customer_claim": "Refund not received.",
+      "amount": 129900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620003490_1272",
+    "order_id": "ORDER_ATK17_1788620003490",
+    "dispute_id": null,
+    "event_type": "CUSTOMER_CONFIRMED_RECEIPT",
+    "timestamp": "2026-09-05T14:53:23.490Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620003495_4379",
+    "order_id": "ORDER_ATK17_1788620003490",
+    "dispute_id": null,
+    "event_type": "CUSTOMER_REPORTED_NON_RECEIPT",
+    "timestamp": "2026-09-05T14:53:23.495Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620003508_2076",
+    "order_id": "ORDER_ATK17_1788620003490",
+    "dispute_id": null,
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T14:53:23.508Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620015364_7519",
+    "order_id": "ORDER_EVAL_A_1788620015364",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T14:53:35.364Z",
+    "source": "freshmart_adapter",
+    "actor": "razorpay",
+    "metadata": {
+      "payment_id": "pay_eval_a_1788620015364",
+      "amount": 149900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620015372_9875",
+    "order_id": "ORDER_EVAL_A_1788620015364",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T14:53:35.372Z",
+    "source": "freshmart_storefront",
+    "actor": "cust_eval_a",
+    "metadata": {
+      "items": [
+        {
+          "sku": "RICE-5KG-001",
+          "qty": 1,
+          "price": 149900
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620015380_9250",
+    "order_id": "ORDER_EVAL_A_1788620015364",
+    "dispute_id": null,
+    "event_type": "PARCEL_PACKED",
+    "timestamp": "2026-09-05T14:53:35.380Z",
+    "source": "freshmart_ops",
+    "actor": "picker_01",
+    "metadata": {
+      "packed_items": [
+        {
+          "sku": "RICE-5KG-001",
+          "qty": 1
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620015386_597",
+    "order_id": "ORDER_EVAL_A_1788620015364",
+    "dispute_id": null,
+    "event_type": "COURIER_ASSIGNED",
+    "timestamp": "2026-09-05T14:53:35.386Z",
+    "source": "freshmart_ops",
+    "actor": "logistics",
+    "metadata": {
+      "courier_name": "Delhivery",
+      "tracking_id": "TRK_A_1001"
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620015392_7503",
+    "order_id": "ORDER_EVAL_A_1788620015364",
+    "dispute_id": null,
+    "event_type": "DISPATCHED_FOR_DELIVERY",
+    "timestamp": "2026-09-05T14:53:35.392Z",
+    "source": "freshmart_ops",
+    "actor": "courier_delhivery",
+    "metadata": {
+      "tracking_id": "TRK_A_1001"
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620015399_7837",
+    "order_id": "ORDER_EVAL_A_1788620015364",
+    "dispute_id": null,
+    "event_type": "COURIER_MARKED_DELIVERED",
+    "timestamp": "2026-09-05T14:53:35.400Z",
+    "source": "freshmart_ops",
+    "actor": "courier_delhivery",
+    "metadata": {
+      "otp_verified": true
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620015406_9475",
+    "order_id": "ORDER_EVAL_A_1788620015364",
+    "dispute_id": null,
+    "event_type": "CUSTOMER_CONFIRMED_RECEIPT",
+    "timestamp": "2026-09-05T14:53:35.406Z",
+    "source": "freshmart_storefront",
+    "actor": "cust_eval_a",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620015417_8377",
+    "order_id": "ORDER_EVAL_A_1788620015364",
+    "dispute_id": "disp_fm_1788620015417",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T14:53:35.417Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "PRODUCT_NOT_RECEIVED",
+      "customer_claim": "Routine inquiry regarding order status.",
+      "amount": 149900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620015659_650",
+    "order_id": "ORDER_EVAL_B_1788620015659",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T14:53:35.659Z",
+    "source": "freshmart_adapter",
+    "actor": "razorpay",
+    "metadata": {
+      "payment_id": "pay_eval_b_1788620015659",
+      "amount": 249900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620015666_1305",
+    "order_id": "ORDER_EVAL_B_1788620015659",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T14:53:35.666Z",
+    "source": "freshmart_storefront",
+    "actor": "cust_eval_b",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620015673_3279",
+    "order_id": "ORDER_EVAL_B_1788620015659",
+    "dispute_id": null,
+    "event_type": "PARCEL_PACKED",
+    "timestamp": "2026-09-05T14:53:35.673Z",
+    "source": "freshmart_ops",
+    "actor": "picker_02",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620015682_8182",
+    "order_id": "ORDER_EVAL_B_1788620015659",
+    "dispute_id": "disp_fm_1788620015682",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T14:53:35.682Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "PRODUCT_NOT_RECEIVED",
+      "customer_claim": "Order packed but never delivered by merchant.",
+      "amount": 249900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620015851_6977",
+    "order_id": "ORDER_EVAL_C_1788620015851",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T14:53:35.851Z",
+    "source": "freshmart_adapter",
+    "actor": "razorpay",
+    "metadata": {
+      "amount": 189900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620015857_5602",
+    "order_id": "ORDER_EVAL_C_1788620015851",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T14:53:35.857Z",
+    "source": "freshmart_storefront",
+    "actor": "cust_eval_c",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620015864_4355",
+    "order_id": "ORDER_EVAL_C_1788620015851",
+    "dispute_id": null,
+    "event_type": "PARCEL_PACKED",
+    "timestamp": "2026-09-05T14:53:35.864Z",
+    "source": "freshmart_ops",
+    "actor": "picker_01",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620015871_8672",
+    "order_id": "ORDER_EVAL_C_1788620015851",
+    "dispute_id": null,
+    "event_type": "COURIER_ASSIGNED",
+    "timestamp": "2026-09-05T14:53:35.871Z",
+    "source": "freshmart_ops",
+    "actor": "logistics",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620015877_6373",
+    "order_id": "ORDER_EVAL_C_1788620015851",
+    "dispute_id": null,
+    "event_type": "DISPATCHED_FOR_DELIVERY",
+    "timestamp": "2026-09-05T14:53:35.877Z",
+    "source": "freshmart_ops",
+    "actor": "courier_delhivery",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620015884_6427",
+    "order_id": "ORDER_EVAL_C_1788620015851",
+    "dispute_id": null,
+    "event_type": "COURIER_MARKED_DELIVERED",
+    "timestamp": "2026-09-05T14:53:35.884Z",
+    "source": "freshmart_ops",
+    "actor": "courier_delhivery",
+    "metadata": {
+      "otp_verified": false
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620015890_3072",
+    "order_id": "ORDER_EVAL_C_1788620015851",
+    "dispute_id": null,
+    "event_type": "CUSTOMER_REPORTED_NON_RECEIPT",
+    "timestamp": "2026-09-05T14:53:35.890Z",
+    "source": "freshmart_storefront",
+    "actor": "cust_eval_c",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620015900_2633",
+    "order_id": "ORDER_EVAL_C_1788620015851",
+    "dispute_id": "disp_fm_1788620015900",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T14:53:35.900Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "PRODUCT_NOT_RECEIVED",
+      "customer_claim": "Driver marked delivered but OTP was not verified.",
+      "amount": 189900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620016096_5200",
+    "order_id": "ORDER_EVAL_D_1788620016096",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T14:53:36.096Z",
+    "source": "freshmart_adapter",
+    "actor": "razorpay",
+    "metadata": {
+      "amount": 189900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620016103_5406",
+    "order_id": "ORDER_EVAL_D_1788620016096",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T14:53:36.103Z",
+    "source": "freshmart_storefront",
+    "actor": "cust_eval_d",
+    "metadata": {
+      "items": [
+        {
+          "product_id": "prod_fm_01",
+          "sku": "RICE-5KG-001",
+          "qty": 1
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620016109_7244",
+    "order_id": "ORDER_EVAL_D_1788620016096",
+    "dispute_id": null,
+    "event_type": "PARCEL_PACKED",
+    "timestamp": "2026-09-05T14:53:36.109Z",
+    "source": "freshmart_ops",
+    "actor": "picker_01",
+    "metadata": {
+      "packed_items": [
+        {
+          "product_id": "prod_fm_08",
+          "sku": "RICE-1KG-009",
+          "qty": 1
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620016117_2106",
+    "order_id": "ORDER_EVAL_D_1788620016096",
+    "dispute_id": null,
+    "event_type": "COURIER_MARKED_DELIVERED",
+    "timestamp": "2026-09-05T14:53:36.117Z",
+    "source": "freshmart_ops",
+    "actor": "courier_delhivery",
+    "metadata": {
+      "otp_verified": true
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620016127_8447",
+    "order_id": "ORDER_EVAL_D_1788620016096",
+    "dispute_id": "disp_fm_1788620016127",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T14:53:36.127Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "WRONG_PRODUCT",
+      "customer_claim": "Received 1kg basmati rice instead of 5kg basmati rice.",
+      "amount": 189900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620016308_3439",
+    "order_id": "ORDER_EVAL_E_1788620016308",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T14:53:36.308Z",
+    "source": "freshmart_adapter",
+    "actor": "razorpay",
+    "metadata": {
+      "amount": 39900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620016314_4790",
+    "order_id": "ORDER_EVAL_E_1788620016308",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T14:53:36.314Z",
+    "source": "freshmart_storefront",
+    "actor": "cust_eval_e",
+    "metadata": {
+      "items": [
+        {
+          "sku": "RICE-5KG-001",
+          "qty": 1
+        },
+        {
+          "sku": "MILK-1L-002",
+          "qty": 2
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620016321_5511",
+    "order_id": "ORDER_EVAL_E_1788620016308",
+    "dispute_id": null,
+    "event_type": "PARCEL_PACKED",
+    "timestamp": "2026-09-05T14:53:36.321Z",
+    "source": "freshmart_ops",
+    "actor": "picker_02",
+    "metadata": {
+      "packed_items": [
+        {
+          "sku": "RICE-5KG-001",
+          "qty": 1
+        },
+        {
+          "sku": "MILK-1L-002",
+          "qty": 1
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620016327_906",
+    "order_id": "ORDER_EVAL_E_1788620016308",
+    "dispute_id": null,
+    "event_type": "COURIER_MARKED_DELIVERED",
+    "timestamp": "2026-09-05T14:53:36.327Z",
+    "source": "freshmart_ops",
+    "actor": "courier_delhivery",
+    "metadata": {
+      "otp_verified": true
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620016337_8084",
+    "order_id": "ORDER_EVAL_E_1788620016308",
+    "dispute_id": "disp_fm_1788620016337",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T14:53:36.337Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "MISSING_ITEM",
+      "customer_claim": "One milk packet was missing from parcel.",
+      "amount": 39900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620016498_413",
+    "order_id": "ORDER_EVAL_F_1788620016498",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T14:53:36.498Z",
+    "source": "freshmart_adapter",
+    "actor": "razorpay",
+    "metadata": {
+      "payment_id": "pay_eval_f1",
+      "amount": 189900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620016505_6362",
+    "order_id": "ORDER_EVAL_F_1788620016498",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T14:53:36.505Z",
+    "source": "freshmart_adapter",
+    "actor": "razorpay",
+    "metadata": {
+      "payment_id": "pay_eval_f2",
+      "amount": 189900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620016511_81",
+    "order_id": "ORDER_EVAL_F_1788620016498",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T14:53:36.511Z",
+    "source": "freshmart_storefront",
+    "actor": "cust_eval_f",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620016520_4935",
+    "order_id": "ORDER_EVAL_F_1788620016498",
+    "dispute_id": "disp_fm_1788620016520",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T14:53:36.520Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "DUPLICATE_CHARGE",
+      "customer_claim": "Charged twice for single transaction session.",
+      "amount": 189900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620016721_6930",
+    "order_id": "ORDER_EVAL_G_1788620016721",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T14:53:36.721Z",
+    "source": "freshmart_adapter",
+    "actor": "razorpay",
+    "metadata": {
+      "payment_id": "pay_eval_g1",
+      "amount": 149900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620016726_9752",
+    "order_id": "ORDER_EVAL_G_1788620016721",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T14:53:36.726Z",
+    "source": "freshmart_storefront",
+    "actor": "cust_eval_g",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620016733_633",
+    "order_id": "ORDER_EVAL_G_1788620016721",
+    "dispute_id": null,
+    "event_type": "REFUND_PROCESSED",
+    "timestamp": "2026-09-05T14:53:36.733Z",
+    "source": "freshmart_storefront",
+    "actor": "merchant_ops",
+    "metadata": {
+      "refund_id": "rfnd_eval_g1",
+      "amount": 149900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620016742_7661",
+    "order_id": "ORDER_EVAL_G_1788620016721",
+    "dispute_id": "disp_fm_1788620016742",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T14:53:36.742Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "REFUND_NOT_PROCESSED",
+      "customer_claim": "Refund initiated but funds not credited to bank.",
+      "amount": 149900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620016907_4451",
+    "order_id": "ORDER_EVAL_H_1788620016907",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T14:53:36.907Z",
+    "source": "freshmart_adapter",
+    "actor": "razorpay",
+    "metadata": {
+      "amount": 89900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620016913_1145",
+    "order_id": "ORDER_EVAL_H_1788620016907",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T14:53:36.913Z",
+    "source": "freshmart_storefront",
+    "actor": "cust_eval_h",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620016923_1073",
+    "order_id": "ORDER_EVAL_H_1788620016907",
+    "dispute_id": "disp_fm_1788620016923",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T14:53:36.923Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "PRODUCT_NOT_RECEIVED",
+      "customer_claim": "I did not receive item 15 mins after ordering.",
+      "amount": 89900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620017098_4870",
+    "order_id": "ORDER_EVAL_I_1788620017098",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T14:53:37.098Z",
+    "source": "freshmart_adapter",
+    "actor": "razorpay",
+    "metadata": {
+      "amount": 1899900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620017105_1652",
+    "order_id": "ORDER_EVAL_I_1788620017098",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T14:53:37.105Z",
+    "source": "freshmart_storefront",
+    "actor": "cust_eval_i",
+    "metadata": {
+      "total_amount": 1899900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620017111_9735",
+    "order_id": "ORDER_EVAL_I_1788620017098",
+    "dispute_id": null,
+    "event_type": "PARCEL_PACKED",
+    "timestamp": "2026-09-05T14:53:37.111Z",
+    "source": "freshmart_ops",
+    "actor": "picker_01",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620017117_3276",
+    "order_id": "ORDER_EVAL_I_1788620017098",
+    "dispute_id": null,
+    "event_type": "COURIER_ASSIGNED",
+    "timestamp": "2026-09-05T14:53:37.117Z",
+    "source": "freshmart_ops",
+    "actor": "logistics",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620017122_5475",
+    "order_id": "ORDER_EVAL_I_1788620017098",
+    "dispute_id": null,
+    "event_type": "DISPATCHED_FOR_DELIVERY",
+    "timestamp": "2026-09-05T14:53:37.122Z",
+    "source": "freshmart_ops",
+    "actor": "courier_delhivery",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620017128_1222",
+    "order_id": "ORDER_EVAL_I_1788620017098",
+    "dispute_id": null,
+    "event_type": "COURIER_MARKED_DELIVERED",
+    "timestamp": "2026-09-05T14:53:37.128Z",
+    "source": "freshmart_ops",
+    "actor": "courier_delhivery",
+    "metadata": {
+      "otp_verified": true
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620017135_3365",
+    "order_id": "ORDER_EVAL_I_1788620017098",
+    "dispute_id": null,
+    "event_type": "CUSTOMER_CONFIRMED_RECEIPT",
+    "timestamp": "2026-09-05T14:53:37.135Z",
+    "source": "freshmart_storefront",
+    "actor": "cust_eval_i",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620017144_9627",
+    "order_id": "ORDER_EVAL_I_1788620017098",
+    "dispute_id": "disp_fm_1788620017144",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T14:53:37.144Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "PRODUCT_DEFECTIVE",
+      "customer_claim": "High-value electronics damaged upon arrival.",
+      "amount": 1899900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620017316_1797",
+    "order_id": "ORDER_EVAL_J_1788620017316",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T14:53:37.316Z",
+    "source": "freshmart_adapter",
+    "actor": "razorpay",
+    "metadata": {
+      "amount": 149900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620017321_7613",
+    "order_id": "ORDER_EVAL_J_1788620017316",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T14:53:37.321Z",
+    "source": "freshmart_storefront",
+    "actor": "cust_eval_j",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620017330_5650",
+    "order_id": "ORDER_EVAL_J_1788620017316",
+    "dispute_id": "disp_fm_1788620017330",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T14:53:37.330Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "PRODUCT_NOT_RECEIVED",
+      "customer_claim": "Not received.",
+      "amount": 149900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620033489_6117",
+    "order_id": "ORDER_INTEGRITY_TEST_1788620033489",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T14:53:53.489Z",
+    "source": "freshmart_order_system",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "payment_id": "pay_test_1788620033489",
+      "total_amount": 1899900,
+      "currency": "INR",
+      "items": [
+        {
+          "product_id": "prod_fm_hero_18999",
+          "sku": "PANTRY-RES-18999",
+          "qty": 1,
+          "price": 1899900
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620033752_597",
+    "order_id": "ORDER_HERO_TEST_1788620033752",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T14:53:53.752Z",
+    "source": "freshmart_payment_adapter",
+    "actor": "razorpay_gateway",
+    "metadata": {
+      "payment_id": "pay_hero_1788620033752",
+      "amount": 1899900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620033759_929",
+    "order_id": "ORDER_HERO_TEST_1788620033752",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T14:53:53.759Z",
+    "source": "freshmart_order_system",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "total_amount": 1899900,
+      "items": [
+        {
+          "product_id": "prod_fm_hero_18999",
+          "sku": "PANTRY-RES-18999",
+          "qty": 1,
+          "price": 1899900
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620033768_8532",
+    "order_id": "ORDER_HERO_TEST_1788620033752",
+    "dispute_id": null,
+    "event_type": "PARCEL_PACKED",
+    "timestamp": "2026-09-05T14:53:53.768Z",
+    "source": "freshmart_warehouse",
+    "actor": "packer_01",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620033776_184",
+    "order_id": "ORDER_HERO_TEST_1788620033752",
+    "dispute_id": null,
+    "event_type": "DISPATCHED_FOR_DELIVERY",
+    "timestamp": "2026-09-05T14:53:53.776Z",
+    "source": "freshmart_courier_app",
+    "actor": "driver_441",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620033784_4581",
+    "order_id": "ORDER_HERO_TEST_1788620033752",
+    "dispute_id": null,
+    "event_type": "COURIER_MARKED_DELIVERED",
+    "timestamp": "2026-09-05T14:53:53.784Z",
+    "source": "freshmart_courier_app",
+    "actor": "driver_441",
+    "metadata": {
+      "otp_verified": false,
+      "otp_status": "BYPASSED_BY_DRIVER"
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620033958_5851",
+    "order_id": "ORDER_HERO_TEST_1788620033752",
+    "dispute_id": "disp_fm_1788620033958",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T14:53:53.958Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "product_not_received",
+      "customer_claim": "High-value Gourmet Pantry Reserve order was marked delivered but never received by customer.",
+      "amount": 1899900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620033990_4468",
+    "order_id": "ORDER_GATE_TEST_1788620033990",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T14:53:53.990Z",
+    "source": "freshmart_payment_adapter",
+    "actor": "razorpay_gateway",
+    "metadata": {
+      "payment_id": "pay_gate_1788620033990",
+      "amount": 1899900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620033997_1369",
+    "order_id": "ORDER_GATE_TEST_1788620033990",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T14:53:53.997Z",
+    "source": "freshmart_order_system",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "total_amount": 1899900,
+      "items": [
+        {
+          "sku": "PANTRY-RES-18999",
+          "qty": 1
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620034008_2380",
+    "order_id": "ORDER_GATE_TEST_1788620033990",
+    "dispute_id": "disp_fm_1788620034007",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T14:53:54.008Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "product_not_received",
+      "customer_claim": "Gourmet Pantry Reserve missing.",
+      "amount": 1899900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620053292_7524",
+    "order_id": "ORDER_FM_1788620053292",
+    "dispute_id": null,
+    "event_type": "PAYMENT_INITIATED",
+    "timestamp": "2026-09-05T14:54:13.292Z",
+    "source": "freshmart_checkout",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "payment_id": "pay_card_1788620053292_54",
+      "amount": 1899900,
+      "mode": "CARD"
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620053301_3098",
+    "order_id": "ORDER_FM_1788620053292",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T14:54:13.301Z",
+    "source": "freshmart_payment_adapter",
+    "actor": "razorpay_gateway",
+    "metadata": {
+      "payment_id": "pay_card_1788620053292_54",
+      "amount": 1899900,
+      "method": "card",
+      "auth_2fa": true,
+      "mode": "CARD"
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620053312_7136",
+    "order_id": "ORDER_FM_1788620053292",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T14:54:13.312Z",
+    "source": "freshmart_order_system",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "payment_id": "pay_card_1788620053292_54",
+      "total_amount": 1899900,
+      "currency": "INR",
+      "items": [
+        {
+          "product_id": "prod_fm_09",
+          "sku": "PANTRY-RES-18999",
+          "name": "Gourmet Pantry Reserve",
+          "price": 1899900,
+          "qty": 1,
+          "subtotal": 1899900
+        }
+      ],
+      "mode": "CARD"
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620053511_5551",
+    "order_id": "ORDER_FM_1788620053292",
+    "dispute_id": null,
+    "event_type": "PARCEL_PACKED",
+    "timestamp": "2026-09-05T14:54:13.511Z",
+    "source": "freshmart_warehouse",
+    "actor": "packer_wh_01",
+    "metadata": {
+      "warehouse_id": "wh_blr_01",
+      "terms_version": "v2026.1",
+      "packed_items": null
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620053527_3503",
+    "order_id": "ORDER_FM_1788620053292",
+    "dispute_id": null,
+    "event_type": "COURIER_ASSIGNED",
+    "timestamp": "2026-09-05T14:54:13.527Z",
+    "source": "freshmart_logistics",
+    "actor": "dispatcher_01",
+    "metadata": {
+      "courier_partner": "DELHIVERY",
+      "tracking_number": "AWB_FM_053527",
+      "driver_id": "driver_441"
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620053545_4540",
+    "order_id": "ORDER_FM_1788620053292",
+    "dispute_id": null,
+    "event_type": "DISPATCHED_FOR_DELIVERY",
+    "timestamp": "2026-09-05T14:54:13.545Z",
+    "source": "freshmart_courier_app",
+    "actor": "driver_441",
+    "metadata": {
+      "tracking_number": "AWB_FM_053527",
+      "estimated_delivery_time": "2026-09-05T16:54:13.545Z"
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620053563_798",
+    "order_id": "ORDER_FM_1788620053292",
+    "dispute_id": null,
+    "event_type": "COURIER_MARKED_DELIVERED",
+    "timestamp": "2026-09-05T14:54:13.563Z",
+    "source": "freshmart_courier_app",
+    "actor": "driver_441",
+    "metadata": {
+      "tracking_number": "AWB_FM_053527",
+      "otp_verified": false,
+      "otp_status": "BYPASSED_BY_DRIVER",
+      "delivery_lat_lng": [
+        12.9716,
+        77.5946
+      ]
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620053587_3424",
+    "order_id": "ORDER_FM_1788620053292",
+    "dispute_id": "disp_fm_1788620053587",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T14:54:13.587Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "product_not_received",
+      "customer_claim": "High-value Gourmet Pantry Reserve order was marked delivered by courier but never received by customer.",
+      "amount": 1899900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620387015_6576",
+    "order_id": "ORDER_FM_1788620387015",
+    "dispute_id": null,
+    "event_type": "PAYMENT_INITIATED",
+    "timestamp": "2026-09-05T14:59:47.015Z",
+    "source": "freshmart_checkout",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "payment_id": "pay_razorpay_test_1788620387015_947",
+      "amount": 64900,
+      "mode": "RAZORPAY_TEST"
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620387036_9505",
+    "order_id": "ORDER_FM_1788620387015",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T14:59:47.036Z",
+    "source": "freshmart_payment_adapter",
+    "actor": "razorpay_gateway",
+    "metadata": {
+      "payment_id": "pay_razorpay_test_1788620387015_947",
+      "amount": 64900,
+      "method": "card",
+      "auth_2fa": true,
+      "mode": "RAZORPAY_TEST"
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620387058_6660",
+    "order_id": "ORDER_FM_1788620387015",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T14:59:47.058Z",
+    "source": "freshmart_order_system",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "payment_id": "pay_razorpay_test_1788620387015_947",
+      "total_amount": 64900,
+      "currency": "INR",
+      "items": [
+        {
+          "product_id": "prod_fm_01",
+          "sku": "RICE-5KG-001",
+          "name": "Royal Organic Basmati Rice (5kg)",
+          "price": 64900,
+          "qty": 1,
+          "subtotal": 64900
+        }
+      ],
+      "mode": "RAZORPAY_TEST"
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620685594_1104",
+    "order_id": "ORDER_ATK1_1788620685594",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T15:04:45.594Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "amount": 129900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620685602_8808",
+    "order_id": "ORDER_ATK1_1788620685594",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T15:04:45.602Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "items": [
+        {
+          "product_id": "prod_fm_01",
+          "sku": "RICE-5KG-001",
+          "qty": 1
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620685614_5689",
+    "order_id": "ORDER_ATK1_1788620685594",
+    "dispute_id": null,
+    "event_type": "COURIER_MARKED_DELIVERED",
+    "timestamp": "2026-09-05T15:04:45.614Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "otp_verified": true
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620685631_1182",
+    "order_id": "ORDER_ATK1_1788620685594",
+    "dispute_id": "disp_fm_1788620685631",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T15:04:45.631Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "WRONG_PRODUCT",
+      "customer_claim": "Received wrong product despite OTP delivery.",
+      "amount": 129900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620685863_7622",
+    "order_id": "ORDER_ATK2_1788620685863",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T15:04:45.863Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620685870_3548",
+    "order_id": "ORDER_ATK2_1788620685863",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T15:04:45.870Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620685880_4456",
+    "order_id": "ORDER_ATK2_1788620685863",
+    "dispute_id": null,
+    "event_type": "COURIER_MARKED_DELIVERED",
+    "timestamp": "2026-09-05T15:04:45.880Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "otp_verified": false
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620685887_9509",
+    "order_id": "ORDER_ATK2_1788620685863",
+    "dispute_id": null,
+    "event_type": "CUSTOMER_REPORTED_NON_RECEIPT",
+    "timestamp": "2026-09-05T15:04:45.887Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620685900_5979",
+    "order_id": "ORDER_ATK2_1788620685863",
+    "dispute_id": "disp_fm_1788620685900",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T15:04:45.900Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "PRODUCT_NOT_RECEIVED",
+      "customer_claim": "Not received.",
+      "amount": 129900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620686055_9176",
+    "order_id": "ORDER_ATK3_1788620686055",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T15:04:46.055Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620686062_3008",
+    "order_id": "ORDER_ATK3_1788620686055",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T15:04:46.062Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620686073_6933",
+    "order_id": "ORDER_ATK3_1788620686055",
+    "dispute_id": "disp_fm_1788620686073",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T15:04:46.073Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "PRODUCT_NOT_RECEIVED",
+      "customer_claim": "Never received.",
+      "amount": 129900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620686229_3741",
+    "order_id": "ORDER_ATK4_1788620686229",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T15:04:46.229Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620686236_8155",
+    "order_id": "ORDER_ATK4_1788620686229",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T15:04:46.236Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "items": [
+        {
+          "product_id": "prod_fm_01",
+          "sku": "RICE-5KG-001",
+          "qty": 1
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620686246_3578",
+    "order_id": "ORDER_ATK4_1788620686229",
+    "dispute_id": null,
+    "event_type": "PARCEL_PACKED",
+    "timestamp": "2026-09-05T15:04:46.246Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "packed_items": [
+        {
+          "product_id": "prod_fm_08",
+          "sku": "RICE-1KG-009",
+          "qty": 1
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620686252_3752",
+    "order_id": "ORDER_ATK4_1788620686229",
+    "dispute_id": null,
+    "event_type": "COURIER_MARKED_DELIVERED",
+    "timestamp": "2026-09-05T15:04:46.252Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "otp_verified": true
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620686262_4079",
+    "order_id": "ORDER_ATK4_1788620686229",
+    "dispute_id": "disp_fm_1788620686262",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T15:04:46.262Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "WRONG_PRODUCT",
+      "customer_claim": "Wrong product.",
+      "amount": 129900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620686415_8488",
+    "order_id": "ORDER_ATK5_1788620686415",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T15:04:46.415Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620686423_2065",
+    "order_id": "ORDER_ATK5_1788620686415",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T15:04:46.423Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "items": [
+        {
+          "sku": "RICE-5KG-001",
+          "qty": 1
+        },
+        {
+          "sku": "MILK-1L-002",
+          "qty": 2
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620686431_382",
+    "order_id": "ORDER_ATK5_1788620686415",
+    "dispute_id": null,
+    "event_type": "PARCEL_PACKED",
+    "timestamp": "2026-09-05T15:04:46.431Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "packed_items": [
+        {
+          "sku": "RICE-5KG-001",
+          "qty": 1
+        },
+        {
+          "sku": "MILK-1L-002",
+          "qty": 1
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620686443_8999",
+    "order_id": "ORDER_ATK6_1788620686443",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T15:04:46.443Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "payment_id": "pay_001",
+      "amount": 189900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620686454_3067",
+    "order_id": "ORDER_ATK6_1788620686443",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T15:04:46.454Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "payment_id": "pay_002",
+      "amount": 189900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620686468_670",
+    "order_id": "ORDER_ATK7_1788620686468",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T15:04:46.468Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620686476_9527",
+    "order_id": "ORDER_ATK7_1788620686468",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T15:04:46.476Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620686484_2266",
+    "order_id": "ORDER_ATK7_1788620686468",
+    "dispute_id": null,
+    "event_type": "CUSTOMER_REPORTED_NON_RECEIPT",
+    "timestamp": "2026-09-05T15:04:46.484Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620686499_7653",
+    "order_id": "ORDER_ATK7_1788620686468",
+    "dispute_id": "disp_fm_1788620686499",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T15:04:46.499Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "PRODUCT_NOT_RECEIVED",
+      "customer_claim": "Not received 5 mins after order.",
+      "amount": 129900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620686673_9074",
+    "order_id": "ORDER_ATK11_1788620686673",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T15:04:46.673Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "amount": 1899900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620686681_4083",
+    "order_id": "ORDER_ATK11_1788620686673",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T15:04:46.681Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "total_amount": 1899900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620686688_1385",
+    "order_id": "ORDER_ATK11_1788620686673",
+    "dispute_id": null,
+    "event_type": "PARCEL_PACKED",
+    "timestamp": "2026-09-05T15:04:46.688Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620686699_745",
+    "order_id": "ORDER_ATK11_1788620686673",
+    "dispute_id": null,
+    "event_type": "COURIER_ASSIGNED",
+    "timestamp": "2026-09-05T15:04:46.699Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620686708_1182",
+    "order_id": "ORDER_ATK11_1788620686673",
+    "dispute_id": null,
+    "event_type": "DISPATCHED_FOR_DELIVERY",
+    "timestamp": "2026-09-05T15:04:46.708Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620686716_5991",
+    "order_id": "ORDER_ATK11_1788620686673",
+    "dispute_id": null,
+    "event_type": "COURIER_MARKED_DELIVERED",
+    "timestamp": "2026-09-05T15:04:46.716Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "otp_verified": true
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620686725_9360",
+    "order_id": "ORDER_ATK11_1788620686673",
+    "dispute_id": null,
+    "event_type": "CUSTOMER_CONFIRMED_RECEIPT",
+    "timestamp": "2026-09-05T15:04:46.725Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620686736_3769",
+    "order_id": "ORDER_ATK11_1788620686673",
+    "dispute_id": "disp_fm_1788620686735",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T15:04:46.736Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "PRODUCT_NOT_RECEIVED",
+      "customer_claim": "",
+      "amount": 1899900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620687100_5739",
+    "order_id": "ORDER_ATK12_1788620686889",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T15:04:47.100Z",
+    "source": "test",
+    "actor": "cust_clean_1788620686889",
+    "metadata": {
+      "payment_id": "pay_clean_1788620686889",
+      "amount": 129900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620687108_26",
+    "order_id": "ORDER_ATK12_1788620686889",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T15:04:47.108Z",
+    "source": "test",
+    "actor": "cust_clean_1788620686889",
+    "metadata": {
+      "total_amount": 129900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620687117_878",
+    "order_id": "ORDER_ATK12_1788620686889",
+    "dispute_id": null,
+    "event_type": "PARCEL_PACKED",
+    "timestamp": "2026-09-05T15:04:47.118Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620687127_3694",
+    "order_id": "ORDER_ATK12_1788620686889",
+    "dispute_id": null,
+    "event_type": "COURIER_ASSIGNED",
+    "timestamp": "2026-09-05T15:04:47.127Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620687134_4902",
+    "order_id": "ORDER_ATK12_1788620686889",
+    "dispute_id": null,
+    "event_type": "DISPATCHED_FOR_DELIVERY",
+    "timestamp": "2026-09-05T15:04:47.134Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620687142_663",
+    "order_id": "ORDER_ATK12_1788620686889",
+    "dispute_id": null,
+    "event_type": "COURIER_MARKED_DELIVERED",
+    "timestamp": "2026-09-05T15:04:47.142Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "otp_verified": true
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620687149_2392",
+    "order_id": "ORDER_ATK12_1788620686889",
+    "dispute_id": null,
+    "event_type": "CUSTOMER_CONFIRMED_RECEIPT",
+    "timestamp": "2026-09-05T15:04:47.149Z",
+    "source": "test",
+    "actor": "cust_clean_1788620686889",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620687166_1010",
+    "order_id": "ORDER_ATK12_1788620686889",
+    "dispute_id": "disp_fm_1788620687166",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T15:04:47.166Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "PRODUCT_NOT_RECEIVED",
+      "customer_claim": "",
+      "amount": 129900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620687326_5027",
+    "order_id": "ORDER_ATK13_1788620687326",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T15:04:47.326Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620687334_2648",
+    "order_id": "ORDER_ATK13_1788620687326",
+    "dispute_id": null,
+    "event_type": "REFUND_PROCESSED",
+    "timestamp": "2026-09-05T15:04:47.334Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620687342_9849",
+    "order_id": "ORDER_ATK13_1788620687326",
+    "dispute_id": null,
+    "event_type": "COURIER_MARKED_DELIVERED",
+    "timestamp": "2026-09-05T15:04:47.342Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620687358_5009",
+    "order_id": "ORDER_ATK14_1788620687358",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T15:04:47.358Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "items": [
+        {
+          "sku": "RICE-5KG-001",
+          "qty": 1
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620687365_3111",
+    "order_id": "ORDER_ATK14_1788620687358",
+    "dispute_id": null,
+    "event_type": "PARCEL_PACKED",
+    "timestamp": "2026-09-05T15:04:47.365Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "packed_items": [
+        {
+          "sku": "RICE-5KG-001",
+          "qty": 2
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620687378_6048",
+    "order_id": "ORDER_ATK15_1788620687378",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T15:04:47.378Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620687386_3229",
+    "order_id": "ORDER_ATK15_1788620687378",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T15:04:47.386Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620687395_677",
+    "order_id": "ORDER_ATK15_1788620687378",
+    "dispute_id": null,
+    "event_type": "COURIER_MARKED_DELIVERED",
+    "timestamp": "2026-09-05T15:04:47.395Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620687409_2048",
+    "order_id": "ORDER_ATK15_1788620687378",
+    "dispute_id": "disp_fm_1788620687409",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T15:04:47.409Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "REFUND_NOT_PROCESSED",
+      "customer_claim": "Refund not received.",
+      "amount": 129900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620687567_1329",
+    "order_id": "ORDER_ATK17_1788620687567",
+    "dispute_id": null,
+    "event_type": "CUSTOMER_CONFIRMED_RECEIPT",
+    "timestamp": "2026-09-05T15:04:47.567Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620687573_9925",
+    "order_id": "ORDER_ATK17_1788620687567",
+    "dispute_id": null,
+    "event_type": "CUSTOMER_REPORTED_NON_RECEIPT",
+    "timestamp": "2026-09-05T15:04:47.573Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620687589_3385",
+    "order_id": "ORDER_ATK17_1788620687567",
+    "dispute_id": null,
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T15:04:47.589Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620694578_1952",
+    "order_id": "ORDER_INTEGRITY_TEST_1788620694578",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T15:04:54.578Z",
+    "source": "freshmart_order_system",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "payment_id": "pay_test_1788620694578",
+      "total_amount": 1899900,
+      "currency": "INR",
+      "items": [
+        {
+          "product_id": "prod_fm_hero_18999",
+          "sku": "PANTRY-RES-18999",
+          "qty": 1,
+          "price": 1899900
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620694860_8054",
+    "order_id": "ORDER_HERO_TEST_1788620694860",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T15:04:54.860Z",
+    "source": "freshmart_payment_adapter",
+    "actor": "razorpay_gateway",
+    "metadata": {
+      "payment_id": "pay_hero_1788620694860",
+      "amount": 1899900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620694872_8088",
+    "order_id": "ORDER_HERO_TEST_1788620694860",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T15:04:54.872Z",
+    "source": "freshmart_order_system",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "total_amount": 1899900,
+      "items": [
+        {
+          "product_id": "prod_fm_hero_18999",
+          "sku": "PANTRY-RES-18999",
+          "qty": 1,
+          "price": 1899900
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620694882_3110",
+    "order_id": "ORDER_HERO_TEST_1788620694860",
+    "dispute_id": null,
+    "event_type": "PARCEL_PACKED",
+    "timestamp": "2026-09-05T15:04:54.882Z",
+    "source": "freshmart_warehouse",
+    "actor": "packer_01",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620694891_188",
+    "order_id": "ORDER_HERO_TEST_1788620694860",
+    "dispute_id": null,
+    "event_type": "DISPATCHED_FOR_DELIVERY",
+    "timestamp": "2026-09-05T15:04:54.891Z",
+    "source": "freshmart_courier_app",
+    "actor": "driver_441",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788620694899_5387",
+    "order_id": "ORDER_HERO_TEST_1788620694860",
+    "dispute_id": null,
+    "event_type": "COURIER_MARKED_DELIVERED",
+    "timestamp": "2026-09-05T15:04:54.899Z",
+    "source": "freshmart_courier_app",
+    "actor": "driver_441",
+    "metadata": {
+      "otp_verified": false,
+      "otp_status": "BYPASSED_BY_DRIVER"
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620695355_7989",
+    "order_id": "ORDER_HERO_TEST_1788620694860",
+    "dispute_id": "disp_fm_1788620695355",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T15:04:55.355Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "product_not_received",
+      "customer_claim": "High-value Gourmet Pantry Reserve order was marked delivered but never received by customer.",
+      "amount": 1899900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620695399_4500",
+    "order_id": "ORDER_GATE_TEST_1788620695399",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T15:04:55.399Z",
+    "source": "freshmart_payment_adapter",
+    "actor": "razorpay_gateway",
+    "metadata": {
+      "payment_id": "pay_gate_1788620695399",
+      "amount": 1899900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620695408_558",
+    "order_id": "ORDER_GATE_TEST_1788620695399",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T15:04:55.408Z",
+    "source": "freshmart_order_system",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "total_amount": 1899900,
+      "items": [
+        {
+          "sku": "PANTRY-RES-18999",
+          "qty": 1
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620695421_2960",
+    "order_id": "ORDER_GATE_TEST_1788620695399",
+    "dispute_id": "disp_fm_1788620695420",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T15:04:55.421Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "product_not_received",
+      "customer_claim": "Gourmet Pantry Reserve missing.",
+      "amount": 1899900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620702149_1918",
+    "order_id": "ORDER_FM_1788620702148",
+    "dispute_id": null,
+    "event_type": "PAYMENT_INITIATED",
+    "timestamp": "2026-09-05T15:05:02.149Z",
+    "source": "freshmart_checkout",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "payment_id": "pay_card_1788620702148_675",
+      "amount": 1899900,
+      "mode": "CARD"
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620702160_3207",
+    "order_id": "ORDER_FM_1788620702148",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T15:05:02.160Z",
+    "source": "freshmart_payment_adapter",
+    "actor": "razorpay_gateway",
+    "metadata": {
+      "payment_id": "pay_card_1788620702148_675",
+      "amount": 1899900,
+      "method": "card",
+      "auth_2fa": true,
+      "mode": "CARD"
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620702173_2674",
+    "order_id": "ORDER_FM_1788620702148",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T15:05:02.173Z",
+    "source": "freshmart_order_system",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "payment_id": "pay_card_1788620702148_675",
+      "total_amount": 1899900,
+      "currency": "INR",
+      "items": [
+        {
+          "product_id": "prod_fm_09",
+          "sku": "PANTRY-RES-18999",
+          "name": "Gourmet Pantry Reserve",
+          "price": 1899900,
+          "qty": 1,
+          "subtotal": 1899900
+        }
+      ],
+      "mode": "CARD"
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620702367_8876",
+    "order_id": "ORDER_FM_1788620702148",
+    "dispute_id": null,
+    "event_type": "PARCEL_PACKED",
+    "timestamp": "2026-09-05T15:05:02.367Z",
+    "source": "freshmart_warehouse",
+    "actor": "packer_wh_01",
+    "metadata": {
+      "warehouse_id": "wh_blr_01",
+      "terms_version": "v2026.1",
+      "packed_items": null
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620702384_2857",
+    "order_id": "ORDER_FM_1788620702148",
+    "dispute_id": null,
+    "event_type": "COURIER_ASSIGNED",
+    "timestamp": "2026-09-05T15:05:02.384Z",
+    "source": "freshmart_logistics",
+    "actor": "dispatcher_01",
+    "metadata": {
+      "courier_partner": "DELHIVERY",
+      "tracking_number": "AWB_FM_702384",
+      "driver_id": "driver_441"
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620702409_992",
+    "order_id": "ORDER_FM_1788620702148",
+    "dispute_id": null,
+    "event_type": "DISPATCHED_FOR_DELIVERY",
+    "timestamp": "2026-09-05T15:05:02.409Z",
+    "source": "freshmart_courier_app",
+    "actor": "driver_441",
+    "metadata": {
+      "tracking_number": "AWB_FM_702384",
+      "estimated_delivery_time": "2026-09-05T17:05:02.409Z"
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620702436_1522",
+    "order_id": "ORDER_FM_1788620702148",
+    "dispute_id": null,
+    "event_type": "COURIER_MARKED_DELIVERED",
+    "timestamp": "2026-09-05T15:05:02.436Z",
+    "source": "freshmart_courier_app",
+    "actor": "driver_441",
+    "metadata": {
+      "tracking_number": "AWB_FM_702384",
+      "otp_verified": false,
+      "otp_status": "BYPASSED_BY_DRIVER",
+      "delivery_lat_lng": [
+        12.9716,
+        77.5946
+      ]
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620702465_8816",
+    "order_id": "ORDER_FM_1788620702148",
+    "dispute_id": "disp_fm_1788620702465",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T15:05:02.465Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "product_not_received",
+      "customer_claim": "High-value Gourmet Pantry Reserve order was marked delivered by courier but never received by customer.",
+      "amount": 1899900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620808089_8489",
+    "order_id": "ORDER_FM_1788620808088",
+    "dispute_id": null,
+    "event_type": "PAYMENT_INITIATED",
+    "timestamp": "2026-09-05T15:06:48.089Z",
+    "source": "freshmart_checkout",
+    "actor": "usr_1788620805471_193",
+    "metadata": {
+      "payment_id": "pay_razorpay_test_1788620808088_580",
+      "amount": 73400,
+      "mode": "RAZORPAY_TEST"
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620808109_6176",
+    "order_id": "ORDER_FM_1788620808088",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T15:06:48.109Z",
+    "source": "freshmart_payment_adapter",
+    "actor": "razorpay_gateway",
+    "metadata": {
+      "payment_id": "pay_razorpay_test_1788620808088_580",
+      "amount": 73400,
+      "method": "card",
+      "auth_2fa": true,
+      "mode": "RAZORPAY_TEST"
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620808130_2144",
+    "order_id": "ORDER_FM_1788620808088",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T15:06:48.130Z",
+    "source": "freshmart_order_system",
+    "actor": "usr_1788620805471_193",
+    "metadata": {
+      "payment_id": "pay_razorpay_test_1788620808088_580",
+      "total_amount": 73400,
+      "currency": "INR",
+      "items": [
+        {
+          "product_id": "prod_fm_01",
+          "sku": "RICE-5KG-001",
+          "name": "Royal Organic Basmati Rice (5kg)",
+          "price": 64900,
+          "qty": 1,
+          "subtotal": 64900
+        },
+        {
+          "product_id": "prod_fm_02",
+          "sku": "MILK-1L-002",
+          "name": "Farm Fresh A2 Whole Cow Milk (1L)",
+          "price": 8500,
+          "qty": 1,
+          "subtotal": 8500
+        }
+      ],
+      "mode": "RAZORPAY_TEST"
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620930392_3053",
+    "order_id": "ORDER_FM_1788620930392",
+    "dispute_id": null,
+    "event_type": "PAYMENT_INITIATED",
+    "timestamp": "2026-09-05T15:08:50.392Z",
+    "source": "freshmart_checkout",
+    "actor": "usr_1788620805471_193",
+    "metadata": {
+      "payment_id": "pay_razorpay_test_1788620930392_914",
+      "amount": 73400,
+      "mode": "RAZORPAY_TEST"
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620930410_9472",
+    "order_id": "ORDER_FM_1788620930392",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T15:08:50.410Z",
+    "source": "freshmart_payment_adapter",
+    "actor": "razorpay_gateway",
+    "metadata": {
+      "payment_id": "pay_razorpay_test_1788620930392_914",
+      "amount": 73400,
+      "method": "card",
+      "auth_2fa": true,
+      "mode": "RAZORPAY_TEST"
+    }
+  },
+  {
+    "event_id": "evt_fm_1788620930435_725",
+    "order_id": "ORDER_FM_1788620930392",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T15:08:50.435Z",
+    "source": "freshmart_order_system",
+    "actor": "usr_1788620805471_193",
+    "metadata": {
+      "payment_id": "pay_razorpay_test_1788620930392_914",
+      "total_amount": 73400,
+      "currency": "INR",
+      "items": [
+        {
+          "product_id": "prod_fm_01",
+          "sku": "RICE-5KG-001",
+          "name": "Royal Organic Basmati Rice (5kg)",
+          "price": 64900,
+          "qty": 1,
+          "subtotal": 64900
+        },
+        {
+          "product_id": "prod_fm_02",
+          "sku": "MILK-1L-002",
+          "name": "Farm Fresh A2 Whole Cow Milk (1L)",
+          "price": 8500,
+          "qty": 1,
+          "subtotal": 8500
+        }
+      ],
+      "mode": "RAZORPAY_TEST"
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621145878_1528",
+    "order_id": "ORDER_ATK1_1788621145878",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T15:12:25.878Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "amount": 129900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621145886_3957",
+    "order_id": "ORDER_ATK1_1788621145878",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T15:12:25.886Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "items": [
+        {
+          "product_id": "prod_fm_01",
+          "sku": "RICE-5KG-001",
+          "qty": 1
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621145894_3684",
+    "order_id": "ORDER_ATK1_1788621145878",
+    "dispute_id": null,
+    "event_type": "COURIER_MARKED_DELIVERED",
+    "timestamp": "2026-09-05T15:12:25.894Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "otp_verified": true
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621145907_51",
+    "order_id": "ORDER_ATK1_1788621145878",
+    "dispute_id": "disp_fm_1788621145907",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T15:12:25.907Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "WRONG_PRODUCT",
+      "customer_claim": "Received wrong product despite OTP delivery.",
+      "amount": 129900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621146153_7226",
+    "order_id": "ORDER_ATK2_1788621146153",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T15:12:26.153Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788621146160_9467",
+    "order_id": "ORDER_ATK2_1788621146153",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T15:12:26.160Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788621146170_1919",
+    "order_id": "ORDER_ATK2_1788621146153",
+    "dispute_id": null,
+    "event_type": "COURIER_MARKED_DELIVERED",
+    "timestamp": "2026-09-05T15:12:26.170Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "otp_verified": false
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621146178_5885",
+    "order_id": "ORDER_ATK2_1788621146153",
+    "dispute_id": null,
+    "event_type": "CUSTOMER_REPORTED_NON_RECEIPT",
+    "timestamp": "2026-09-05T15:12:26.178Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788621146193_7032",
+    "order_id": "ORDER_ATK2_1788621146153",
+    "dispute_id": "disp_fm_1788621146193",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T15:12:26.193Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "PRODUCT_NOT_RECEIVED",
+      "customer_claim": "Not received.",
+      "amount": 129900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621146352_7475",
+    "order_id": "ORDER_ATK3_1788621146352",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T15:12:26.352Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788621146358_8303",
+    "order_id": "ORDER_ATK3_1788621146352",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T15:12:26.358Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788621146372_5917",
+    "order_id": "ORDER_ATK3_1788621146352",
+    "dispute_id": "disp_fm_1788621146372",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T15:12:26.372Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "PRODUCT_NOT_RECEIVED",
+      "customer_claim": "Never received.",
+      "amount": 129900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621146537_2640",
+    "order_id": "ORDER_ATK4_1788621146537",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T15:12:26.537Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788621146544_2358",
+    "order_id": "ORDER_ATK4_1788621146537",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T15:12:26.544Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "items": [
+        {
+          "product_id": "prod_fm_01",
+          "sku": "RICE-5KG-001",
+          "qty": 1
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621146552_8018",
+    "order_id": "ORDER_ATK4_1788621146537",
+    "dispute_id": null,
+    "event_type": "PARCEL_PACKED",
+    "timestamp": "2026-09-05T15:12:26.552Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "packed_items": [
+        {
+          "product_id": "prod_fm_08",
+          "sku": "RICE-1KG-009",
+          "qty": 1
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621146559_1681",
+    "order_id": "ORDER_ATK4_1788621146537",
+    "dispute_id": null,
+    "event_type": "COURIER_MARKED_DELIVERED",
+    "timestamp": "2026-09-05T15:12:26.559Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "otp_verified": true
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621146571_4500",
+    "order_id": "ORDER_ATK4_1788621146537",
+    "dispute_id": "disp_fm_1788621146571",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T15:12:26.571Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "WRONG_PRODUCT",
+      "customer_claim": "Wrong product.",
+      "amount": 129900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621146727_5962",
+    "order_id": "ORDER_ATK5_1788621146727",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T15:12:26.727Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788621146734_9503",
+    "order_id": "ORDER_ATK5_1788621146727",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T15:12:26.734Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "items": [
+        {
+          "sku": "RICE-5KG-001",
+          "qty": 1
+        },
+        {
+          "sku": "MILK-1L-002",
+          "qty": 2
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621146742_4004",
+    "order_id": "ORDER_ATK5_1788621146727",
+    "dispute_id": null,
+    "event_type": "PARCEL_PACKED",
+    "timestamp": "2026-09-05T15:12:26.742Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "packed_items": [
+        {
+          "sku": "RICE-5KG-001",
+          "qty": 1
+        },
+        {
+          "sku": "MILK-1L-002",
+          "qty": 1
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621146754_1720",
+    "order_id": "ORDER_ATK6_1788621146754",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T15:12:26.754Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "payment_id": "pay_001",
+      "amount": 189900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621146760_1975",
+    "order_id": "ORDER_ATK6_1788621146754",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T15:12:26.760Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "payment_id": "pay_002",
+      "amount": 189900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621146773_2119",
+    "order_id": "ORDER_ATK7_1788621146773",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T15:12:26.773Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788621146781_6761",
+    "order_id": "ORDER_ATK7_1788621146773",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T15:12:26.781Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788621146789_2899",
+    "order_id": "ORDER_ATK7_1788621146773",
+    "dispute_id": null,
+    "event_type": "CUSTOMER_REPORTED_NON_RECEIPT",
+    "timestamp": "2026-09-05T15:12:26.789Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788621146804_6380",
+    "order_id": "ORDER_ATK7_1788621146773",
+    "dispute_id": "disp_fm_1788621146804",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T15:12:26.804Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "PRODUCT_NOT_RECEIVED",
+      "customer_claim": "Not received 5 mins after order.",
+      "amount": 129900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621146964_1284",
+    "order_id": "ORDER_ATK11_1788621146964",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T15:12:26.964Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "amount": 1899900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621146971_9414",
+    "order_id": "ORDER_ATK11_1788621146964",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T15:12:26.971Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "total_amount": 1899900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621146979_7535",
+    "order_id": "ORDER_ATK11_1788621146964",
+    "dispute_id": null,
+    "event_type": "PARCEL_PACKED",
+    "timestamp": "2026-09-05T15:12:26.979Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788621146989_91",
+    "order_id": "ORDER_ATK11_1788621146964",
+    "dispute_id": null,
+    "event_type": "COURIER_ASSIGNED",
+    "timestamp": "2026-09-05T15:12:26.989Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788621146995_4690",
+    "order_id": "ORDER_ATK11_1788621146964",
+    "dispute_id": null,
+    "event_type": "DISPATCHED_FOR_DELIVERY",
+    "timestamp": "2026-09-05T15:12:26.995Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788621147003_6854",
+    "order_id": "ORDER_ATK11_1788621146964",
+    "dispute_id": null,
+    "event_type": "COURIER_MARKED_DELIVERED",
+    "timestamp": "2026-09-05T15:12:27.003Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "otp_verified": true
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621147013_6224",
+    "order_id": "ORDER_ATK11_1788621146964",
+    "dispute_id": null,
+    "event_type": "CUSTOMER_CONFIRMED_RECEIPT",
+    "timestamp": "2026-09-05T15:12:27.013Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788621147024_953",
+    "order_id": "ORDER_ATK11_1788621146964",
+    "dispute_id": "disp_fm_1788621147024",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T15:12:27.024Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "PRODUCT_NOT_RECEIVED",
+      "customer_claim": "",
+      "amount": 1899900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621147404_3542",
+    "order_id": "ORDER_ATK12_1788621147191",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T15:12:27.404Z",
+    "source": "test",
+    "actor": "cust_clean_1788621147191",
+    "metadata": {
+      "payment_id": "pay_clean_1788621147191",
+      "amount": 129900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621147418_8321",
+    "order_id": "ORDER_ATK12_1788621147191",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T15:12:27.418Z",
+    "source": "test",
+    "actor": "cust_clean_1788621147191",
+    "metadata": {
+      "total_amount": 129900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621147426_9395",
+    "order_id": "ORDER_ATK12_1788621147191",
+    "dispute_id": null,
+    "event_type": "PARCEL_PACKED",
+    "timestamp": "2026-09-05T15:12:27.426Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788621147434_4896",
+    "order_id": "ORDER_ATK12_1788621147191",
+    "dispute_id": null,
+    "event_type": "COURIER_ASSIGNED",
+    "timestamp": "2026-09-05T15:12:27.434Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788621147443_2632",
+    "order_id": "ORDER_ATK12_1788621147191",
+    "dispute_id": null,
+    "event_type": "DISPATCHED_FOR_DELIVERY",
+    "timestamp": "2026-09-05T15:12:27.443Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788621147452_1437",
+    "order_id": "ORDER_ATK12_1788621147191",
+    "dispute_id": null,
+    "event_type": "COURIER_MARKED_DELIVERED",
+    "timestamp": "2026-09-05T15:12:27.452Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "otp_verified": true
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621147460_9270",
+    "order_id": "ORDER_ATK12_1788621147191",
+    "dispute_id": null,
+    "event_type": "CUSTOMER_CONFIRMED_RECEIPT",
+    "timestamp": "2026-09-05T15:12:27.460Z",
+    "source": "test",
+    "actor": "cust_clean_1788621147191",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788621147475_732",
+    "order_id": "ORDER_ATK12_1788621147191",
+    "dispute_id": "disp_fm_1788621147475",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T15:12:27.475Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "PRODUCT_NOT_RECEIVED",
+      "customer_claim": "",
+      "amount": 129900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621147640_3882",
+    "order_id": "ORDER_ATK13_1788621147640",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T15:12:27.640Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788621147645_4024",
+    "order_id": "ORDER_ATK13_1788621147640",
+    "dispute_id": null,
+    "event_type": "REFUND_PROCESSED",
+    "timestamp": "2026-09-05T15:12:27.645Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788621147654_4500",
+    "order_id": "ORDER_ATK13_1788621147640",
+    "dispute_id": null,
+    "event_type": "COURIER_MARKED_DELIVERED",
+    "timestamp": "2026-09-05T15:12:27.654Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788621147664_4017",
+    "order_id": "ORDER_ATK14_1788621147664",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T15:12:27.664Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "items": [
+        {
+          "sku": "RICE-5KG-001",
+          "qty": 1
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621147671_3891",
+    "order_id": "ORDER_ATK14_1788621147664",
+    "dispute_id": null,
+    "event_type": "PARCEL_PACKED",
+    "timestamp": "2026-09-05T15:12:27.671Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {
+      "packed_items": [
+        {
+          "sku": "RICE-5KG-001",
+          "qty": 2
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621147683_9186",
+    "order_id": "ORDER_ATK15_1788621147683",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T15:12:27.683Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788621147690_9605",
+    "order_id": "ORDER_ATK15_1788621147683",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T15:12:27.690Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788621147696_2646",
+    "order_id": "ORDER_ATK15_1788621147683",
+    "dispute_id": null,
+    "event_type": "COURIER_MARKED_DELIVERED",
+    "timestamp": "2026-09-05T15:12:27.696Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788621147708_414",
+    "order_id": "ORDER_ATK15_1788621147683",
+    "dispute_id": "disp_fm_1788621147708",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T15:12:27.708Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "REFUND_NOT_PROCESSED",
+      "customer_claim": "Refund not received.",
+      "amount": 129900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621147886_6313",
+    "order_id": "ORDER_ATK17_1788621147886",
+    "dispute_id": null,
+    "event_type": "CUSTOMER_CONFIRMED_RECEIPT",
+    "timestamp": "2026-09-05T15:12:27.886Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788621147892_5266",
+    "order_id": "ORDER_ATK17_1788621147886",
+    "dispute_id": null,
+    "event_type": "CUSTOMER_REPORTED_NON_RECEIPT",
+    "timestamp": "2026-09-05T15:12:27.892Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788621147910_7748",
+    "order_id": "ORDER_ATK17_1788621147886",
+    "dispute_id": null,
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T15:12:27.910Z",
+    "source": "test",
+    "actor": "test",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788621151944_66",
+    "order_id": "ORDER_INTEGRITY_TEST_1788621151944",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T15:12:31.944Z",
+    "source": "freshmart_order_system",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "payment_id": "pay_test_1788621151944",
+      "total_amount": 1899900,
+      "currency": "INR",
+      "items": [
+        {
+          "product_id": "prod_fm_hero_18999",
+          "sku": "PANTRY-RES-18999",
+          "qty": 1,
+          "price": 1899900
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621152235_5782",
+    "order_id": "ORDER_HERO_TEST_1788621152235",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T15:12:32.235Z",
+    "source": "freshmart_payment_adapter",
+    "actor": "razorpay_gateway",
+    "metadata": {
+      "payment_id": "pay_hero_1788621152235",
+      "amount": 1899900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621152244_7866",
+    "order_id": "ORDER_HERO_TEST_1788621152235",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T15:12:32.244Z",
+    "source": "freshmart_order_system",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "total_amount": 1899900,
+      "items": [
+        {
+          "product_id": "prod_fm_hero_18999",
+          "sku": "PANTRY-RES-18999",
+          "qty": 1,
+          "price": 1899900
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621152255_9445",
+    "order_id": "ORDER_HERO_TEST_1788621152235",
+    "dispute_id": null,
+    "event_type": "PARCEL_PACKED",
+    "timestamp": "2026-09-05T15:12:32.255Z",
+    "source": "freshmart_warehouse",
+    "actor": "packer_01",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788621152267_5533",
+    "order_id": "ORDER_HERO_TEST_1788621152235",
+    "dispute_id": null,
+    "event_type": "DISPATCHED_FOR_DELIVERY",
+    "timestamp": "2026-09-05T15:12:32.267Z",
+    "source": "freshmart_courier_app",
+    "actor": "driver_441",
+    "metadata": {}
+  },
+  {
+    "event_id": "evt_fm_1788621152275_6643",
+    "order_id": "ORDER_HERO_TEST_1788621152235",
+    "dispute_id": null,
+    "event_type": "COURIER_MARKED_DELIVERED",
+    "timestamp": "2026-09-05T15:12:32.275Z",
+    "source": "freshmart_courier_app",
+    "actor": "driver_441",
+    "metadata": {
+      "otp_verified": false,
+      "otp_status": "BYPASSED_BY_DRIVER"
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621152468_8510",
+    "order_id": "ORDER_HERO_TEST_1788621152235",
+    "dispute_id": "disp_fm_1788621152468",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T15:12:32.468Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "product_not_received",
+      "customer_claim": "High-value Gourmet Pantry Reserve order was marked delivered but never received by customer.",
+      "amount": 1899900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621152513_2609",
+    "order_id": "ORDER_GATE_TEST_1788621152513",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T15:12:32.513Z",
+    "source": "freshmart_payment_adapter",
+    "actor": "razorpay_gateway",
+    "metadata": {
+      "payment_id": "pay_gate_1788621152513",
+      "amount": 1899900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621152526_3171",
+    "order_id": "ORDER_GATE_TEST_1788621152513",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T15:12:32.526Z",
+    "source": "freshmart_order_system",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "total_amount": 1899900,
+      "items": [
+        {
+          "sku": "PANTRY-RES-18999",
+          "qty": 1
+        }
+      ]
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621152545_6716",
+    "order_id": "ORDER_GATE_TEST_1788621152513",
+    "dispute_id": "disp_fm_1788621152545",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T15:12:32.545Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "product_not_received",
+      "customer_claim": "Gourmet Pantry Reserve missing.",
+      "amount": 1899900
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621156741_6325",
+    "order_id": "ORDER_FM_1788621156741",
+    "dispute_id": null,
+    "event_type": "PAYMENT_INITIATED",
+    "timestamp": "2026-09-05T15:12:36.741Z",
+    "source": "freshmart_checkout",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "payment_id": "pay_card_1788621156741_336",
+      "amount": 1899900,
+      "mode": "CARD"
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621156754_1193",
+    "order_id": "ORDER_FM_1788621156741",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T15:12:36.754Z",
+    "source": "freshmart_payment_adapter",
+    "actor": "razorpay_gateway",
+    "metadata": {
+      "payment_id": "pay_card_1788621156741_336",
+      "amount": 1899900,
+      "method": "card",
+      "auth_2fa": true,
+      "mode": "CARD"
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621156764_416",
+    "order_id": "ORDER_FM_1788621156741",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T15:12:36.764Z",
+    "source": "freshmart_order_system",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "payment_id": "pay_card_1788621156741_336",
+      "total_amount": 1899900,
+      "currency": "INR",
+      "items": [
+        {
+          "product_id": "prod_fm_09",
+          "sku": "PANTRY-RES-18999",
+          "name": "Gourmet Pantry Reserve",
+          "price": 1899900,
+          "qty": 1,
+          "subtotal": 1899900
+        }
+      ],
+      "mode": "CARD"
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621156948_9494",
+    "order_id": "ORDER_FM_1788621156741",
+    "dispute_id": null,
+    "event_type": "PARCEL_PACKED",
+    "timestamp": "2026-09-05T15:12:36.948Z",
+    "source": "freshmart_warehouse",
+    "actor": "packer_wh_01",
+    "metadata": {
+      "warehouse_id": "wh_blr_01",
+      "terms_version": "v2026.1",
+      "packed_items": null
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621156962_2446",
+    "order_id": "ORDER_FM_1788621156741",
+    "dispute_id": null,
+    "event_type": "COURIER_ASSIGNED",
+    "timestamp": "2026-09-05T15:12:36.962Z",
+    "source": "freshmart_logistics",
+    "actor": "dispatcher_01",
+    "metadata": {
+      "courier_partner": "DELHIVERY",
+      "tracking_number": "AWB_FM_156962",
+      "driver_id": "driver_441"
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621156988_1866",
+    "order_id": "ORDER_FM_1788621156741",
+    "dispute_id": null,
+    "event_type": "DISPATCHED_FOR_DELIVERY",
+    "timestamp": "2026-09-05T15:12:36.988Z",
+    "source": "freshmart_courier_app",
+    "actor": "driver_441",
+    "metadata": {
+      "tracking_number": "AWB_FM_156962",
+      "estimated_delivery_time": "2026-09-05T17:12:36.988Z"
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621157011_701",
+    "order_id": "ORDER_FM_1788621156741",
+    "dispute_id": null,
+    "event_type": "COURIER_MARKED_DELIVERED",
+    "timestamp": "2026-09-05T15:12:37.011Z",
+    "source": "freshmart_courier_app",
+    "actor": "driver_441",
+    "metadata": {
+      "tracking_number": "AWB_FM_156962",
+      "otp_verified": false,
+      "otp_status": "BYPASSED_BY_DRIVER",
+      "delivery_lat_lng": [
+        12.9716,
+        77.5946
+      ]
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621157039_8511",
+    "order_id": "ORDER_FM_1788621156741",
+    "dispute_id": "disp_fm_1788621157039",
+    "event_type": "DISPUTE_FILED",
+    "timestamp": "2026-09-05T15:12:37.039Z",
+    "source": "freshmart_customer_app",
+    "actor": "cust_fm_demo_user",
+    "metadata": {
+      "reason_code": "product_not_received",
+      "customer_claim": "High-value Gourmet Pantry Reserve order was marked delivered by courier but never received by customer.",
+      "amount": 1899900
+    }
   }
 ]

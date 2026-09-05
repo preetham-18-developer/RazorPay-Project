@@ -10,8 +10,6 @@ export default function CustomerSignupPage() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [role, setRole] = useState('customer');
-  const [adminKey, setAdminKey] = useState('');
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
 
@@ -25,7 +23,7 @@ export default function CustomerSignupPage() {
       const res = await fetch('/api/auth/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, password, role, adminKey })
+        body: JSON.stringify({ name, email, password })
       });
       const data = await res.json();
 
@@ -104,39 +102,13 @@ export default function CustomerSignupPage() {
               />
             </div>
 
-            <div>
-              <label style={{ fontSize: '0.85rem', fontWeight: 600, color: '#475569', display: 'block', marginBottom: '0.35rem' }}>Account Role</label>
-              <select
-                value={role}
-                onChange={(e) => setRole(e.target.value)}
-                style={{ width: '100%', padding: '0.65rem 0.85rem', borderRadius: '6px', border: '1px solid #cbd5e1', fontSize: '0.9rem', outline: 'none', backgroundColor: '#ffffff' }}
-              >
-                <option value="customer">Customer Account</option>
-                <option value="admin">Admin / Risk Manager Account</option>
-              </select>
-            </div>
-
-            {role === 'admin' && (
-              <div>
-                <label style={{ fontSize: '0.85rem', fontWeight: 600, color: '#c2410c', display: 'block', marginBottom: '0.35rem' }}>Admin Authorization Key</label>
-                <input
-                  type="password"
-                  required
-                  value={adminKey}
-                  onChange={(e) => setAdminKey(e.target.value)}
-                  placeholder="Enter ADMIN2026 key"
-                  style={{ width: '100%', padding: '0.65rem 0.85rem', borderRadius: '6px', border: '1px solid #fdba74', fontSize: '0.9rem', outline: 'none', backgroundColor: '#fff7ed' }}
-                />
-              </div>
-            )}
-
             <button
               type="submit"
               disabled={loading}
               className="btn-primary"
               style={{ width: '100%', padding: '0.75rem', fontSize: '0.95rem', marginTop: '0.5rem' }}
             >
-              {loading ? 'Creating Account...' : 'Register Account →'}
+              {loading ? 'Creating Account...' : 'Create Account →'}
             </button>
           </form>
 

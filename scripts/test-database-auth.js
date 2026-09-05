@@ -47,9 +47,10 @@ async function runDatabaseAuthTests() {
 
   try {
     // Test 1: User Signup with Password Hashing
+    const customerEmail = `customer_${Date.now()}@freshsmart.com`;
     const signupRes = await makeRequest(server, 'POST', '/api/auth/signup', {
       name: 'Test Customer',
-      email: `customer_${Date.now()}@freshsmart.com`,
+      email: customerEmail,
       password: 'password123',
       role: 'customer'
     });
@@ -61,50 +62,45 @@ async function runDatabaseAuthTests() {
       console.log('✗ [FAIL] 1. User signup failed:', signupRes.body);
     }
 
-    // Test 2: Admin Signup Rejection without valid Key
-    const badAdminRes = await makeRequest(server, 'POST', '/api/auth/signup', {
-      name: 'Fake Admin',
-      email: `fakeadmin_${Date.now()}@freshsmart.com`,
+    // Test 2: Injected role=admin in Public Signup is ignored / forced to customer
+    const injectedAdminRes = await makeRequest(server, 'POST', '/api/auth/signup', {
+      name: 'Attempted Admin',
+      email: `attemptedadmin_${Date.now()}@freshsmart.com`,
       password: 'password123',
-      role: 'admin',
-      adminKey: 'WRONG_KEY'
+      role: 'admin'
     });
 
-    if (badAdminRes.status === 403) {
-      console.log('✓ [PASS] 2. Admin account creation rejects invalid admin authorization key');
+    if (injectedAdminRes.status === 201 && injectedAdminRes.body.user.role === 'customer') {
+      console.log('✓ [PASS] 2. Public signup ignores client-injected role=admin and strictly forces customer role');
       passCount++;
     } else {
-      console.log('✗ [FAIL] 2. Admin key check failed:', badAdminRes.body);
+      console.log('✗ [FAIL] 2. Injected role check failed:', injectedAdminRes.body);
     }
 
-    // Test 3: Admin Signup Success with ADMIN2026 Key
-    const adminEmail = `admin_${Date.now()}@freshsmart.com`;
-    const adminSignupRes = await makeRequest(server, 'POST', '/api/auth/signup', {
-      name: 'Verified Admin',
-      email: adminEmail,
-      password: 'password123',
-      role: 'admin',
-      adminKey: 'ADMIN2026'
+    // Test 3: Predefined Admin Account Login
+    const adminLoginRes = await makeRequest(server, 'POST', '/api/auth/login', {
+      email: 'admin@gmail.com',
+      password: 'admin1234'
     });
 
-    if (adminSignupRes.status === 201 && adminSignupRes.body.user.role === 'admin') {
-      console.log('✓ [PASS] 3. Admin account creation succeeds with verified ADMIN2026 key');
+    if (adminLoginRes.status === 200 && adminLoginRes.body.user.role === 'admin' && adminLoginRes.body.token) {
+      console.log('✓ [PASS] 3. Predefined Admin login authenticates admin@gmail.com with role=admin JWT session token');
       passCount++;
     } else {
-      console.log('✗ [FAIL] 3. Admin creation failed:', adminSignupRes.body);
+      console.log('✗ [FAIL] 3. Predefined admin login failed:', adminLoginRes.body);
     }
 
-    // Test 4: Login Verification
-    const loginRes = await makeRequest(server, 'POST', '/api/auth/login', {
-      email: adminEmail,
+    // Test 4: Customer Login Verification
+    const customerLoginRes = await makeRequest(server, 'POST', '/api/auth/login', {
+      email: customerEmail,
       password: 'password123'
     });
 
-    if (loginRes.status === 200 && loginRes.body.token) {
-      console.log('✓ [PASS] 4. User login authenticates credentials and returns JWT session token');
+    if (customerLoginRes.status === 200 && customerLoginRes.body.token) {
+      console.log('✓ [PASS] 4. Customer login authenticates credentials and returns customer JWT session token');
       passCount++;
     } else {
-      console.log('✗ [FAIL] 4. Login failed:', loginRes.body);
+      console.log('✗ [FAIL] 4. Customer login failed:', customerLoginRes.body);
     }
 
     // Test 5: Products Catalog Database Retrieval

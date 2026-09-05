@@ -5,7 +5,21 @@ import { getDisputes, getDispute } from '../api/disputes';
 
 export default function AdminDashboardPage() {
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState('overview'); // overview, orders, customers, queries, feedback, disputes, analytics
+  const [currentUser, setCurrentUser] = useState(() => {
+    try {
+      const stored = localStorage.getItem('freshsmart_user');
+      return stored ? JSON.parse(stored) : null;
+    } catch (e) {
+      return null;
+    }
+  });
+
+  const [adminEmail, setAdminEmail] = useState('admin@gmail.com');
+  const [adminPassword, setAdminPassword] = useState('');
+  const [adminLoginLoading, setAdminLoginLoading] = useState(false);
+  const [adminLoginError, setAdminLoginError] = useState('');
+
+  const [activeTab, setActiveTab] = useState('overview');
   const [metrics, setMetrics] = useState({
     total_customers: 0,
     total_orders: 0,
@@ -26,17 +40,54 @@ export default function AdminDashboardPage() {
   const [deliveryOtpVerified, setDeliveryOtpVerified] = useState(false);
 
   useEffect(() => {
-    fetchAdminData();
-  }, []);
+    if (currentUser && currentUser.role === 'admin') {
+      fetchAdminData();
+    } else {
+      setLoading(false);
+    }
+  }, [currentUser]);
+
+  const handleAdminLoginSubmit = async (e) => {
+    e.preventDefault();
+    setAdminLoginLoading(true);
+    setAdminLoginError('');
+
+    try {
+      const res = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: adminEmail, password: adminPassword })
+      });
+      const data = await res.json();
+
+      if (res.ok && data.user && data.user.role === 'admin') {
+        localStorage.setItem('freshsmart_user', JSON.stringify(data.user));
+        localStorage.setItem('freshsmart_token', data.token);
+        setCurrentUser(data.user);
+        fetchAdminData();
+      } else if (data.user && data.user.role !== 'admin') {
+        setAdminLoginError('Access denied: Customer account cannot access Admin Dashboard.');
+      } else {
+        setAdminLoginError(data.error || 'Invalid admin credentials.');
+      }
+    } catch (err) {
+      setAdminLoginError(err.message || 'Server authentication failed.');
+    } finally {
+      setAdminLoginLoading(false);
+    }
+  };
 
   async function fetchAdminData() {
     try {
       setLoading(true);
+      const token = localStorage.getItem('freshsmart_token') || '';
+      const headers = { 'Authorization': `Bearer ${token}` };
+
       const [mRes, oRes, qRes, fRes, dRes] = await Promise.all([
-        fetch('/freshmart/admin/metrics').then(r => r.json()).catch(() => ({})),
-        fetch('/freshmart/orders').then(r => r.json()).catch(() => []),
-        fetch('/freshmart/support/queries?admin=true').then(r => r.json()).catch(() => []),
-        fetch('/freshmart/feedback').then(r => r.json()).catch(() => []),
+        fetch('/freshmart/admin/metrics', { headers }).then(r => r.json()).catch(() => ({})),
+        fetch('/freshmart/orders', { headers }).then(r => r.json()).catch(() => []),
+        fetch('/freshmart/support/queries?admin=true', { headers }).then(r => r.json()).catch(() => []),
+        fetch('/freshmart/feedback', { headers }).then(r => r.json()).catch(() => []),
         getDisputes().catch(() => [])
       ]);
 
@@ -94,6 +145,68 @@ export default function AdminDashboardPage() {
       console.error(e);
     }
   };
+
+  if (!currentUser || currentUser.role !== 'admin') {
+    return (
+      <div style={{ backgroundColor: '#f8fafc', color: '#0f172a', minHeight: '100vh' }}>
+        <FreshMartHeader />
+        <main style={{ maxWidth: '440px', margin: '4rem auto', padding: '0 1.5rem' }}>
+          <div style={{ backgroundColor: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '2rem', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05)' }}>
+            <div style={{ textAlign: 'center', marginBottom: '1.75rem' }}>
+              <div style={{ width: '48px', height: '48px', borderRadius: '12px', backgroundColor: '#0f172a', color: '#f97316', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 0.75rem auto', fontSize: '1.5rem', fontWeight: 800 }}>
+                🛡️
+              </div>
+              <h1 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#0f172a' }}>ADMIN LOGIN</h1>
+              <p style={{ fontSize: '0.85rem', color: '#64748b', marginTop: '0.25rem' }}>
+                Access FreshSmart Merchant & AI DisputeShield Console
+              </p>
+            </div>
+
+            {adminLoginError && (
+              <div style={{ backgroundColor: '#fef2f2', border: '1px solid #fecaca', color: '#dc2626', padding: '0.75rem', borderRadius: '6px', fontSize: '0.85rem', marginBottom: '1.25rem' }}>
+                ⚠️ {adminLoginError}
+              </div>
+            )}
+
+            <form onSubmit={handleAdminLoginSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+              <div>
+                <label style={{ fontSize: '0.85rem', fontWeight: 600, color: '#475569', display: 'block', marginBottom: '0.35rem' }}>Admin Email</label>
+                <input
+                  type="email"
+                  required
+                  value={adminEmail}
+                  onChange={(e) => setAdminEmail(e.target.value)}
+                  placeholder="admin@gmail.com"
+                  style={{ width: '100%', padding: '0.65rem 0.85rem', borderRadius: '6px', border: '1px solid #cbd5e1', fontSize: '0.9rem', outline: 'none' }}
+                />
+              </div>
+
+              <div>
+                <label style={{ fontSize: '0.85rem', fontWeight: 600, color: '#475569', display: 'block', marginBottom: '0.35rem' }}>Admin Password</label>
+                <input
+                  type="password"
+                  required
+                  value={adminPassword}
+                  onChange={(e) => setAdminPassword(e.target.value)}
+                  placeholder="••••••••"
+                  style={{ width: '100%', padding: '0.65rem 0.85rem', borderRadius: '6px', border: '1px solid #cbd5e1', fontSize: '0.9rem', outline: 'none' }}
+                />
+              </div>
+
+              <button
+                type="submit"
+                disabled={adminLoginLoading}
+                className="btn-primary"
+                style={{ width: '100%', padding: '0.75rem', fontSize: '0.95rem', marginTop: '0.5rem', backgroundColor: '#0f172a' }}
+              >
+                {adminLoginLoading ? 'Authenticating Admin...' : 'Sign In to Admin Dashboard →'}
+              </button>
+            </form>
+          </div>
+        </main>
+      </div>
+    );
+  }
 
   return (
     <div style={{ backgroundColor: '#f8fafc', color: '#0f172a', minHeight: '100vh' }}>

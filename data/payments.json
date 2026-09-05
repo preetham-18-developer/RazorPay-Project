@@ -2386,5 +2386,65 @@
     "device_id": "dev_clean_01",
     "ip_address": "1.1.1.1",
     "created_at": "2026-09-05T14:48:05.623Z"
+  },
+  {
+    "id": "pay_prev_1788620002822",
+    "amount": 129900,
+    "currency": "INR",
+    "method": "card",
+    "customer_id": "cust_clean_1788620002822",
+    "device_id": "dev_clean_01",
+    "ip_address": "1.1.1.1",
+    "created_at": "2026-08-26T14:53:22.822Z"
+  },
+  {
+    "id": "pay_clean_1788620002822",
+    "amount": 129900,
+    "currency": "INR",
+    "method": "card",
+    "customer_id": "cust_clean_1788620002822",
+    "device_id": "dev_clean_01",
+    "ip_address": "1.1.1.1",
+    "created_at": "2026-09-05T14:53:22.822Z"
+  },
+  {
+    "id": "pay_prev_1788620686891",
+    "amount": 129900,
+    "currency": "INR",
+    "method": "card",
+    "customer_id": "cust_clean_1788620686889",
+    "device_id": "dev_clean_01",
+    "ip_address": "1.1.1.1",
+    "created_at": "2026-08-26T15:04:46.891Z"
+  },
+  {
+    "id": "pay_clean_1788620686889",
+    "amount": 129900,
+    "currency": "INR",
+    "method": "card",
+    "customer_id": "cust_clean_1788620686889",
+    "device_id": "dev_clean_01",
+    "ip_address": "1.1.1.1",
+    "created_at": "2026-09-05T15:04:46.891Z"
+  },
+  {
+    "id": "pay_prev_1788621147192",
+    "amount": 129900,
+    "currency": "INR",
+    "method": "card",
+    "customer_id": "cust_clean_1788621147191",
+    "device_id": "dev_clean_01",
+    "ip_address": "1.1.1.1",
+    "created_at": "2026-08-26T15:12:27.192Z"
+  },
+  {
+    "id": "pay_clean_1788621147191",
+    "amount": 129900,
+    "currency": "INR",
+    "method": "card",
+    "customer_id": "cust_clean_1788621147191",
+    "device_id": "dev_clean_01",
+    "ip_address": "1.1.1.1",
+    "created_at": "2026-09-05T15:12:27.192Z"
   }
 ]
