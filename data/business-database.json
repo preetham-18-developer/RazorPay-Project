@@ -23,6 +23,22 @@
       "password_hash": "$2b$10$8k5A0IVfjLxftmA5Anrw/.Bap3ll5dlphY9R3V.xlP2O9.vTTjlpm",
       "role": "customer",
       "created_at": "2026-09-05T15:25:21.606Z"
+    },
+    {
+      "id": "usr_1788624267367_813",
+      "name": "Test Customer",
+      "email": "customer_1788624266391@freshsmart.com",
+      "password_hash": "$2b$10$plZU58ucJ5wFhL/cOaa6aejNU2Q.e//hvXTKwHd6v4eBfMzsKPTYG",
+      "role": "customer",
+      "created_at": "2026-09-05T16:04:27.367Z"
+    },
+    {
+      "id": "usr_1788624268048_52",
+      "name": "Attempted Admin",
+      "email": "attemptedadmin_1788624267818@freshsmart.com",
+      "password_hash": "$2b$10$xEytgFpN9hnBQr8sd4e0v.KeLFRMsxfJWfLhJQjYQpoYIlQQq.Jva",
+      "role": "customer",
+      "created_at": "2026-09-05T16:04:28.048Z"
     }
   ],
   "products": [
@@ -111,14 +127,593 @@
       "sku": "PANTRY-RES-18999",
       "name": "Gourmet Pantry Reserve",
       "description": "Exclusive artisanal hamper with Kashmir Mongra Saffron (5g), Cold-Pressed Truffle Olive Oil (500ml), and Aged Balsamic Vinegar.",
-      "price": 499,
+      "price": 1899900,
       "currency": "INR",
       "image": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=600&q=80",
       "category": "Pantry & Gourmet"
     }
   ],
-  "orders": [],
-  "queries": [],
-  "feedback": [],
-  "disputes": []
+  "orders": [
+    {
+      "order_id": "ORDER_GATE_TEST_1788625317076",
+      "user_id": "cust_fm_demo_user",
+      "customer_name": "Demo Customer",
+      "customer_email": "customer@freshsmart.com",
+      "total_amount": 1899900,
+      "payment_status": "CAPTURED",
+      "payment_id": "pay_gate_1788625317076",
+      "fulfillment_status": "UNFULFILLED",
+      "delivery_status": "PENDING",
+      "otp_verified": false,
+      "tracking_number": null,
+      "items": [],
+      "created_at": "2026-09-05T16:21:57.079Z"
+    },
+    {
+      "order_id": "ORDER_HERO_TEST_1788625316883",
+      "user_id": "cust_fm_demo_user",
+      "customer_name": "Demo Customer",
+      "customer_email": "customer@freshsmart.com",
+      "total_amount": 1899900,
+      "payment_status": "CAPTURED",
+      "payment_id": "pay_hero_1788625316883",
+      "fulfillment_status": "UNFULFILLED",
+      "delivery_status": "PENDING",
+      "otp_verified": false,
+      "tracking_number": null,
+      "items": [
+        {
+          "product_id": "prod_fm_hero_18999",
+          "sku": "PANTRY-RES-18999",
+          "qty": 1,
+          "price": 1899900
+        }
+      ],
+      "created_at": "2026-09-05T16:21:56.893Z"
+    },
+    {
+      "order_id": "ORDER_INTEGRITY_TEST_1788625316388",
+      "user_id": "cust_fm_demo_user",
+      "customer_name": "Demo Customer",
+      "customer_email": "customer@freshsmart.com",
+      "total_amount": 1899900,
+      "payment_status": "CAPTURED",
+      "payment_id": "pay_test_1788625316388",
+      "fulfillment_status": "UNFULFILLED",
+      "delivery_status": "PENDING",
+      "otp_verified": false,
+      "tracking_number": null,
+      "items": [
+        {
+          "product_id": "prod_fm_hero_18999",
+          "sku": "PANTRY-RES-18999",
+          "qty": 1,
+          "price": 1899900
+        }
+      ],
+      "created_at": "2026-09-05T16:21:56.391Z"
+    },
+    {
+      "order_id": "ORDER_FM_1788624872267",
+      "user_id": "cust_fm_demo_user",
+      "customer_name": "Demo Customer",
+      "customer_email": "customer@freshsmart.com",
+      "total_amount": 1899900,
+      "payment_status": "CAPTURED",
+      "payment_id": "pay_card_1788624872267_641",
+      "fulfillment_status": "COURIER_ASSIGNED",
+      "delivery_status": "DELIVERED",
+      "otp_verified": false,
+      "tracking_number": "AWB_FM_872608",
+      "items": [
+        {
+          "product_id": "prod_fm_09",
+          "sku": "PANTRY-RES-18999",
+          "name": "Gourmet Pantry Reserve",
+          "price": 1899900,
+          "qty": 1,
+          "subtotal": 1899900
+        }
+      ],
+      "created_at": "2026-09-05T16:14:32.273Z"
+    },
+    {
+      "order_id": "ORDER_FM_1788624839098",
+      "user_id": "cust_fm_demo_user",
+      "customer_name": "Demo Customer",
+      "customer_email": "customer@freshsmart.com",
+      "total_amount": 1899900,
+      "payment_status": "CAPTURED",
+      "payment_id": "pay_card_1788624839098_322",
+      "fulfillment_status": "COURIER_ASSIGNED",
+      "delivery_status": "DELIVERED",
+      "otp_verified": false,
+      "tracking_number": "AWB_FM_839440",
+      "items": [
+        {
+          "product_id": "prod_fm_09",
+          "sku": "PANTRY-RES-18999",
+          "name": "Gourmet Pantry Reserve",
+          "price": 1899900,
+          "qty": 1,
+          "subtotal": 1899900
+        }
+      ],
+      "created_at": "2026-09-05T16:13:59.107Z"
+    },
+    {
+      "order_id": "ORDER_FM_1788624819247",
+      "user_id": "cust_fm_demo_user",
+      "customer_name": "Demo Customer",
+      "customer_email": "customer@freshsmart.com",
+      "total_amount": 1899900,
+      "payment_status": "CAPTURED",
+      "payment_id": "pay_card_1788624819248_438",
+      "fulfillment_status": "COURIER_ASSIGNED",
+      "delivery_status": "DELIVERED",
+      "otp_verified": false,
+      "tracking_number": "AWB_FM_819595",
+      "items": [
+        {
+          "product_id": "prod_fm_09",
+          "sku": "PANTRY-RES-18999",
+          "name": "Gourmet Pantry Reserve",
+          "price": 1899900,
+          "qty": 1,
+          "subtotal": 1899900
+        }
+      ],
+      "created_at": "2026-09-05T16:13:39.257Z"
+    },
+    {
+      "order_id": "ORDER_FM_1788624794354",
+      "user_id": "cust_fm_demo_user",
+      "customer_name": "Demo Customer",
+      "customer_email": "customer@freshsmart.com",
+      "total_amount": 1899900,
+      "payment_status": "CAPTURED",
+      "payment_id": "pay_card_1788624794354_774",
+      "fulfillment_status": "COURIER_ASSIGNED",
+      "delivery_status": "DELIVERED",
+      "otp_verified": false,
+      "tracking_number": "AWB_FM_794722",
+      "items": [
+        {
+          "product_id": "prod_fm_09",
+          "sku": "PANTRY-RES-18999",
+          "name": "Gourmet Pantry Reserve",
+          "price": 1899900,
+          "qty": 1,
+          "subtotal": 1899900
+        }
+      ],
+      "created_at": "2026-09-05T16:13:14.361Z"
+    },
+    {
+      "order_id": "ORDER_FM_1788624767112",
+      "user_id": "cust_fm_demo_user",
+      "customer_name": "Demo Customer",
+      "customer_email": "customer@freshsmart.com",
+      "total_amount": 18999,
+      "payment_status": "CAPTURED",
+      "payment_id": "pay_card_1788624767112_636",
+      "fulfillment_status": "UNFULFILLED",
+      "delivery_status": "PENDING",
+      "otp_verified": false,
+      "tracking_number": null,
+      "items": [
+        {
+          "product_id": "prod_fm_09",
+          "sku": "PANTRY-RES-18999",
+          "name": "Gourmet Pantry Reserve",
+          "price": 18999,
+          "qty": 1,
+          "subtotal": 18999
+        }
+      ],
+      "created_at": "2026-09-05T16:12:47.124Z"
+    },
+    {
+      "order_id": "ORDER_FM_1788624743212",
+      "user_id": "cust_fm_demo_user",
+      "customer_name": "Demo Customer",
+      "customer_email": "customer@freshsmart.com",
+      "total_amount": 499,
+      "payment_status": "CAPTURED",
+      "payment_id": "pay_card_1788624743212_752",
+      "fulfillment_status": "UNFULFILLED",
+      "delivery_status": "PENDING",
+      "otp_verified": false,
+      "tracking_number": null,
+      "items": [
+        {
+          "product_id": "prod_fm_09",
+          "sku": "PANTRY-RES-18999",
+          "name": "Gourmet Pantry Reserve",
+          "price": 499,
+          "qty": 1,
+          "subtotal": 499
+        }
+      ],
+      "created_at": "2026-09-05T16:12:23.225Z"
+    },
+    {
+      "order_id": "ORDER_ATK12_1788624655354",
+      "user_id": "cust_clean_1788624655354",
+      "customer_name": "Demo Customer",
+      "customer_email": "customer@freshsmart.com",
+      "total_amount": 129900,
+      "payment_status": "CAPTURED",
+      "payment_id": "pay_clean_1788624655354",
+      "fulfillment_status": "UNFULFILLED",
+      "delivery_status": "PENDING",
+      "otp_verified": false,
+      "tracking_number": null,
+      "items": [],
+      "created_at": "2026-09-05T16:10:55.356Z"
+    }
+  ],
+  "queries": [
+    {
+      "id": "qry_1788624268592_369",
+      "user_id": "usr_test_101",
+      "customer_name": "Test Customer",
+      "customer_email": "customer@freshsmart.com",
+      "subject": "Delivery Delay",
+      "message": "Where is my order parcel?",
+      "order_id": null,
+      "category": "Non-Receipt",
+      "status": "OPEN",
+      "created_at": "2026-09-05T16:04:28.592Z"
+    }
+  ],
+  "feedback": [
+    {
+      "id": "fb_1788624268756_654",
+      "user_id": "usr_test_101",
+      "customer_name": "Test Customer",
+      "rating": 5,
+      "feedback_text": "Excellent organic basmati rice quality!",
+      "order_id": null,
+      "created_at": "2026-09-05T16:04:28.756Z"
+    }
+  ],
+  "disputes": [
+    {
+      "id": "disp_fm_1788625335818",
+      "dispute_id": "disp_fm_1788625335818",
+      "order_id": "ORDER_EVAL_J_1788625335815",
+      "payment_id": "pay_sim_evt_fm_1788625335815_9200",
+      "amount": 149900,
+      "currency": "INR",
+      "reason_code": "PRODUCT_NOT_RECEIVED",
+      "customer_claim": "Not received.",
+      "status": "under_review",
+      "merchant_id": "merchant_fm_01",
+      "created_at": "2026-09-05T16:22:15.818Z",
+      "due_by": "2026-09-12T16:22:15.818Z"
+    },
+    {
+      "id": "disp_fm_1788625335757",
+      "dispute_id": "disp_fm_1788625335757",
+      "order_id": "ORDER_EVAL_I_1788625335746",
+      "payment_id": "pay_sim_evt_fm_1788625335746_1156",
+      "amount": 1899900,
+      "currency": "INR",
+      "reason_code": "PRODUCT_DEFECTIVE",
+      "customer_claim": "High-value electronics damaged upon arrival.",
+      "status": "under_review",
+      "merchant_id": "merchant_fm_01",
+      "created_at": "2026-09-05T16:22:15.757Z",
+      "due_by": "2026-09-12T16:22:15.757Z"
+    },
+    {
+      "id": "disp_fm_1788625335682",
+      "dispute_id": "disp_fm_1788625335682",
+      "order_id": "ORDER_EVAL_H_1788625335679",
+      "payment_id": "pay_sim_evt_fm_1788625335679_6785",
+      "amount": 8990000,
+      "currency": "INR",
+      "reason_code": "PRODUCT_NOT_RECEIVED",
+      "customer_claim": "I did not receive item 15 mins after ordering.",
+      "status": "under_review",
+      "merchant_id": "merchant_fm_01",
+      "created_at": "2026-09-05T16:22:15.682Z",
+      "due_by": "2026-09-12T16:22:15.682Z"
+    },
+    {
+      "id": "disp_fm_1788625335616",
+      "dispute_id": "disp_fm_1788625335616",
+      "order_id": "ORDER_EVAL_G_1788625335612",
+      "payment_id": "pay_eval_g1",
+      "amount": 149900,
+      "currency": "INR",
+      "reason_code": "REFUND_NOT_PROCESSED",
+      "customer_claim": "Refund initiated but funds not credited to bank.",
+      "status": "under_review",
+      "merchant_id": "merchant_fm_01",
+      "created_at": "2026-09-05T16:22:15.616Z",
+      "due_by": "2026-09-12T16:22:15.616Z"
+    },
+    {
+      "id": "disp_fm_1788625335548",
+      "dispute_id": "disp_fm_1788625335548",
+      "order_id": "ORDER_EVAL_F_1788625335542",
+      "payment_id": "pay_eval_f1",
+      "amount": 189900,
+      "currency": "INR",
+      "reason_code": "DUPLICATE_CHARGE",
+      "customer_claim": "Charged twice for single transaction session.",
+      "status": "under_review",
+      "merchant_id": "merchant_fm_01",
+      "created_at": "2026-09-05T16:22:15.548Z",
+      "due_by": "2026-09-12T16:22:15.548Z"
+    },
+    {
+      "id": "disp_fm_1788625335481",
+      "dispute_id": "disp_fm_1788625335481",
+      "order_id": "ORDER_EVAL_E_1788625335474",
+      "payment_id": "pay_sim_evt_fm_1788625335474_7522",
+      "amount": 3990000,
+      "currency": "INR",
+      "reason_code": "MISSING_ITEM",
+      "customer_claim": "One milk packet was missing from parcel.",
+      "status": "under_review",
+      "merchant_id": "merchant_fm_01",
+      "created_at": "2026-09-05T16:22:15.481Z",
+      "due_by": "2026-09-12T16:22:15.481Z"
+    },
+    {
+      "id": "disp_fm_1788625335403",
+      "dispute_id": "disp_fm_1788625335403",
+      "order_id": "ORDER_EVAL_D_1788625335397",
+      "payment_id": "pay_sim_evt_fm_1788625335397_1530",
+      "amount": 189900,
+      "currency": "INR",
+      "reason_code": "WRONG_PRODUCT",
+      "customer_claim": "Received 1kg basmati rice instead of 5kg basmati rice.",
+      "status": "under_review",
+      "merchant_id": "merchant_fm_01",
+      "created_at": "2026-09-05T16:22:15.403Z",
+      "due_by": "2026-09-12T16:22:15.403Z"
+    },
+    {
+      "id": "disp_fm_1788625335327",
+      "dispute_id": "disp_fm_1788625335327",
+      "order_id": "ORDER_EVAL_C_1788625335311",
+      "payment_id": "pay_sim_evt_fm_1788625335311_4719",
+      "amount": 189900,
+      "currency": "INR",
+      "reason_code": "PRODUCT_NOT_RECEIVED",
+      "customer_claim": "Driver marked delivered but OTP was not verified.",
+      "status": "under_review",
+      "merchant_id": "merchant_fm_01",
+      "created_at": "2026-09-05T16:22:15.327Z",
+      "due_by": "2026-09-12T16:22:15.327Z"
+    },
+    {
+      "id": "disp_fm_1788625335177",
+      "dispute_id": "disp_fm_1788625335177",
+      "order_id": "ORDER_EVAL_B_1788625335172",
+      "payment_id": "pay_eval_b_1788625335172",
+      "amount": 249900,
+      "currency": "INR",
+      "reason_code": "PRODUCT_NOT_RECEIVED",
+      "customer_claim": "Order packed but never delivered by merchant.",
+      "status": "under_review",
+      "merchant_id": "merchant_fm_01",
+      "created_at": "2026-09-05T16:22:15.177Z",
+      "due_by": "2026-09-12T16:22:15.177Z"
+    },
+    {
+      "id": "disp_fm_1788625334998",
+      "dispute_id": "disp_fm_1788625334998",
+      "order_id": "ORDER_EVAL_A_1788625334987",
+      "payment_id": "pay_eval_a_1788625334987",
+      "amount": 149900,
+      "currency": "INR",
+      "reason_code": "PRODUCT_NOT_RECEIVED",
+      "customer_claim": "Routine inquiry regarding order status.",
+      "status": "under_review",
+      "merchant_id": "merchant_fm_01",
+      "created_at": "2026-09-05T16:22:14.998Z",
+      "due_by": "2026-09-12T16:22:14.998Z"
+    },
+    {
+      "id": "disp_fm_1788625317080",
+      "dispute_id": "disp_fm_1788625317080",
+      "order_id": "ORDER_GATE_TEST_1788625317076",
+      "payment_id": "pay_gate_1788625317076",
+      "amount": 1899900,
+      "currency": "INR",
+      "reason_code": "product_not_received",
+      "customer_claim": "Gourmet Pantry Reserve missing.",
+      "status": "under_review",
+      "merchant_id": "merchant_fm_01",
+      "created_at": "2026-09-05T16:21:57.080Z",
+      "due_by": "2026-09-12T16:21:57.080Z"
+    },
+    {
+      "id": "disp_fm_1788625317061",
+      "dispute_id": "disp_fm_1788625317061",
+      "order_id": "ORDER_HERO_TEST_1788625316883",
+      "payment_id": "pay_hero_1788625316883",
+      "amount": 1899900,
+      "currency": "INR",
+      "reason_code": "product_not_received",
+      "customer_claim": "High-value Gourmet Pantry Reserve order was marked delivered but never received by customer.",
+      "status": "under_review",
+      "merchant_id": "merchant_fm_01",
+      "created_at": "2026-09-05T16:21:57.061Z",
+      "due_by": "2026-09-12T16:21:57.061Z"
+    },
+    {
+      "id": "disp_fm_1788624873124",
+      "dispute_id": "disp_fm_1788624873124",
+      "order_id": "ORDER_FM_1788624872267",
+      "payment_id": "pay_card_1788624872267_641",
+      "amount": 1899900,
+      "currency": "INR",
+      "reason_code": "product_not_received",
+      "customer_claim": "High-value Gourmet Pantry Reserve order was marked delivered by courier but never received by customer.",
+      "status": "under_review",
+      "merchant_id": "merchant_fm_01",
+      "created_at": "2026-09-05T16:14:33.124Z",
+      "due_by": "2026-09-12T16:14:33.124Z"
+    },
+    {
+      "id": "disp_fm_1788624839955",
+      "dispute_id": "disp_fm_1788624839955",
+      "order_id": "ORDER_FM_1788624839098",
+      "payment_id": "pay_card_1788624839098_322",
+      "amount": 1899900,
+      "currency": "INR",
+      "reason_code": "product_not_received",
+      "customer_claim": "High-value Gourmet Pantry Reserve order was marked delivered by courier but never received by customer.",
+      "status": "under_review",
+      "merchant_id": "merchant_fm_01",
+      "created_at": "2026-09-05T16:13:59.955Z",
+      "due_by": "2026-09-12T16:13:59.955Z"
+    },
+    {
+      "id": "disp_fm_1788624820096",
+      "dispute_id": "disp_fm_1788624820096",
+      "order_id": "ORDER_FM_1788624819247",
+      "payment_id": "pay_card_1788624819248_438",
+      "amount": 1899900,
+      "currency": "INR",
+      "reason_code": "product_not_received",
+      "customer_claim": "High-value Gourmet Pantry Reserve order was marked delivered by courier but never received by customer.",
+      "status": "under_review",
+      "merchant_id": "merchant_fm_01",
+      "created_at": "2026-09-05T16:13:40.096Z",
+      "due_by": "2026-09-12T16:13:40.096Z"
+    },
+    {
+      "id": "disp_fm_1788624795237",
+      "dispute_id": "disp_fm_1788624795237",
+      "order_id": "ORDER_FM_1788624794354",
+      "payment_id": "pay_card_1788624794354_774",
+      "amount": 1899900,
+      "currency": "INR",
+      "reason_code": "product_not_received",
+      "customer_claim": "High-value Gourmet Pantry Reserve order was marked delivered by courier but never received by customer.",
+      "status": "under_review",
+      "merchant_id": "merchant_fm_01",
+      "created_at": "2026-09-05T16:13:15.237Z",
+      "due_by": "2026-09-12T16:13:15.237Z"
+    },
+    {
+      "id": "disp_fm_1788624656237",
+      "dispute_id": "disp_fm_1788624656237",
+      "order_id": "ORDER_ATK15_1788624656226",
+      "payment_id": "pay_sim_evt_fm_1788624656226_5157",
+      "amount": 129900,
+      "currency": "INR",
+      "reason_code": "REFUND_NOT_PROCESSED",
+      "customer_claim": "Refund not received.",
+      "status": "under_review",
+      "merchant_id": "merchant_fm_01",
+      "created_at": "2026-09-05T16:10:56.237Z",
+      "due_by": "2026-09-12T16:10:56.237Z"
+    },
+    {
+      "id": "disp_fm_1788624656094",
+      "dispute_id": "disp_fm_1788624656094",
+      "order_id": "ORDER_ATK12_1788624655354",
+      "payment_id": "pay_clean_1788624655354",
+      "amount": 129900,
+      "currency": "INR",
+      "reason_code": "PRODUCT_NOT_RECEIVED",
+      "customer_claim": "",
+      "status": "under_review",
+      "merchant_id": "merchant_fm_01",
+      "created_at": "2026-09-05T16:10:56.094Z",
+      "due_by": "2026-09-12T16:10:56.094Z"
+    },
+    {
+      "id": "disp_fm_1788624655256",
+      "dispute_id": "disp_fm_1788624655256",
+      "order_id": "ORDER_ATK11_1788624655236",
+      "payment_id": "pay_sim_evt_fm_1788624655236_1166",
+      "amount": 1899900,
+      "currency": "INR",
+      "reason_code": "PRODUCT_NOT_RECEIVED",
+      "customer_claim": "",
+      "status": "under_review",
+      "merchant_id": "merchant_fm_01",
+      "created_at": "2026-09-05T16:10:55.256Z",
+      "due_by": "2026-09-12T16:10:55.256Z"
+    },
+    {
+      "id": "disp_fm_1788624655157",
+      "dispute_id": "disp_fm_1788624655157",
+      "order_id": "ORDER_ATK7_1788624655146",
+      "payment_id": "pay_sim_evt_fm_1788624655146_8591",
+      "amount": 129900,
+      "currency": "INR",
+      "reason_code": "PRODUCT_NOT_RECEIVED",
+      "customer_claim": "Not received 5 mins after order.",
+      "status": "under_review",
+      "merchant_id": "merchant_fm_01",
+      "created_at": "2026-09-05T16:10:55.157Z",
+      "due_by": "2026-09-12T16:10:55.157Z"
+    },
+    {
+      "id": "disp_fm_1788624655092",
+      "dispute_id": "disp_fm_1788624655092",
+      "order_id": "ORDER_ATK4_1788624655087",
+      "payment_id": "pay_sim_evt_fm_1788624655087_9524",
+      "amount": 129900,
+      "currency": "INR",
+      "reason_code": "WRONG_PRODUCT",
+      "customer_claim": "Wrong product.",
+      "status": "under_review",
+      "merchant_id": "merchant_fm_01",
+      "created_at": "2026-09-05T16:10:55.092Z",
+      "due_by": "2026-09-12T16:10:55.092Z"
+    },
+    {
+      "id": "disp_fm_1788624655028",
+      "dispute_id": "disp_fm_1788624655028",
+      "order_id": "ORDER_ATK3_1788624655024",
+      "payment_id": "pay_sim_evt_fm_1788624655024_7917",
+      "amount": 129900,
+      "currency": "INR",
+      "reason_code": "PRODUCT_NOT_RECEIVED",
+      "customer_claim": "Never received.",
+      "status": "under_review",
+      "merchant_id": "merchant_fm_01",
+      "created_at": "2026-09-05T16:10:55.028Z",
+      "due_by": "2026-09-12T16:10:55.028Z"
+    },
+    {
+      "id": "disp_fm_1788624654959",
+      "dispute_id": "disp_fm_1788624654959",
+      "order_id": "ORDER_ATK2_1788624654952",
+      "payment_id": "pay_sim_evt_fm_1788624654952_5528",
+      "amount": 129900,
+      "currency": "INR",
+      "reason_code": "PRODUCT_NOT_RECEIVED",
+      "customer_claim": "Not received.",
+      "status": "under_review",
+      "merchant_id": "merchant_fm_01",
+      "created_at": "2026-09-05T16:10:54.959Z",
+      "due_by": "2026-09-12T16:10:54.959Z"
+    },
+    {
+      "id": "disp_fm_1788624654696",
+      "dispute_id": "disp_fm_1788624654696",
+      "order_id": "ORDER_ATK1_1788624654676",
+      "payment_id": "pay_sim_evt_fm_1788624654677_3150",
+      "amount": 129900,
+      "currency": "INR",
+      "reason_code": "WRONG_PRODUCT",
+      "customer_claim": "Received wrong product despite OTP delivery.",
+      "status": "under_review",
+      "merchant_id": "merchant_fm_01",
+      "created_at": "2026-09-05T16:10:54.696Z",
+      "due_by": "2026-09-12T16:10:54.696Z"
+    }
+  ]
 }

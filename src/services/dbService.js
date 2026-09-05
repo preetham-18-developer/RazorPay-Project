@@ -163,7 +163,7 @@ function loadInitialCatalog() {
       sku: "PANTRY-RES-18999",
       name: "Gourmet Pantry Reserve",
       category: "Pantry & Gourmet",
-      price: 499,
+      price: 1899900,
       description: "Exclusive artisanal hamper with Kashmir Mongra Saffron (5g), Cold-Pressed Truffle Olive Oil (500ml), and Aged Balsamic Vinegar.",
       image: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=600&q=80",
       stock_status: "IN_STOCK",

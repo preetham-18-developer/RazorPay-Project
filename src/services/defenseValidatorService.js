@@ -23,8 +23,9 @@ function validateDefenseDraft(disputeId, draftTextOrObj) {
     : (draftTextOrObj.response_body || JSON.stringify(draftTextOrObj));
 
   // Rule 1: Correct dispute ID
-  if (!draftBody.includes(dispute.id)) {
-    errors.push(`Draft text does not reference correct dispute ID ${dispute.id}.`);
+  const targetDisputeId = dispute.id || dispute.dispute_id;
+  if (targetDisputeId && !draftBody.includes(targetDisputeId)) {
+    errors.push(`Draft text does not reference correct dispute ID ${targetDisputeId}.`);
   }
 
   // Rule 2: Zero ground_truth leakage
@@ -58,7 +59,7 @@ function validateDefenseDraft(disputeId, draftTextOrObj) {
   }
 
   // Check if draft references any document ID that does not exist in presentDocIds
-  const docIdRegex = /doc_SYN[0-9]+_[a-z]+/g;
+  const docIdRegex = /doc_[a-zA-Z0-9_]+/g;
   const matchedDocIds = draftBody.match(docIdRegex) || [];
 
   for (const matchedId of matchedDocIds) {

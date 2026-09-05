@@ -168,7 +168,8 @@ function approveReview(disputeId, { reviewer = 'demo-user', response_body }) {
   const finalResponseBody = response_body || existingDraft.response_body;
 
   // Determine origin (human_edited if text was modified)
-  const isEdited = existingDraft.response_body && existingDraft.response_body.trim() !== finalResponseBody.trim();
+  const normalizeText = str => (str || '').replace(/\r\n/g, '\n').trim();
+  const isEdited = existingDraft.response_body && normalizeText(existingDraft.response_body) !== normalizeText(finalResponseBody);
   const origin = isEdited ? DRAFT_ORIGIN.HUMAN_EDITED : DRAFT_ORIGIN.AI_GENERATED;
 
   // Server-side validation check
@@ -198,7 +199,8 @@ function approveReview(disputeId, { reviewer = 'demo-user', response_body }) {
   saveJSONMap(REVIEWS_FILE, reviews);
 
   // Record simulated action to data/action-records.json
-  const actionRecords = loadJSONMap(ACTIONS_FILE, []);
+  const rawActionRecords = loadJSONMap(ACTIONS_FILE, []);
+  const actionRecords = Array.isArray(rawActionRecords) ? rawActionRecords : [];
   const actionEntry = {
     dispute_id: disputeId,
     action: 'defence_ready_for_submission',
