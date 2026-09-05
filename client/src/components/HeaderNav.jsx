@@ -51,10 +51,10 @@ export default function HeaderNav() {
 
         {/* Right: Operational Status & System Clock */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', backgroundColor: isConnected ? '#f0fdf4' : '#fff7ed', border: `1px solid ${isConnected ? '#bbf7d0' : '#ffedd5'}`, padding: '0.25rem 0.65rem', borderRadius: '4px' }}>
-            <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: isConnected ? '#16a34a' : '#ea580c' }} />
-            <span className="mono" style={{ color: isConnected ? '#15803d' : '#c2410c', fontWeight: 700, fontSize: '0.65rem' }}>
-              {isConnected ? 'RAZORPAY CONNECTED MODE' : 'LIVE TRANSACTION INVESTIGATION ENGINE'}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', backgroundColor: '#f0fdf4', border: '1px solid #bbf7d0', padding: '0.25rem 0.65rem', borderRadius: '4px' }}>
+            <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#16a34a' }} />
+            <span className="mono" style={{ color: '#15803d', fontWeight: 700, fontSize: '0.65rem' }}>
+              LIVE TRANSACTION INVESTIGATION ENGINE
             </span>
           </div>
 
