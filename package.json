@@ -1,0 +1,39 @@
+{
+  "name": "disputeshield-project",
+  "version": "4.0.0",
+  "description": "DisputeShield - Bounded-Autonomy Dispute Defence Agent for Razorpay Hackathon (Track 02: AI Risk Manager)",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "client": "npm --prefix client run dev",
+    "client:install": "npm --prefix client install",
+    "start": "node src/server.js",
+    "seed": "node scripts/seed.js",
+    "train": "node scripts/train-model.js",
+    "train:v3": "node scripts/train-model-v3.js",
+    "evaluate": "node scripts/evaluate.js",
+    "evaluate:v3": "node scripts/evaluate-v3.js",
+    "test:verify": "node scripts/verify.js"
+  },
+  "keywords": [
+    "razorpay",
+    "dispute",
+    "risk-manager",
+    "disputeshield",
+    "llama3.3-70b",
+    "risk-classifier",
+    "react-frontend"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.115.0",
+    "bcryptjs": "^3.0.3",
+    "express": "^4.19.2",
+    "openai": "^4.52.0",
+    "razorpay": "^2.9.8"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "ORDER_1001": {
+    "scenario_id": "SCENARIO_A",
+    "title": "Strong Merchant Evidence",
+    "ground_truth_fact": "Item was delivered and recipient confirmed receipt.",
+    "merchant_fault": false,
+    "expected_ideal_decision": "auto_draft"
+  },
+  "ORDER_1002_UNVERIFIED_OTP": {
+    "scenario_id": "SCENARIO_C",
+    "title": "Contradictory Delivery Signal",
+    "ground_truth_fact": "Courier driver marked delivered without recipient OTP verification.",
+    "merchant_fault": true,
+    "expected_ideal_decision": "review",
+    "expected_conflict_code": "DELIVERY_MARKED_WITHOUT_OTP"
+  },
+  "ORDER_1003_DUPLICATE_PAYMENT": {
+    "scenario_id": "SCENARIO_G",
+    "title": "Duplicate Charge",
+    "ground_truth_fact": "Customer was double-charged due to checkout retry latency.",
+    "merchant_fault": true,
+    "expected_ideal_decision": "do_not_contest"
+  }
+}

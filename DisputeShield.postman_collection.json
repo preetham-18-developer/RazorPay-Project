@@ -1,0 +1,97 @@
+{
+  "info": {
+    "_postman_id": "disputeshield-phase1-collection",
+    "name": "DisputeShield Phase 1 API",
+    "description": "Postman Collection for DisputeShield Phase 1 - Bounded-autonomy dispute defence agent dataset and webhook simulator",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "GET /health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/health",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "health"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET /disputes",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/disputes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "disputes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET /disputes/:id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/disputes/disp_SYN0001",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "disputes",
+            "disp_SYN0001"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST /webhooks/dispute-created",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"dispute_id\": \"disp_SYN0001\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/webhooks/dispute-created",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "webhooks",
+            "dispute-created"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
