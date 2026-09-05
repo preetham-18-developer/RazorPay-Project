@@ -79,14 +79,6 @@ export default function FreshMartHeader({ cartCount = 0, onOpenCart, paymentMode
 
         {/* Right Section Actions */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-          
-          {/* Razorpay Test Mode Indicator */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', backgroundColor: '#fff7ed', padding: '0.35rem 0.65rem', borderRadius: '6px', border: '1px solid #ffedd5' }}>
-            <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#f97316' }} />
-            <span className="mono" style={{ fontSize: '0.65rem', color: '#c2410c', fontWeight: 700 }}>
-              RAZORPAY TEST MODE
-            </span>
-          </div>
 
           {/* Cart Button */}
           <Link

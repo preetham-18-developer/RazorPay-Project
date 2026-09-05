@@ -128,38 +128,6 @@ export default function FreshMartStorePage() {
             </p>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', alignItems: 'flex-end' }}>
-            <div style={{ display: 'flex', gap: '0.5rem' }}>
-              <button
-                onClick={() => setPaymentMode('RAZORPAY_TEST')}
-                style={{
-                  padding: '0.55rem 0.95rem',
-                  border: paymentMode === 'RAZORPAY_TEST' ? '1px solid #38bdf8' : '1px solid #334155',
-                  backgroundColor: paymentMode === 'RAZORPAY_TEST' ? 'rgba(56, 189, 248, 0.15)' : 'transparent',
-                  color: paymentMode === 'RAZORPAY_TEST' ? '#38bdf8' : '#94a3b8',
-                  borderRadius: '4px',
-                  fontSize: '0.75rem',
-                  fontWeight: 700,
-                  cursor: 'pointer'
-                }}
-              >
-                ● RAZORPAY TEST MODE
-              </button>
-              <button
-                onClick={() => setPaymentMode('SIMULATION')}
-                style={{
-                  padding: '0.55rem 0.95rem',
-                  border: paymentMode === 'SIMULATION' ? '1px solid #f59e0b' : '1px solid #334155',
-                  backgroundColor: paymentMode === 'SIMULATION' ? 'rgba(245, 158, 11, 0.15)' : 'transparent',
-                  color: paymentMode === 'SIMULATION' ? '#f59e0b' : '#94a3b8',
-                  borderRadius: '4px',
-                  fontSize: '0.75rem',
-                  fontWeight: 700,
-                  cursor: 'pointer'
-                }}
-              >
-                ● SIMULATION MODE
-              </button>
-            </div>
             <Link to="/freshmart/merchant" style={{ color: '#10b981', fontSize: '0.8rem', fontWeight: 600, textDecoration: 'none' }}>
               Switch to Merchant Console →
             </Link>
@@ -394,62 +362,13 @@ export default function FreshMartStorePage() {
               </div>
             </div>
 
-            {/* Payment Mode Selection Toggle */}
-            <div style={{ marginBottom: '1.25rem' }}>
-              <span style={{ fontSize: '0.8rem', color: '#94a3b8', display: 'block', marginBottom: '0.5rem', fontWeight: 600 }}>PAYMENT EXECUTION MODE</span>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
-                <button
-                  type="button"
-                  onClick={() => setPaymentMode('RAZORPAY_TEST')}
-                  style={{
-                    padding: '0.75rem',
-                    border: paymentMode === 'RAZORPAY_TEST' ? '2px solid #38bdf8' : '1px solid #334155',
-                    backgroundColor: paymentMode === 'RAZORPAY_TEST' ? 'rgba(56, 189, 248, 0.15)' : '#1e293b',
-                    color: '#f8fafc',
-                    borderRadius: '6px',
-                    fontSize: '0.75rem',
-                    fontWeight: 700,
-                    cursor: 'pointer'
-                  }}
-                >
-                  RAZORPAY TEST MODE
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setPaymentMode('SIMULATION')}
-                  style={{
-                    padding: '0.75rem',
-                    border: paymentMode === 'SIMULATION' ? '2px solid #f59e0b' : '1px solid #334155',
-                    backgroundColor: paymentMode === 'SIMULATION' ? 'rgba(245, 158, 11, 0.15)' : '#1e293b',
-                    color: '#f8fafc',
-                    borderRadius: '6px',
-                    fontSize: '0.75rem',
-                    fontWeight: 700,
-                    cursor: 'pointer'
-                  }}
-                >
-                  SIMULATION MODE
-                </button>
-              </div>
-            </div>
-
-            {/* Simulate Failure Checkbox */}
-            <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.8rem', color: '#94a3b8', marginBottom: '1.5rem', cursor: 'pointer' }}>
-              <input
-                type="checkbox"
-                checked={simulateFailure}
-                onChange={e => setSimulateFailure(e.target.checked)}
-              />
-              <span>Simulate Payment Failure (Declined by Gateway)</span>
-            </label>
-
             {/* Pay Button */}
             <button
               onClick={handleCheckout}
               disabled={submitting}
               style={{
                 width: '100%',
-                backgroundColor: paymentMode === 'RAZORPAY_TEST' ? '#38bdf8' : '#f59e0b',
+                backgroundColor: '#10b981',
                 color: '#0f172a',
                 border: 'none',
                 padding: '0.9rem',
@@ -459,7 +378,7 @@ export default function FreshMartStorePage() {
                 cursor: 'pointer'
               }}
             >
-              {submitting ? 'PROCESSING PAYMENT...' : `PAY ${cartTotalRupees} (${paymentMode})`}
+              {submitting ? 'PROCESSING PAYMENT...' : `PAY ${cartTotalRupees}`}
             </button>
           </div>
         </div>

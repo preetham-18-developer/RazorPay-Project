@@ -71,7 +71,7 @@ export default function FreshMartCheckoutPage({ cart, clearCart }) {
 
       <main style={{ maxWidth: '900px', margin: '0 auto', padding: '2.5rem 2rem 4rem 2rem' }}>
         <h1 style={{ fontSize: '2rem', fontWeight: 800, color: '#0f172a', marginBottom: '1.5rem' }}>
-          Checkout & Razorpay Payment
+          Checkout & Payment
         </h1>
 
         {!currentUser && (
@@ -171,17 +171,8 @@ export default function FreshMartCheckoutPage({ cart, clearCart }) {
 
           {/* Payment Action Summary */}
           <div style={{ backgroundColor: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '1.5rem', height: 'fit-content' }}>
-            <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#0f172a' }}>Payment Gateway</h2>
+            <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '1rem', color: '#0f172a' }}>Payment Summary</h2>
             
-            <div style={{ backgroundColor: '#fff7ed', border: '1px solid #ffedd5', padding: '0.85rem', borderRadius: '8px', marginBottom: '1.25rem' }}>
-              <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#c2410c', textTransform: 'uppercase', marginBottom: '0.2rem' }}>
-                Razorpay Test Mode Active
-              </div>
-              <div style={{ fontSize: '0.85rem', color: '#9a3412', lineHeight: 1.4 }}>
-                Simulating secure test payment. No real money charged.
-              </div>
-            </div>
-
             <div style={{ borderTop: '1px solid #e2e8f0', paddingTop: '1rem', marginBottom: '1.25rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <span style={{ fontWeight: 700, fontSize: '1rem', color: '#0f172a' }}>Total Amount</span>
               <span style={{ fontWeight: 800, fontSize: '1.4rem', color: '#f97316' }}>
@@ -196,16 +187,7 @@ export default function FreshMartCheckoutPage({ cart, clearCart }) {
                 className="btn-primary"
                 style={{ width: '100%', padding: '0.85rem', fontSize: '1rem' }}
               >
-                {submitting ? 'Processing Payment...' : '💳 Pay with Razorpay Test Mode'}
-              </button>
-
-              <button
-                onClick={() => handleCheckout(true)}
-                disabled={submitting || cart.length === 0}
-                className="btn-secondary"
-                style={{ width: '100%', padding: '0.65rem', fontSize: '0.85rem', color: '#ef4444', borderColor: '#fca5a5' }}
-              >
-                Simulate Payment Failure
+                {submitting ? 'Processing Payment...' : '💳 Pay Now'}
               </button>
             </div>
           </div>
