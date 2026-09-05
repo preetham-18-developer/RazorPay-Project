@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import FreshMartHeader from '../components/FreshMartHeader';
 
 export default function CustomerLoginPage() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const redirectParam = new URLSearchParams(location.search).get('redirect');
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -28,6 +31,8 @@ export default function CustomerLoginPage() {
         localStorage.setItem('freshsmart_token', data.token);
         if (data.user.role === 'admin') {
           navigate('/freshmart/merchant');
+        } else if (redirectParam) {
+          navigate(redirectParam);
         } else {
           navigate('/account');
         }

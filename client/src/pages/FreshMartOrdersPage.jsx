@@ -8,7 +8,21 @@ export default function FreshMartOrdersPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const currentUser = (() => {
+    try {
+      const stored = localStorage.getItem('freshsmart_user');
+      return stored ? JSON.parse(stored) : null;
+    } catch (e) {
+      return null;
+    }
+  })();
+
   useEffect(() => {
+    if (!currentUser) {
+      setLoading(false);
+      return;
+    }
+
     async function fetchOrders() {
       try {
         setLoading(true);
@@ -22,6 +36,33 @@ export default function FreshMartOrdersPage() {
     }
     fetchOrders();
   }, []);
+
+  if (!currentUser) {
+    return (
+      <div style={{ backgroundColor: '#f8fafc', color: '#0f172a', minHeight: '100vh' }}>
+        <FreshMartHeader />
+        <main style={{ maxWidth: '600px', margin: '4rem auto', padding: '0 1.5rem', textAlign: 'center' }}>
+          <div style={{ backgroundColor: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '2.5rem', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.03)' }}>
+            <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>🔐</div>
+            <h2 style={{ fontSize: '1.35rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.5rem' }}>
+              Sign In to View Orders
+            </h2>
+            <p style={{ color: '#64748b', fontSize: '0.9rem', marginBottom: '1.5rem' }}>
+              Please sign in or create an account to view your transaction history and track deliveries.
+            </p>
+            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
+              <Link to="/login?redirect=/orders" className="btn-primary" style={{ padding: '0.65rem 1.5rem', textDecoration: 'none' }}>
+                Sign In
+              </Link>
+              <Link to="/signup?redirect=/orders" className="btn-secondary" style={{ padding: '0.65rem 1.5rem', textDecoration: 'none' }}>
+                Create Account
+              </Link>
+            </div>
+          </div>
+        </main>
+      </div>
+    );
+  }
 
   return (
     <div style={{ backgroundColor: '#f8fafc', color: '#0f172a', minHeight: '100vh' }}>

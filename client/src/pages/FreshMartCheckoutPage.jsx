@@ -7,9 +7,19 @@ export default function FreshMartCheckoutPage({ cart, clearCart }) {
   const navigate = useNavigate();
   const [submitting, setSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
+
+  const currentUser = (() => {
+    try {
+      const stored = localStorage.getItem('freshsmart_user');
+      return stored ? JSON.parse(stored) : null;
+    } catch (e) {
+      return null;
+    }
+  })();
+
   const [address, setAddress] = useState({
-    name: 'Preetham Kumar',
-    email: 'customer@freshsmart.com',
+    name: currentUser?.name || 'Preetham Kumar',
+    email: currentUser?.email || 'customer@freshsmart.com',
     street: '#42 Organic Avenue, Indiranagar',
     city: 'Bengaluru',
     pincode: '560038'
@@ -20,6 +30,12 @@ export default function FreshMartCheckoutPage({ cart, clearCart }) {
 
   const handleCheckout = async (simulateFailure = false) => {
     if (cart.length === 0) return;
+
+    if (!currentUser) {
+      setErrorMsg('Please sign in or create an account before placing your order.');
+      return;
+    }
+
     setSubmitting(true);
     setErrorMsg('');
 
@@ -33,7 +49,7 @@ export default function FreshMartCheckoutPage({ cart, clearCart }) {
         items: itemsPayload,
         payment_mode: 'RAZORPAY_TEST',
         simulate_failure: simulateFailure,
-        customer_id: 'cust_fm_demo_user'
+        customer_id: currentUser?.id || 'cust_fm_demo_user'
       });
 
       if (res.success && res.order_id) {
@@ -57,6 +73,34 @@ export default function FreshMartCheckoutPage({ cart, clearCart }) {
         <h1 style={{ fontSize: '2rem', fontWeight: 800, color: '#0f172a', marginBottom: '1.5rem' }}>
           Checkout & Razorpay Payment
         </h1>
+
+        {!currentUser && (
+          <div style={{ backgroundColor: '#fff7ed', border: '1px solid #ffedd5', padding: '1.5rem', borderRadius: '12px', marginBottom: '1.5rem', textAlign: 'center' }}>
+            <div style={{ fontSize: '1.5rem', marginBottom: '0.35rem' }}>🔐 Authentication Required</div>
+            <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#0f172a', margin: '0 0 0.4rem 0' }}>
+              Please sign in or create an account before placing your order.
+            </h3>
+            <p style={{ color: '#64748b', fontSize: '0.9rem', marginBottom: '1.25rem' }}>
+              You must be signed in to associate this order with your account and track delivery.
+            </p>
+            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
+              <button
+                onClick={() => navigate('/login?redirect=/checkout')}
+                className="btn-primary"
+                style={{ padding: '0.65rem 1.5rem', cursor: 'pointer' }}
+              >
+                Sign In
+              </button>
+              <button
+                onClick={() => navigate('/signup?redirect=/checkout')}
+                className="btn-secondary"
+                style={{ padding: '0.65rem 1.5rem', cursor: 'pointer' }}
+              >
+                Create Account
+              </button>
+            </div>
+          </div>
+        )}
 
         {errorMsg && (
           <div style={{ backgroundColor: '#fef2f2', border: '1px solid #fecaca', color: '#dc2626', padding: '1rem', borderRadius: '8px', marginBottom: '1.5rem' }}>

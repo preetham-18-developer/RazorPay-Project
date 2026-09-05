@@ -56,6 +56,10 @@ export default function FreshMartOrderDetailPage() {
 
   const { reconstructed_state: state, timeline, evidence_dossier: evidence } = data;
 
+  const [disputeSubmitted, setDisputeSubmitted] = useState(false);
+  const [createdDisputeId, setCreatedDisputeId] = useState('');
+  const [showReportForm, setShowReportForm] = useState(false);
+
   const handleDisputeSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -64,7 +68,6 @@ export default function FreshMartOrderDetailPage() {
 
     try {
       setSubmittingDispute(true);
-      setTransitionStatus('Filing DISPUTE_FILED event in operational ledger...');
 
       const res = await fetch(`/freshmart/orders/${state.order_id}/dispute`, {
         method: 'POST',
@@ -74,19 +77,18 @@ export default function FreshMartOrderDetailPage() {
       const resData = await res.json();
 
       if (res.ok && resData.dispute_id) {
-        setTransitionStatus('Building operational dossier & evaluating evidence...');
-        setTimeout(() => {
-          setTransitionStatus('Opening DisputeShield investigation workbench...');
-          setTimeout(() => {
-            navigate(`/disputes/${resData.dispute_id}`);
-          }, 600);
-        }, 600);
+        setDisputeSubmitted(true);
+        setCreatedDisputeId(resData.dispute_id);
+        setShowReportForm(false);
+        // Refresh timeline in background
+        const resUpdated = await getFreshMartOrderTimeline(id);
+        setData(resUpdated);
       } else {
         alert(resData.error || 'Dispute submission failed');
-        setSubmittingDispute(false);
       }
     } catch (err) {
       alert('Dispute submission failed: ' + err.message);
+    } finally {
       setSubmittingDispute(false);
     }
   };
@@ -106,32 +108,13 @@ export default function FreshMartOrderDetailPage() {
     { label: 'Delivered', done: state.delivery_status === 'DELIVERED' }
   ];
 
-  const isOrderEligibleForDispute = Boolean(
-    state &&
-    state.order_id &&
-    state.payment_status === 'CAPTURED' &&
-    (state.order_placed || (state.ordered_items && state.ordered_items.length > 0) || state.event_count >= 1)
-  );
+  const isDelivered = state.delivery_status === 'DELIVERED';
+  const isDisputed = state.dispute_status === 'DISPUTED' || disputeSubmitted;
+  const activeDisputeId = state.dispute_id || createdDisputeId;
 
   return (
     <div style={{ backgroundColor: '#f8fafc', color: '#0f172a', minHeight: '100vh' }}>
       <FreshMartHeader />
-
-      {/* Investigation Transition Modal Overlay */}
-      {submittingDispute && (
-        <div style={{ position: 'fixed', inset: 0, zIndex: 400, backgroundColor: 'rgba(15, 23, 42, 0.75)', display: 'flex', alignItems: 'center', justifyContent: 'center', backdropFilter: 'blur(4px)' }}>
-          <div style={{ textAlign: 'center', backgroundColor: '#ffffff', border: '1px solid #f97316', padding: '2.5rem', borderRadius: '12px', maxWidth: '480px', width: '90%', boxShadow: '0 20px 25px -5px rgba(0,0,0,0.1)' }}>
-            <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>🛡️</div>
-            <h3 style={{ fontSize: '1.25rem', color: '#0f172a', fontWeight: 800, margin: '0 0 0.5rem 0' }}>Opening DisputeShield Investigation</h3>
-            <p className="mono" style={{ color: '#ea580c', fontSize: '0.85rem', fontWeight: 700, minHeight: '2.5rem' }}>
-              {transitionStatus}
-            </p>
-            <div style={{ width: '100%', height: '4px', backgroundColor: '#fff7ed', borderRadius: '2px', overflow: 'hidden', marginTop: '1rem' }}>
-              <div style={{ width: '85%', height: '100%', backgroundColor: '#f97316', borderRadius: '2px' }} />
-            </div>
-          </div>
-        </div>
-      )}
 
       <main style={{ maxWidth: '1100px', margin: '0 auto', padding: '2.5rem 2rem 4rem 2rem' }}>
         
@@ -176,7 +159,7 @@ export default function FreshMartOrderDetailPage() {
                   color: step.done ? '#ffffff' : '#94a3b8',
                   display: 'flex',
                   alignItems: 'center',
-                  justify: 'center',
+                  justifyContent: 'center',
                   fontWeight: 800,
                   fontSize: '0.85rem',
                   marginBottom: '0.5rem',
@@ -268,8 +251,8 @@ export default function FreshMartOrderDetailPage() {
 
         </div>
 
-        {/* Customer Acknowledgement Prompt */}
-        {state.delivery_status === 'DELIVERED' && !state.customer_response && (
+        {/* Customer Acknowledgement Prompt for Delivered Orders */}
+        {isDelivered && !state.customer_response && !isDisputed && (
           <div style={{ backgroundColor: '#fff7ed', border: '1px solid #ffedd5', padding: '1.5rem', borderRadius: '12px', marginBottom: '2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <div>
               <div style={{ color: '#c2410c', fontWeight: 800, fontSize: '0.8rem', textTransform: 'uppercase' }}>CUSTOMER ACKNOWLEDGEMENT</div>
@@ -297,7 +280,7 @@ export default function FreshMartOrderDetailPage() {
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ response_type: 'NON_RECEIPT' })
                   });
-                  window.location.reload();
+                  setShowReportForm(true);
                 }}
                 style={{ backgroundColor: '#dc2626', color: '#ffffff', border: 'none', padding: '0.65rem 1.25rem', borderRadius: '6px', fontWeight: 700, fontSize: '0.85rem', cursor: 'pointer' }}
               >
@@ -307,72 +290,98 @@ export default function FreshMartOrderDetailPage() {
           </div>
         )}
 
-        {/* Report a Problem / File Dispute Section - Only Rendered When Payment Captured & Order Exists */}
-        {isOrderEligibleForDispute && (
-          <div style={{ backgroundColor: '#ffffff', border: '1px solid #ffedd5', borderRadius: '12px', padding: '1.75rem', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.03)' }}>
-            <div style={{ borderBottom: '1px solid #f1f5f9', paddingBottom: '1rem', marginBottom: '1.25rem' }}>
-              <span style={{ color: '#f97316', fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                DISPUTESHIELD AI ASSISTANT
-              </span>
-              <h2 style={{ fontSize: '1.35rem', fontWeight: 800, color: '#0f172a', margin: '0.2rem 0' }}>
-                Having a problem with your order?
-              </h2>
-              <p style={{ color: '#64748b', fontSize: '0.9rem', margin: 0 }}>
-                Tell us what happened. DisputeShield will automatically gather transaction and delivery evidence to evaluate your claim.
-              </p>
-            </div>
-
-            {state.dispute_status !== 'DISPUTED' ? (
-              <form onSubmit={handleDisputeSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-                <div>
-                  <label style={{ fontSize: '0.85rem', fontWeight: 600, color: '#475569', display: 'block', marginBottom: '0.35rem' }}>Dispute Reason</label>
-                  <select
-                    name="reason_code"
-                    style={{ width: '100%', padding: '0.65rem', borderRadius: '6px', border: '1px solid #cbd5e1', fontSize: '0.9rem', outline: 'none', backgroundColor: '#ffffff' }}
-                  >
-                    <option value="PRODUCT_NOT_RECEIVED">PRODUCT_NOT_RECEIVED (Merchandise not received)</option>
-                    <option value="PRODUCT_DEFECTIVE">PRODUCT_DEFECTIVE (Damaged / defective items)</option>
-                    <option value="WRONG_PRODUCT">WRONG_PRODUCT (Incorrect product delivered)</option>
-                    <option value="MISSING_ITEM">MISSING_ITEM (Partial shipment / missing item)</option>
-                    <option value="DUPLICATE_CHARGE">DUPLICATE_CHARGE (Multiple payment charges)</option>
-                    <option value="REFUND_NOT_PROCESSED">REFUND_NOT_PROCESSED (Refund unfulfilled)</option>
-                  </select>
+        {/* Customer Problem Reporting Section - ONLY shown on Delivered Orders or Disputed Orders */}
+        {(isDelivered || isDisputed) && (
+          <div style={{ backgroundColor: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '1.75rem', boxShadow: '0 2px 4px rgba(0,0,0,0.02)' }}>
+            
+            {isDisputed ? (
+              <div style={{ backgroundColor: '#f0fdf4', border: '1px solid #bbf7d0', padding: '1.25rem', borderRadius: '8px', color: '#15803d' }}>
+                <div style={{ fontWeight: 800, fontSize: '1rem', marginBottom: '0.35rem' }}>
+                  ✓ Customer Support Ticket Active
                 </div>
-
-                <div>
-                  <label style={{ fontSize: '0.85rem', fontWeight: 600, color: '#475569', display: 'block', marginBottom: '0.35rem' }}>Description of Problem</label>
-                  <textarea
-                    name="customer_claim"
-                    rows={3}
-                    placeholder="Describe what happened (e.g. Courier marked parcel delivered without OTP verification, but package was never received)."
-                    defaultValue={state.customer_response === 'REPORTED_NON_RECEIPT' ? 'Package was marked delivered by courier without OTP verification, but I did not receive the items.' : ''}
-                    style={{ width: '100%', padding: '0.65rem', borderRadius: '6px', border: '1px solid #cbd5e1', fontSize: '0.9rem', outline: 'none', resize: 'vertical' }}
-                    required
-                  />
+                <div style={{ fontSize: '0.85rem', color: '#166534' }}>
+                  Issue Report {activeDisputeId ? `#${activeDisputeId}` : ''} has been received and is currently being processed by merchant customer support.
                 </div>
-
+              </div>
+            ) : !showReportForm ? (
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div>
+                  <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#0f172a', margin: '0 0 0.2rem 0' }}>
+                    Need help with this order?
+                  </h3>
+                  <p style={{ color: '#64748b', fontSize: '0.85rem', margin: 0 }}>
+                    If you experienced an issue with delivery or item condition, report a problem to support.
+                  </p>
+                </div>
                 <button
-                  type="submit"
-                  disabled={submittingDispute}
-                  className="btn-primary"
-                  style={{ padding: '0.75rem 1.5rem', fontSize: '0.95rem', alignSelf: 'flex-start' }}
+                  onClick={() => setShowReportForm(true)}
+                  className="btn-secondary"
+                  style={{ padding: '0.6rem 1.2rem', fontSize: '0.85rem', color: '#ea580c', borderColor: '#fdba74', fontWeight: 700 }}
                 >
-                  Submit Dispute & Start AI Investigation →
+                  ⚠ Report a Problem
                 </button>
-              </form>
+              </div>
             ) : (
-              <div style={{ backgroundColor: '#fff7ed', border: '1px solid #ffedd5', padding: '1.25rem', borderRadius: '8px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <div>
-                  <span style={{ color: '#c2410c', fontWeight: 800, fontSize: '0.8rem' }}>DISPUTE ACTIVE</span>
-                  <div style={{ color: '#0f172a', fontWeight: 700, fontSize: '0.95rem', marginTop: '0.2rem' }}>
-                    Case #{state.dispute_id} is under AI risk evaluation & evidence grounding.
-                  </div>
+              <div>
+                <div style={{ borderBottom: '1px solid #f1f5f9', paddingBottom: '0.85rem', marginBottom: '1.25rem' }}>
+                  <h2 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#0f172a', margin: '0 0 0.2rem 0' }}>
+                    Report a Problem with Order #{state.order_id}
+                  </h2>
+                  <p style={{ color: '#64748b', fontSize: '0.85rem', margin: 0 }}>
+                    Select the issue category and describe what happened with your delivery.
+                  </p>
                 </div>
-                <Link to={`/disputes/${state.dispute_id}`} className="btn-primary" style={{ textDecoration: 'none' }}>
-                  Open DisputeShield Investigation Workbench →
-                </Link>
+
+                <form onSubmit={handleDisputeSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+                  <div>
+                    <label style={{ fontSize: '0.85rem', fontWeight: 600, color: '#475569', display: 'block', marginBottom: '0.35rem' }}>Issue Category</label>
+                    <select
+                      name="reason_code"
+                      style={{ width: '100%', padding: '0.65rem', borderRadius: '6px', border: '1px solid #cbd5e1', fontSize: '0.9rem', outline: 'none', backgroundColor: '#ffffff' }}
+                    >
+                      <option value="PRODUCT_NOT_RECEIVED">I did not receive my order (Non-receipt)</option>
+                      <option value="PRODUCT_DEFECTIVE">Product was damaged or defective</option>
+                      <option value="WRONG_PRODUCT">Received wrong product</option>
+                      <option value="MISSING_ITEM">Missing items from package</option>
+                      <option value="DUPLICATE_CHARGE">Duplicate payment charge</option>
+                      <option value="REFUND_NOT_PROCESSED">Refund was not processed</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label style={{ fontSize: '0.85rem', fontWeight: 600, color: '#475569', display: 'block', marginBottom: '0.35rem' }}>Problem Description</label>
+                    <textarea
+                      name="customer_claim"
+                      rows={3}
+                      placeholder="Please describe what happened (e.g. Courier marked parcel delivered without OTP verification, but package was not received)."
+                      defaultValue={state.customer_response === 'REPORTED_NON_RECEIPT' ? 'Package was marked delivered by courier without OTP verification, but I did not receive the items.' : ''}
+                      style={{ width: '100%', padding: '0.65rem', borderRadius: '6px', border: '1px solid #cbd5e1', fontSize: '0.9rem', outline: 'none', resize: 'vertical' }}
+                      required
+                    />
+                  </div>
+
+                  <div style={{ display: 'flex', gap: '0.75rem' }}>
+                    <button
+                      type="submit"
+                      disabled={submittingDispute}
+                      className="btn-primary"
+                      style={{ padding: '0.65rem 1.25rem', fontSize: '0.9rem' }}
+                    >
+                      {submittingDispute ? 'Submitting Report...' : 'Submit Problem Report'}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setShowReportForm(false)}
+                      className="btn-secondary"
+                      style={{ padding: '0.65rem 1.25rem', fontSize: '0.9rem' }}
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </form>
               </div>
             )}
+
           </div>
         )}
 

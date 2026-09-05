@@ -50,9 +50,15 @@ export default function FreshMartHeader({ cartCount = 0, onOpenCart, paymentMode
           <Link to="/products" style={{ textDecoration: 'none', color: '#334155', fontSize: '0.9rem', fontWeight: 600 }}>
             Shop
           </Link>
-          <Link to="/orders" style={{ textDecoration: 'none', color: '#334155', fontSize: '0.9rem', fontWeight: 600 }}>
-            My Orders
-          </Link>
+          {currentUser ? (
+            <Link to="/orders" style={{ textDecoration: 'none', color: '#334155', fontSize: '0.9rem', fontWeight: 600 }}>
+              My Orders
+            </Link>
+          ) : (
+            <Link to="/login?redirect=/orders" style={{ textDecoration: 'none', color: '#64748b', fontSize: '0.9rem', fontWeight: 500 }}>
+              My Orders
+            </Link>
+          )}
           <Link to="/support" style={{ textDecoration: 'none', color: '#334155', fontSize: '0.9rem', fontWeight: 500 }}>
             Support
           </Link>
@@ -104,17 +110,26 @@ export default function FreshMartHeader({ cartCount = 0, onOpenCart, paymentMode
                 👤 {currentUser.name || 'Account'}
               </Link>
               {currentUser.role === 'admin' && (
-                <Link to="/freshmart/merchant" style={{ textDecoration: 'none', color: '#ffffff', backgroundColor: '#0f172a', padding: '0.4rem 0.75rem', borderRadius: '6px', fontWeight: 600, fontSize: '0.85rem' }}>
+                <Link to="/admin" style={{ textDecoration: 'none', color: '#ffffff', backgroundColor: '#0f172a', padding: '0.4rem 0.75rem', borderRadius: '6px', fontWeight: 600, fontSize: '0.85rem' }}>
                   🛡 Admin Console
                 </Link>
               )}
+              <button
+                onClick={handleLogout}
+                style={{ backgroundColor: 'transparent', border: '1px solid #e2e8f0', color: '#64748b', padding: '0.4rem 0.65rem', borderRadius: '6px', fontSize: '0.8rem', cursor: 'pointer' }}
+              >
+                Sign Out
+              </button>
             </div>
           ) : (
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               <Link to="/login" style={{ textDecoration: 'none', color: '#0f172a', fontWeight: 600, fontSize: '0.85rem', padding: '0.4rem 0.75rem', borderRadius: '6px', border: '1px solid #cbd5e1' }}>
                 Sign In
               </Link>
-              <Link to="/freshmart/merchant" style={{ textDecoration: 'none', color: '#475569', fontWeight: 600, fontSize: '0.8rem', padding: '0.4rem 0.75rem', backgroundColor: '#f1f5f9', borderRadius: '6px' }}>
+              <Link to="/signup" style={{ textDecoration: 'none', color: '#ffffff', backgroundColor: '#f97316', fontWeight: 600, fontSize: '0.85rem', padding: '0.4rem 0.75rem', borderRadius: '6px' }}>
+                Create Account
+              </Link>
+              <Link to="/admin" style={{ textDecoration: 'none', color: '#475569', fontWeight: 600, fontSize: '0.8rem', padding: '0.4rem 0.65rem', backgroundColor: '#f1f5f9', borderRadius: '6px' }}>
                 Admin
               </Link>
             </div>
