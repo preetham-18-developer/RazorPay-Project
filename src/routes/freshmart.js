@@ -58,24 +58,11 @@ router.get('/events/:orderId', (req, res) => {
 
 /**
  * GET /freshmart/orders
- * Returns list of all orders reconstructed from event stream.
+ * Returns list of all unified orders from persistent database + event ledger.
  */
-router.get('/orders', (req, res) => {
+router.get('/orders', async (req, res) => {
   try {
-    const allEvents = freshmartEventService.loadAllEvents();
-    const orderIds = Array.from(new Set(allEvents.map(e => e.order_id)));
-
-    const orders = orderIds
-      .map(id => freshmartEventService.replayOrderState(id))
-      .filter(Boolean)
-      .sort((a, b) => {
-        const lastA = freshmartEventService.getLatestEvent(a.order_id);
-        const lastB = freshmartEventService.getLatestEvent(b.order_id);
-        const timeA = lastA ? new Date(lastA.timestamp).getTime() : 0;
-        const timeB = lastB ? new Date(lastB.timestamp).getTime() : 0;
-        return timeB - timeA;
-      });
-
+    const orders = await dbService.getAllOrdersAdmin();
     return res.status(200).json(orders);
   } catch (error) {
     return res.status(500).json({ error: 'Failed to retrieve orders', details: error.message });
@@ -206,7 +193,7 @@ router.post('/checkout', async (req, res) => {
 /**
  * Merchant Operations Endpoint: POST /freshmart/orders/:orderId/pack
  */
-router.post('/orders/:orderId/pack', (req, res) => {
+router.post('/orders/:orderId/pack', async (req, res) => {
   try {
     const orderId = req.params.orderId;
     const { warehouse_id = 'wh_blr_01', packed_items } = req.body || {};
@@ -223,6 +210,8 @@ router.post('/orders/:orderId/pack', (req, res) => {
       }
     });
 
+    await dbService.updateOrderFulfillment(orderId, { fulfillment_status: 'PACKED' });
+
     const state = freshmartEventService.replayOrderState(orderId);
     return res.status(200).json({ success: true, event: evt, state });
   } catch (error) {
@@ -233,7 +222,7 @@ router.post('/orders/:orderId/pack', (req, res) => {
 /**
  * Merchant Operations Endpoint: POST /freshmart/orders/:orderId/assign-courier
  */
-router.post('/orders/:orderId/assign-courier', (req, res) => {
+router.post('/orders/:orderId/assign-courier', async (req, res) => {
   try {
     const orderId = req.params.orderId;
     const { courier_partner = 'DELHIVERY', driver_id = 'driver_441' } = req.body || {};
@@ -251,6 +240,11 @@ router.post('/orders/:orderId/assign-courier', (req, res) => {
       }
     });
 
+    await dbService.updateOrderFulfillment(orderId, {
+      fulfillment_status: 'COURIER_ASSIGNED',
+      tracking_number: trackingNumber
+    });
+
     const state = freshmartEventService.replayOrderState(orderId);
     return res.status(200).json({ success: true, event: evt, state });
   } catch (error) {
@@ -261,7 +255,7 @@ router.post('/orders/:orderId/assign-courier', (req, res) => {
 /**
  * Merchant Operations Endpoint: POST /freshmart/orders/:orderId/dispatch
  */
-router.post('/orders/:orderId/dispatch', (req, res) => {
+router.post('/orders/:orderId/dispatch', async (req, res) => {
   try {
     const orderId = req.params.orderId;
     const currentState = freshmartEventService.replayOrderState(orderId);
@@ -278,6 +272,11 @@ router.post('/orders/:orderId/dispatch', (req, res) => {
       }
     });
 
+    await dbService.updateOrderFulfillment(orderId, {
+      delivery_status: 'IN_TRANSIT',
+      tracking_number: trackingNumber
+    });
+
     const state = freshmartEventService.replayOrderState(orderId);
     return res.status(200).json({ success: true, event: evt, state });
   } catch (error) {
@@ -288,7 +287,7 @@ router.post('/orders/:orderId/dispatch', (req, res) => {
 /**
  * Merchant Operations Endpoint: POST /freshmart/orders/:orderId/deliver
  */
-router.post('/orders/:orderId/deliver', (req, res) => {
+router.post('/orders/:orderId/deliver', async (req, res) => {
   try {
     const orderId = req.params.orderId;
     const { otp_verified = true } = req.body || {};
@@ -305,6 +304,11 @@ router.post('/orders/:orderId/deliver', (req, res) => {
         otp_status: otp_verified ? 'VERIFIED' : 'BYPASSED_BY_DRIVER',
         delivery_lat_lng: [12.9716, 77.5946]
       }
+    });
+
+    await dbService.updateOrderFulfillment(orderId, {
+      delivery_status: 'DELIVERED',
+      otp_verified: Boolean(otp_verified)
     });
 
     const state = freshmartEventService.replayOrderState(orderId);

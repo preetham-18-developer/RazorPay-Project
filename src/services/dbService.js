@@ -7,6 +7,7 @@ const { supabase } = require('../config/supabase');
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcryptjs');
+const freshmartEventService = require('./freshmartEventService');
 
 const DATA_DIR = path.join(__dirname, '..', '..', 'data');
 const PRODUCTS_FILE = path.join(DATA_DIR, 'freshmart-products.json');
@@ -269,131 +270,7 @@ async function getProductById(productId) {
 }
 
 // -------------------------------------------------------------
-// ORDERS DATABASE OPERATIONS
-// -------------------------------------------------------------
-
-async function createOrder(orderData) {
-  const orderRecord = {
-    order_id: orderData.order_id,
-    user_id: orderData.user_id || 'cust_fm_demo_user',
-    customer_name: orderData.customer_name || 'Demo Customer',
-    customer_email: orderData.customer_email || 'customer@freshsmart.com',
-    total_amount: orderData.total_amount,
-    payment_status: orderData.payment_status || 'CAPTURED',
-    payment_id: orderData.payment_id,
-    fulfillment_status: 'UNFULFILLED',
-    delivery_status: 'PENDING',
-    otp_verified: false,
-    tracking_number: null,
-    items: orderData.items || [],
-    created_at: orderData.created_at || new Date().toISOString()
-  };
-
-  try {
-    const { data, error } = await supabase
-      .from('orders')
-      .insert([orderRecord])
-      .select('*')
-      .single();
-
-    if (!error && data) {
-      const db = loadBusinessDb();
-      db.orders.unshift(data);
-      saveBusinessDb(db);
-      return data;
-    }
-  } catch (e) {
-    // fallback
-  }
-
-  const db = loadBusinessDb();
-  db.orders.unshift(orderRecord);
-  saveBusinessDb(db);
-  return orderRecord;
-}
-
-async function getOrdersForUser(userId) {
-  try {
-    const { data, error } = await supabase
-      .from('orders')
-      .select('*')
-      .eq('user_id', userId)
-      .order('created_at', { ascending: false });
-
-    if (!error && Array.isArray(data)) return data;
-  } catch (e) {
-    // fallback
-  }
-
-  const db = loadBusinessDb();
-  return db.orders.filter(o => o.user_id === userId || userId === 'cust_fm_demo_user');
-}
-
-async function getAllOrdersAdmin() {
-  try {
-    const { data, error } = await supabase
-      .from('orders')
-      .select('*')
-      .order('created_at', { ascending: false });
-
-    if (!error && Array.isArray(data)) return data;
-  } catch (e) {
-    // fallback
-  }
-
-  const db = loadBusinessDb();
-  return db.orders;
-}
-
-async function getOrderById(orderId) {
-  try {
-    const { data, error } = await supabase
-      .from('orders')
-      .select('*')
-      .eq('order_id', orderId)
-      .single();
-
-    if (!error && data) return data;
-  } catch (e) {
-    // fallback
-  }
-
-  const db = loadBusinessDb();
-  return db.orders.find(o => o.order_id === orderId || o.id === orderId) || null;
-}
-
-async function updateOrderFulfillment(orderId, updateFields) {
-  try {
-    const { data, error } = await supabase
-      .from('orders')
-      .update(updateFields)
-      .eq('order_id', orderId)
-      .select('*')
-      .single();
-
-    if (!error && data) {
-      const db = loadBusinessDb();
-      const idx = db.orders.findIndex(o => o.order_id === orderId);
-      if (idx !== -1) db.orders[idx] = { ...db.orders[idx], ...updateFields };
-      saveBusinessDb(db);
-      return data;
-    }
-  } catch (e) {
-    // fallback
-  }
-
-  const db = loadBusinessDb();
-  const idx = db.orders.findIndex(o => o.order_id === orderId);
-  if (idx !== -1) {
-    db.orders[idx] = { ...db.orders[idx], ...updateFields };
-    saveBusinessDb(db);
-    return db.orders[idx];
-  }
-  return null;
-}
-
-// -------------------------------------------------------------
-// ORDERS DATABASE OPERATIONS
+// ORDERS DATABASE OPERATIONS (UNIFIED SINGLE SOURCE OF TRUTH)
 // -------------------------------------------------------------
 
 function getOrderByIdSync(orderId) {
@@ -445,53 +322,108 @@ async function createOrder(orderData) {
   return orderRecord;
 }
 
-async function getOrdersForUser(userId) {
+async function getAllOrdersAdmin() {
+  const db = loadBusinessDb();
+  let baseOrders = [];
+
   try {
     const { data, error } = await supabase
       .from('orders')
       .select('*')
-      .eq('user_id', userId)
       .order('created_at', { ascending: false });
 
-    if (!error && Array.isArray(data)) return data;
+    if (!error && Array.isArray(data) && data.length > 0) {
+      baseOrders = data;
+    }
   } catch (e) {
     // fallback
   }
 
-  const db = loadBusinessDb();
-  return db.orders.filter(o => o.user_id === userId || userId === 'cust_fm_demo_user');
+  if (baseOrders.length === 0) {
+    baseOrders = Array.isArray(db.orders) ? db.orders : [];
+  }
+
+  const orderMap = new Map();
+
+  // 1. Seed with local JSON db orders
+  (Array.isArray(db.orders) ? db.orders : []).forEach(o => {
+    if (o && o.order_id) orderMap.set(o.order_id, { ...o });
+  });
+
+  // 2. Merge Supabase base orders
+  baseOrders.forEach(o => {
+    if (o && o.order_id) {
+      const existing = orderMap.get(o.order_id) || {};
+      orderMap.set(o.order_id, { ...existing, ...o });
+    }
+  });
+
+  // 3. Merge replayed state from freshmartEventService
+  try {
+    const allEvents = freshmartEventService.loadAllEvents();
+    const eventOrderIds = Array.from(new Set(allEvents.map(e => e.order_id)));
+
+    eventOrderIds.forEach(orderId => {
+      const replayed = freshmartEventService.replayOrderState(orderId);
+      if (replayed) {
+        const existing = orderMap.get(orderId);
+        if (existing) {
+          existing.fulfillment_status = replayed.fulfillment_status || existing.fulfillment_status;
+          existing.delivery_status = replayed.delivery_status || existing.delivery_status;
+          existing.tracking_number = replayed.tracking_number || existing.tracking_number;
+          existing.otp_verified = typeof replayed.otp_verified === 'boolean' ? replayed.otp_verified : existing.otp_verified;
+          existing.event_count = replayed.event_count || existing.event_count;
+          existing.timeline = replayed.timeline || existing.timeline;
+          if (replayed.total_amount && !existing.total_amount) existing.total_amount = replayed.total_amount;
+          if (replayed.ordered_items && replayed.ordered_items.length > 0 && (!existing.items || existing.items.length === 0)) {
+            existing.items = replayed.ordered_items;
+          }
+          orderMap.set(orderId, existing);
+        } else {
+          const newOrd = {
+            order_id: orderId,
+            user_id: replayed.customer_id || 'cust_fm_demo_user',
+            customer_name: 'Customer',
+            customer_email: 'customer@freshsmart.com',
+            total_amount: replayed.total_amount || 0,
+            payment_status: replayed.payment_status || 'CAPTURED',
+            payment_id: replayed.captured_payments[0]?.payment_id || `pay_evt_${orderId}`,
+            fulfillment_status: replayed.fulfillment_status || 'UNFULFILLED',
+            delivery_status: replayed.delivery_status || 'PENDING',
+            otp_verified: Boolean(replayed.otp_verified),
+            tracking_number: replayed.tracking_number || null,
+            items: replayed.ordered_items || [],
+            event_count: replayed.event_count || 1,
+            timeline: replayed.timeline || [],
+            created_at: replayed.timeline[0]?.timestamp || new Date().toISOString()
+          };
+          orderMap.set(orderId, newOrd);
+        }
+      }
+    });
+  } catch (e) {
+    // fallback
+  }
+
+  const result = Array.from(orderMap.values());
+  result.sort((a, b) => new Date(b.created_at || 0).getTime() - new Date(a.created_at || 0).getTime());
+  return result;
 }
 
-async function getAllOrdersAdmin() {
-  try {
-    const { data, error } = await supabase
-      .from('orders')
-      .select('*')
-      .order('created_at', { ascending: false });
-
-    if (!error && Array.isArray(data)) return data;
-  } catch (e) {
-    // fallback
-  }
-
-  const db = loadBusinessDb();
-  return db.orders;
+async function getOrdersForUser(userId) {
+  const allOrders = await getAllOrdersAdmin();
+  if (!userId) return allOrders;
+  return allOrders.filter(o =>
+    o.user_id === userId ||
+    o.customer_id === userId ||
+    userId === 'cust_fm_demo_user' ||
+    o.customer_email === userId
+  );
 }
 
 async function getOrderById(orderId) {
-  try {
-    const { data, error } = await supabase
-      .from('orders')
-      .select('*')
-      .eq('order_id', orderId)
-      .single();
-
-    if (!error && data) return data;
-  } catch (e) {
-    // fallback
-  }
-
-  return getOrderByIdSync(orderId);
+  const allOrders = await getAllOrdersAdmin();
+  return allOrders.find(o => o.order_id === orderId || o.id === orderId) || getOrderByIdSync(orderId);
 }
 
 async function updateOrderFulfillment(orderId, updateFields) {
@@ -507,6 +439,7 @@ async function updateOrderFulfillment(orderId, updateFields) {
       const db = loadBusinessDb();
       const idx = db.orders.findIndex(o => o.order_id === orderId);
       if (idx !== -1) db.orders[idx] = { ...db.orders[idx], ...updateFields };
+      else db.orders.unshift({ order_id: orderId, ...updateFields });
       saveBusinessDb(db);
       return data;
     }
@@ -518,10 +451,11 @@ async function updateOrderFulfillment(orderId, updateFields) {
   const idx = db.orders.findIndex(o => o.order_id === orderId);
   if (idx !== -1) {
     db.orders[idx] = { ...db.orders[idx], ...updateFields };
-    saveBusinessDb(db);
-    return db.orders[idx];
+  } else {
+    db.orders.unshift({ order_id: orderId, ...updateFields });
   }
-  return null;
+  saveBusinessDb(db);
+  return db.orders.find(o => o.order_id === orderId) || null;
 }
 
 // -------------------------------------------------------------

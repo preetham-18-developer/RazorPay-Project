@@ -48,7 +48,7 @@
     "reviewer": "test-officer",
     "feedback": null,
     "origin": "ai_generated",
-    "updated_at": "2026-09-05T15:12:21.814Z"
+    "updated_at": "2026-09-05T15:20:32.812Z"
   },
   "disp_SYN0012": {
     "dispute_id": "disp_SYN0012",
@@ -72,7 +72,7 @@
     "reviewer": "test-officer",
     "feedback": "Weak proof",
     "origin": null,
-    "updated_at": "2026-09-05T15:12:21.827Z"
+    "updated_at": "2026-09-05T15:20:32.823Z"
   },
   "disp_SYN0004": {
     "dispute_id": "disp_SYN0004",
@@ -84,7 +84,7 @@
     "reviewer": "test-officer",
     "feedback": "Attach POD",
     "origin": null,
-    "updated_at": "2026-09-05T15:12:21.838Z"
+    "updated_at": "2026-09-05T15:20:32.831Z"
   },
   "disp_SYN0005": {
     "dispute_id": "disp_SYN0005",
@@ -96,7 +96,7 @@
       "dispute_id": "disp_SYN0005",
       "title": "Defense Response for Product Not Received Claim (#disp_SYN0005)",
       "summary": "Factual transaction and shipping records indicate that order #order_SYN0005 was processed for delivery.",
-      "response_body": "RE: DISPUTE DEFENSE PACKET — DISPUTE ID #disp_SYN0005\nTransaction Amount: ₹1,299\nPayment Reference: pay_SYN0005\nDispute Category: product_not_received\n\nSUMMARY OF DEFENSE STATEMENT:\nFactual transaction and shipping records indicate that order #order_SYN0005 was processed for delivery.\n\nKEY FACTUAL ARGUMENTS:\n1. Payment authorization confirmed under document ID doc_disp_SYN0005_payment.\n2. Delivery confirmation document is not available in the current case file.\n3. Carrier shipment record available under document ID doc_disp_SYN0005_shipping.\n\nSUPPORTING TRANSACTION & EVIDENTIARY RECORDS:\n• Payment ID pay_SYN0005 of ₹1,299 was authorized via NETBANKING on 2026-02-11T10:28:32.000Z.\n• Transaction recorded with Customer ID cust_025, Device ID dev_006, and IP address 193.75.246.87.\n• Order #order_SYN0005 delivery status is recorded as 'in_transit'.\n• Destination address: 70 Example Street, Bengaluru, Karnataka 560001, IN.\n• Note: The following evidence document types are missing from the case file: delivery_confirmation.\n\nEVIDENCE DOCUMENTS ATTACHED:\n[✓] payment_confirmation: doc_disp_SYN0005_payment\n[✓] shipping_record: doc_disp_SYN0005_shipping\n\nThis defense statement is generated from verified operational records and logs.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.",
+      "response_body": "RE: DISPUTE DEFENSE PACKET — DISPUTE ID #disp_SYN0005\nTransaction Amount: ₹1,299\nPayment Reference: pay_SYN0005\nDispute Category: product_not_received\n\nSUMMARY OF DEFENSE STATEMENT:\nFactual transaction and shipping records indicate that order #order_SYN0005 was processed for delivery.\n\nKEY FACTUAL ARGUMENTS:\n1. Payment authorization confirmed under document ID doc_disp_SYN0005_payment.\n2. Delivery confirmation document is not available in the current case file.\n3. Carrier shipment record available under document ID doc_disp_SYN0005_shipping.\n\nSUPPORTING TRANSACTION & EVIDENTIARY RECORDS:\n• Payment ID pay_SYN0005 of ₹1,299 was authorized via NETBANKING on 2026-02-11T10:28:32.000Z.\n• Transaction recorded with Customer ID cust_025, Device ID dev_006, and IP address 193.75.246.87.\n• Order #order_SYN0005 delivery status is recorded as 'in_transit'.\n• Destination address: 70 Example Street, Bengaluru, Karnataka 560001, IN.\n• Note: The following evidence document types are missing from the case file: delivery_confirmation.\n\nEVIDENCE DOCUMENTS ATTACHED:\n[✓] payment_confirmation: doc_disp_SYN0005_payment\n[✓] shipping_record: doc_disp_SYN0005_shipping\n\nThis defense statement is generated from verified operational records and logs.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.\n\nAdditional human officer statement.",
       "key_arguments": [
         "Payment authorization confirmed under document ID doc_disp_SYN0005_payment.",
         "Delivery confirmation document is not available in the current case file.",
@@ -135,7 +135,7 @@
     "reviewer": "test-officer",
     "feedback": null,
     "origin": "human_edited",
-    "updated_at": "2026-09-05T15:12:21.851Z"
+    "updated_at": "2026-09-05T15:20:32.845Z"
   },
   "disp_SYN0006": {
     "dispute_id": "disp_SYN0006",
@@ -3123,5 +3123,57 @@
     "feedback": null,
     "origin": "ai_generated",
     "updated_at": "2026-09-05T15:12:37.387Z"
+  },
+  "disp_fm_1788621671545": {
+    "dispute_id": "disp_fm_1788621671545",
+    "status": "approved",
+    "decision": "prepare_and_review",
+    "requires_human_review": true,
+    "draft_available": true,
+    "current_draft": {
+      "dispute_id": "disp_fm_1788621671545",
+      "title": "Defense Response for Product Not Received Claim (#disp_fm_1788621671545)",
+      "summary": "Factual transaction and shipping records indicate that order #undefined was processed for delivery.",
+      "response_body": "RE: DISPUTE DEFENSE PACKET — DISPUTE ID #disp_fm_1788621671545\nTransaction Amount: ₹18,999\nPayment Reference: pay_card_1788621670551_521\nDispute Category: product_not_received\n\nSUMMARY OF DEFENSE STATEMENT:\nFactual transaction and shipping records indicate that order #undefined was processed for delivery.\n\nKEY FACTUAL ARGUMENTS:\n1. Payment authorization confirmed under document ID doc_fm_payment_ORDER_FM_1788621670551.\n2. Delivery fulfillment confirmed via proof of delivery document ID doc_fm_deliv_ORDER_FM_1788621670551.\n3. Carrier shipment record available under document ID doc_fm_ship_ORDER_FM_1788621670551.\n\nSUPPORTING TRANSACTION & EVIDENTIARY RECORDS:\n• Payment ID pay_card_1788621670551_521 of ₹18,999 was authorized via CARD on 2026-09-05T15:21:11.545Z.\n• Transaction recorded with Customer ID cust_fm_demo_user, Device ID undefined, and IP address undefined.\n• Order #undefined delivery status is recorded as 'DELIVERED'.\n\nEVIDENCE DOCUMENTS ATTACHED:\n[✓] payment_confirmation: doc_fm_payment_ORDER_FM_1788621670551\n[✓] delivery_confirmation: doc_fm_deliv_ORDER_FM_1788621670551\n[✓] shipping_record: doc_fm_ship_ORDER_FM_1788621670551\n\nThis defense statement is generated from verified operational records and logs.",
+      "key_arguments": [
+        "Payment authorization confirmed under document ID doc_fm_payment_ORDER_FM_1788621670551.",
+        "Delivery fulfillment confirmed via proof of delivery document ID doc_fm_deliv_ORDER_FM_1788621670551.",
+        "Carrier shipment record available under document ID doc_fm_ship_ORDER_FM_1788621670551."
+      ],
+      "supporting_evidence": [
+        {
+          "type": "payment_confirmation",
+          "doc_id": "doc_fm_payment_ORDER_FM_1788621670551",
+          "present": true
+        },
+        {
+          "type": "delivery_confirmation",
+          "doc_id": "doc_fm_deliv_ORDER_FM_1788621670551",
+          "present": true
+        },
+        {
+          "type": "shipping_record",
+          "doc_id": "doc_fm_ship_ORDER_FM_1788621670551",
+          "present": true
+        }
+      ],
+      "important_facts": [
+        "Payment ID pay_card_1788621670551_521 of ₹18,999 was authorized via CARD on 2026-09-05T15:21:11.545Z.",
+        "Transaction recorded with Customer ID cust_fm_demo_user, Device ID undefined, and IP address undefined.",
+        "Order #undefined delivery status is recorded as 'DELIVERED'."
+      ],
+      "confidence": 80,
+      "generated_at": "2026-09-05T15:21:11.880Z",
+      "validation": {
+        "valid": true,
+        "errors": [],
+        "warnings": []
+      },
+      "origin": "ai_generated"
+    },
+    "reviewer": "risk_officer_admin",
+    "feedback": null,
+    "origin": "ai_generated",
+    "updated_at": "2026-09-05T15:21:11.911Z"
   }
 }
