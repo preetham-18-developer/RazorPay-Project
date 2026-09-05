@@ -383,40 +383,57 @@ export default function AdminDashboardPage() {
                         </span>
                       </div>
 
-                      {/* Fulfillment Action Buttons */}
-                      <div style={{ display: 'flex', gap: '0.5rem' }}>
-                        <button
-                          onClick={() => handleFulfillmentAction(order.order_id, 'pack')}
-                          disabled={actionLoading}
-                          className="btn-secondary"
-                          style={{ fontSize: '0.8rem', padding: '0.4rem 0.85rem' }}
-                        >
-                          📦 Pack
-                        </button>
-                        <button
-                          onClick={() => handleFulfillmentAction(order.order_id, 'assign-courier')}
-                          disabled={actionLoading}
-                          className="btn-secondary"
-                          style={{ fontSize: '0.8rem', padding: '0.4rem 0.85rem' }}
-                        >
-                          🚚 Assign Courier
-                        </button>
-                        <button
-                          onClick={() => handleFulfillmentAction(order.order_id, 'dispatch')}
-                          disabled={actionLoading}
-                          className="btn-secondary"
-                          style={{ fontSize: '0.8rem', padding: '0.4rem 0.85rem' }}
-                        >
-                          🛵 Dispatch
-                        </button>
-                        <button
-                          onClick={() => handleFulfillmentAction(order.order_id, 'deliver')}
-                          disabled={actionLoading}
-                          className="btn-primary"
-                          style={{ fontSize: '0.8rem', padding: '0.4rem 0.85rem' }}
-                        >
-                          ✓ Deliver
-                        </button>
+                      {/* Fulfillment Action Buttons (Strict Sequential State Machine) */}
+                      <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                        {(!order.fulfillment_status || order.fulfillment_status === 'UNFULFILLED') && (
+                          <button
+                            onClick={() => handleFulfillmentAction(order.order_id, 'pack')}
+                            disabled={actionLoading}
+                            className="btn-primary"
+                            style={{ fontSize: '0.8rem', padding: '0.4rem 0.85rem' }}
+                          >
+                            📦 Pack Parcel
+                          </button>
+                        )}
+
+                        {order.fulfillment_status === 'PACKED' && (
+                          <button
+                            onClick={() => handleFulfillmentAction(order.order_id, 'assign-courier')}
+                            disabled={actionLoading}
+                            className="btn-primary"
+                            style={{ fontSize: '0.8rem', padding: '0.4rem 0.85rem' }}
+                          >
+                            🚚 Assign Courier
+                          </button>
+                        )}
+
+                        {order.fulfillment_status === 'COURIER_ASSIGNED' && order.delivery_status !== 'IN_TRANSIT' && order.delivery_status !== 'DELIVERED' && order.delivery_status !== 'NON_RECEIPT_REPORTED' && (
+                          <button
+                            onClick={() => handleFulfillmentAction(order.order_id, 'dispatch')}
+                            disabled={actionLoading}
+                            className="btn-primary"
+                            style={{ fontSize: '0.8rem', padding: '0.4rem 0.85rem' }}
+                          >
+                            🛵 Dispatch
+                          </button>
+                        )}
+
+                        {order.delivery_status === 'IN_TRANSIT' && (
+                          <button
+                            onClick={() => handleFulfillmentAction(order.order_id, 'deliver')}
+                            disabled={actionLoading}
+                            className="btn-primary"
+                            style={{ fontSize: '0.8rem', padding: '0.4rem 0.85rem' }}
+                          >
+                            ✓ Mark Delivered
+                          </button>
+                        )}
+
+                        {(order.delivery_status === 'DELIVERED' || order.delivery_status === 'RECEIPT_CONFIRMED' || order.delivery_status === 'NON_RECEIPT_REPORTED') && (
+                          <span style={{ fontSize: '0.8rem', fontWeight: 700, color: '#16a34a', backgroundColor: '#f0fdf4', border: '1px solid #bbf7d0', padding: '0.35rem 0.75rem', borderRadius: '6px' }}>
+                            ✓ DELIVERED SUCCESSFULLY
+                          </span>
+                        )}
                       </div>
 
                     </div>

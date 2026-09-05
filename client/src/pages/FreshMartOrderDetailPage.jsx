@@ -98,14 +98,16 @@ export default function FreshMartOrderDetailPage() {
     ? (state.total_amount / 100).toLocaleString('en-IN', { style: 'currency', currency: 'INR' })
     : Number(state.total_amount || 0).toLocaleString('en-IN', { style: 'currency', currency: 'INR' });
 
-  // Order Timeline Steps Status
+  const hasEvent = (evtType) => (timeline || []).some(e => e.event_type === evtType);
+
+  // Order Timeline Steps Status - strictly based on event occurrence
   const steps = [
-    { label: 'Payment Confirmed', done: state.payment_status === 'CAPTURED' },
-    { label: 'Order Placed', done: state.event_count >= 1 },
-    { label: 'Packed', done: state.fulfillment_status === 'PACKED' || state.fulfillment_status === 'COURIER_ASSIGNED' || state.delivery_status !== 'PENDING' },
-    { label: 'Courier Assigned', done: state.fulfillment_status === 'COURIER_ASSIGNED' || state.delivery_status !== 'PENDING' },
-    { label: 'Dispatched', done: state.delivery_status === 'IN_TRANSIT' || state.delivery_status === 'DELIVERED' },
-    { label: 'Delivered', done: state.delivery_status === 'DELIVERED' }
+    { label: 'Payment Confirmed', done: state.payment_status === 'CAPTURED' || hasEvent('PAYMENT_CAPTURED') },
+    { label: 'Order Placed', done: state.order_placed || hasEvent('ORDER_PLACED') },
+    { label: 'Packed', done: hasEvent('PARCEL_PACKED') },
+    { label: 'Courier Assigned', done: hasEvent('COURIER_ASSIGNED') },
+    { label: 'Dispatched', done: hasEvent('DISPATCHED_FOR_DELIVERY') },
+    { label: 'Delivered', done: hasEvent('COURIER_MARKED_DELIVERED') || state.delivery_status === 'DELIVERED' }
   ];
 
   const isDelivered = state.delivery_status === 'DELIVERED';

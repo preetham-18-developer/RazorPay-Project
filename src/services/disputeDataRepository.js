@@ -61,34 +61,47 @@ function getAssembledCase(disputeId) {
   if (dispute) {
     // Real Business DB Dispute
     const orderId = dispute.order_id;
-    order = dbService.getOrderByIdSync(orderId);
+    let rawOrder = dbService.getOrderByIdSync(orderId);
 
     // Replay operational event ledger for order state & evidence
     const state = freshmartEventService.replayOrderState(orderId);
     evidence = freshmartEvidenceService.generateEvidenceForOrder(orderId);
 
-    const paymentId = dispute.payment_id || (order ? order.payment_id : `pay_${orderId}`);
-    const amount = dispute.amount || (order ? order.total_amount : 129900);
+    const paymentId = dispute.payment_id || (rawOrder ? rawOrder.payment_id : `pay_${orderId}`);
+    let amount = dispute.amount || (rawOrder ? rawOrder.total_amount : 129900);
+    if (amount < 100000 && amount > 0) {
+      amount = amount * 100;
+    }
+
+    dispute.amount = amount;
 
     payment = {
       id: paymentId,
+      payment_id: paymentId,
       amount: amount,
       currency: dispute.currency || 'INR',
       method: 'card',
-      customer_id: order ? order.user_id : 'cust_fm_demo_user',
+      customer_id: rawOrder ? (rawOrder.user_id || rawOrder.customer_id) : (state ? state.customer_id : 'cust_fm_demo_user'),
       created_at: dispute.created_at || new Date().toISOString()
     };
 
-    if (!order && state) {
-      order = {
-        id: orderId,
-        payment_id: paymentId,
-        amount: amount,
-        items: state.ordered_items || [],
-        skus: (state.ordered_items || []).map(i => i.sku),
-        created_at: dispute.created_at
-      };
-    }
+    order = {
+      id: orderId,
+      order_id: orderId,
+      payment_id: paymentId,
+      amount: amount,
+      total_amount: amount,
+      delivery_status: rawOrder?.delivery_status || state?.delivery_status || 'DELIVERED',
+      fulfillment_status: rawOrder?.fulfillment_status || state?.fulfillment_status || 'UNFULFILLED',
+      customer_name: rawOrder?.customer_name || 'Demo Customer',
+      customer_email: rawOrder?.customer_email || 'customer@freshsmart.com',
+      user_id: rawOrder?.user_id || state?.customer_id || 'cust_fm_demo_user',
+      items: (rawOrder && Array.isArray(rawOrder.items) && rawOrder.items.length > 0)
+        ? rawOrder.items
+        : (state?.ordered_items || []),
+      skus: (state?.ordered_items || rawOrder?.items || []).map(i => i.sku),
+      created_at: dispute.created_at || new Date().toISOString()
+    };
 
     return {
       dispute,

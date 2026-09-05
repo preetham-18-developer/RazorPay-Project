@@ -6,8 +6,9 @@ export default function PaymentTelemetry({ payment }) {
 
   if (!payment) return null;
 
-  const amountRupees = (payment.amount / 100).toLocaleString('en-IN', { style: 'currency', currency: 'INR' });
-  const createdDate = new Date(payment.created_at).toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+  const amt = payment.amount > 100000 ? payment.amount / 100 : (payment.amount || 0);
+  const amountRupees = Number(amt).toLocaleString('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 });
+  const createdDate = new Date(payment.created_at || Date.now()).toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit' });
 
   return (
     <div style={{ backgroundColor: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '8px', padding: '1rem 1.25rem', boxShadow: '0 1px 2px rgba(0,0,0,0.03)' }}>
@@ -18,7 +19,7 @@ export default function PaymentTelemetry({ payment }) {
         <div>
           <span className="lbl" style={{ display: 'block', color: '#ea580c' }}>PAYMENT TELEMETRY LOG</span>
           <span style={{ fontSize: '0.9rem', fontWeight: 700, color: '#0f172a' }}>
-            #{payment.id} — <span style={{ color: '#ea580c' }}>{amountRupees}</span> ({payment.method ? payment.method.toUpperCase() : 'PAYMENT'})
+            #{payment.payment_id || payment.id || 'PAY_N/A'} — <span style={{ color: '#ea580c' }}>{amountRupees}</span> ({payment.method ? payment.method.toUpperCase() : 'PAYMENT'})
           </span>
         </div>
 

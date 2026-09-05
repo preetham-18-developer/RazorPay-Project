@@ -197,6 +197,11 @@ router.post('/orders/:orderId/pack', async (req, res) => {
   try {
     const orderId = req.params.orderId;
     const { warehouse_id = 'wh_blr_01', packed_items } = req.body || {};
+    const currentState = freshmartEventService.replayOrderState(orderId);
+
+    if (currentState && currentState.timeline && currentState.timeline.some(e => e.event_type === 'PARCEL_PACKED')) {
+      return res.status(200).json({ success: true, message: 'Order is already packed', state: currentState });
+    }
 
     const evt = freshmartEventService.appendEvent({
       order_id: orderId,
@@ -226,6 +231,12 @@ router.post('/orders/:orderId/assign-courier', async (req, res) => {
   try {
     const orderId = req.params.orderId;
     const { courier_partner = 'DELHIVERY', driver_id = 'driver_441' } = req.body || {};
+    const currentState = freshmartEventService.replayOrderState(orderId);
+
+    if (currentState && currentState.timeline && currentState.timeline.some(e => e.event_type === 'COURIER_ASSIGNED')) {
+      return res.status(200).json({ success: true, message: 'Courier is already assigned', state: currentState });
+    }
+
     const trackingNumber = `AWB_FM_${Date.now().toString().slice(-6)}`;
 
     const evt = freshmartEventService.appendEvent({
@@ -259,6 +270,11 @@ router.post('/orders/:orderId/dispatch', async (req, res) => {
   try {
     const orderId = req.params.orderId;
     const currentState = freshmartEventService.replayOrderState(orderId);
+
+    if (currentState && currentState.timeline && currentState.timeline.some(e => e.event_type === 'DISPATCHED_FOR_DELIVERY')) {
+      return res.status(200).json({ success: true, message: 'Order is already dispatched', state: currentState });
+    }
+
     const trackingNumber = currentState?.tracking_number || `AWB_FM_${Date.now().toString().slice(-6)}`;
 
     const evt = freshmartEventService.appendEvent({
@@ -292,6 +308,10 @@ router.post('/orders/:orderId/deliver', async (req, res) => {
     const orderId = req.params.orderId;
     const { otp_verified = true } = req.body || {};
     const currentState = freshmartEventService.replayOrderState(orderId);
+
+    if (currentState && currentState.timeline && currentState.timeline.some(e => e.event_type === 'COURIER_MARKED_DELIVERED')) {
+      return res.status(200).json({ success: true, message: 'Order is already marked delivered', state: currentState });
+    }
 
     const evt = freshmartEventService.appendEvent({
       order_id: orderId,

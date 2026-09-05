@@ -23,7 +23,7 @@ export default function OrderDossier({ order }) {
         <div>
           <span className="lbl" style={{ display: 'block', color: '#ea580c' }}>MERCHANT ORDER DOSSIER</span>
           <span style={{ fontSize: '0.9rem', fontWeight: 700, color: '#0f172a' }}>
-            #{order.id} — Status: <span style={{ textTransform: 'uppercase', color: '#16a34a', fontWeight: 700 }}>{order.delivery_status ? order.delivery_status.replace(/_/g, ' ') : 'N/A'}</span>
+            #{order.order_id || order.id || 'ORDER_N/A'} — Status: <span style={{ textTransform: 'uppercase', color: '#16a34a', fontWeight: 700 }}>{order.delivery_status ? order.delivery_status.replace(/_/g, ' ') : 'N/A'}</span>
           </span>
         </div>
 
@@ -40,14 +40,19 @@ export default function OrderDossier({ order }) {
             <span className="lbl" style={{ display: 'block', marginBottom: '0.5rem', color: '#64748b' }}>PURCHASED LINE ITEMS</span>
             {Array.isArray(order.items) && order.items.length > 0 ? (
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                {order.items.map((item, i) => (
-                  <div key={i} style={{ display: 'flex', justifyContent: 'space-between', padding: '0.4rem 0.6rem', backgroundColor: '#f8fafc', borderRadius: '6px', border: '1px solid #f1f5f9' }}>
-                    <span style={{ color: '#0f172a', fontWeight: 600 }}>{item.name} × {item.quantity}</span>
-                    <span className="mono" style={{ fontWeight: 700, color: '#ea580c' }}>
-                      {((item.price * item.quantity) / 100).toLocaleString('en-IN', { style: 'currency', currency: 'INR' })}
-                    </span>
-                  </div>
-                ))}
+                {order.items.map((item, i) => {
+                  const qty = item.quantity || item.qty || 1;
+                  const itemPrice = item.price > 100000 ? item.price / 100 : (item.price || 0);
+                  const subtotal = itemPrice * qty;
+                  return (
+                    <div key={i} style={{ display: 'flex', justifyContent: 'space-between', padding: '0.4rem 0.6rem', backgroundColor: '#f8fafc', borderRadius: '6px', border: '1px solid #f1f5f9' }}>
+                      <span style={{ color: '#0f172a', fontWeight: 600 }}>{item.name} × {qty}</span>
+                      <span className="mono" style={{ fontWeight: 700, color: '#ea580c' }}>
+                        {subtotal.toLocaleString('en-IN', { style: 'currency', currency: 'INR' })}
+                      </span>
+                    </div>
+                  );
+                })}
               </div>
             ) : (
               <span className="lbl" style={{ color: '#94a3b8' }}>No line items listed</span>

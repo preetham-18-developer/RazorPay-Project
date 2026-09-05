@@ -94,7 +94,10 @@ function createDisputeFromFreshMartOrder({ order_id, reason_code = 'PRODUCT_NOT_
 
   const disputeId = `disp_fm_${Date.now()}`;
   const paymentId = state.captured_payments[0]?.payment_id || `pay_sim_${order_id}`;
-  const amount = state.total_amount || 129900;
+  let amount = state.total_amount || 129900;
+  if (amount < 100000 && amount > 0) {
+    amount = amount * 100;
+  }
   const timestamp = new Date().toISOString();
   const dueBy = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString();
 

@@ -51,10 +51,10 @@ export default function HeaderNav() {
 
         {/* Right: Operational Status & System Clock */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', backgroundColor: isConnected ? '#f0fdf4' : '#fffbeb', border: `1px solid ${isConnected ? '#bbf7d0' : '#fde68a'}`, padding: '0.25rem 0.65rem', borderRadius: '4px' }}>
-            <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: isConnected ? '#16a34a' : '#d97706' }} />
-            <span className="mono" style={{ color: isConnected ? '#15803d' : '#b45309', fontWeight: 700, fontSize: '0.65rem' }}>
-              {isConnected ? 'RAZORPAY CONNECTED MODE' : 'SIMULATION MODE (BENCHMARK DATA)'}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', backgroundColor: isConnected ? '#f0fdf4' : '#fff7ed', border: `1px solid ${isConnected ? '#bbf7d0' : '#ffedd5'}`, padding: '0.25rem 0.65rem', borderRadius: '4px' }}>
+            <span style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: isConnected ? '#16a34a' : '#ea580c' }} />
+            <span className="mono" style={{ color: isConnected ? '#15803d' : '#c2410c', fontWeight: 700, fontSize: '0.65rem' }}>
+              {isConnected ? 'RAZORPAY CONNECTED MODE' : 'LIVE TRANSACTION INVESTIGATION ENGINE'}
             </span>
           </div>
 
