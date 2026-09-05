@@ -63,6 +63,7 @@ export default function AdminDashboardPage() {
       if (res.ok && data.user && data.user.role === 'admin') {
         localStorage.setItem('freshsmart_user', JSON.stringify(data.user));
         localStorage.setItem('freshsmart_token', data.token);
+        window.dispatchEvent(new Event('auth_state_changed'));
         setCurrentUser(data.user);
         fetchAdminData();
       } else if (data.user && data.user.role !== 'admin') {

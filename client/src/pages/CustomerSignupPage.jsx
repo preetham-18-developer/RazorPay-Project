@@ -30,12 +30,14 @@ export default function CustomerSignupPage() {
       if (res.ok && data.user) {
         localStorage.setItem('freshsmart_user', JSON.stringify(data.user));
         localStorage.setItem('freshsmart_token', data.token);
+        window.dispatchEvent(new Event('auth_state_changed'));
+
         if (data.user.role === 'admin') {
-          navigate('/freshmart/merchant');
+          navigate('/admin');
         } else if (redirectParam) {
           navigate(redirectParam);
         } else {
-          navigate('/account');
+          navigate('/orders');
         }
       } else {
         setErrorMsg(data.error || 'Registration failed');

@@ -37985,5 +37985,68 @@
       "customer_claim": "High-value Gourmet Pantry Reserve order was marked delivered by courier but never received by customer.",
       "amount": 1899900
     }
+  },
+  {
+    "event_id": "evt_fm_1788621350022_1171",
+    "order_id": "ORDER_FM_1788621350021",
+    "dispute_id": null,
+    "event_type": "PAYMENT_INITIATED",
+    "timestamp": "2026-09-05T15:15:50.022Z",
+    "source": "freshmart_checkout",
+    "actor": "usr_1788620805471_193",
+    "metadata": {
+      "payment_id": "pay_razorpay_test_1788621350022_431",
+      "amount": 114800,
+      "mode": "RAZORPAY_TEST"
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621350056_1443",
+    "order_id": "ORDER_FM_1788621350021",
+    "dispute_id": null,
+    "event_type": "PAYMENT_CAPTURED",
+    "timestamp": "2026-09-05T15:15:50.056Z",
+    "source": "freshmart_payment_adapter",
+    "actor": "razorpay_gateway",
+    "metadata": {
+      "payment_id": "pay_razorpay_test_1788621350022_431",
+      "amount": 114800,
+      "method": "card",
+      "auth_2fa": true,
+      "mode": "RAZORPAY_TEST"
+    }
+  },
+  {
+    "event_id": "evt_fm_1788621350082_3996",
+    "order_id": "ORDER_FM_1788621350021",
+    "dispute_id": null,
+    "event_type": "ORDER_PLACED",
+    "timestamp": "2026-09-05T15:15:50.082Z",
+    "source": "freshmart_order_system",
+    "actor": "usr_1788620805471_193",
+    "metadata": {
+      "payment_id": "pay_razorpay_test_1788621350022_431",
+      "total_amount": 114800,
+      "currency": "INR",
+      "items": [
+        {
+          "product_id": "prod_fm_01",
+          "sku": "RICE-5KG-001",
+          "name": "Royal Organic Basmati Rice (5kg)",
+          "price": 64900,
+          "qty": 1,
+          "subtotal": 64900
+        },
+        {
+          "product_id": "prod_fm_05",
+          "sku": "TEA-500G-005",
+          "name": "Darjeeling First Flush Black Tea (500g)",
+          "price": 49900,
+          "qty": 1,
+          "subtotal": 49900
+        }
+      ],
+      "mode": "RAZORPAY_TEST"
+    }
   }
 ]

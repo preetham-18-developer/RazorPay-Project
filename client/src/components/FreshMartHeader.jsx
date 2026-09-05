@@ -6,20 +6,30 @@ export default function FreshMartHeader({ cartCount = 0, onOpenCart, paymentMode
   const [currentUser, setCurrentUser] = useState(null);
 
   useEffect(() => {
-    try {
-      const stored = localStorage.getItem('freshsmart_user');
-      if (stored) {
-        setCurrentUser(JSON.parse(stored));
+    const syncUser = () => {
+      try {
+        const stored = localStorage.getItem('freshsmart_user');
+        setCurrentUser(stored ? JSON.parse(stored) : null);
+      } catch (e) {
+        setCurrentUser(null);
       }
-    } catch (e) {
-      // ignore
-    }
+    };
+
+    syncUser();
+    window.addEventListener('storage', syncUser);
+    window.addEventListener('auth_state_changed', syncUser);
+
+    return () => {
+      window.removeEventListener('storage', syncUser);
+      window.removeEventListener('auth_state_changed', syncUser);
+    };
   }, []);
 
   const handleLogout = () => {
     localStorage.removeItem('freshsmart_user');
     localStorage.removeItem('freshsmart_token');
     setCurrentUser(null);
+    window.dispatchEvent(new Event('auth_state_changed'));
     navigate('/login');
   };
 
